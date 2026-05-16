@@ -40,7 +40,7 @@ a { color: inherit; }
 :root {
   /* Colors */
   --color-bg:       #FFFFFF;
-  --color-surface:  #EDE8DF;
+  --color-surface:  #F5F2EC;
   --color-ink:      #0A0A0A;
   --color-ink-soft: #6B6560;
   --color-rule:     #C8C2BA;
