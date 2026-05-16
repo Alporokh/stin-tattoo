@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STIN Tattoo Studio — Custom tattoo in the heart of Prague, Malá Strana.">
+  <title>STIN Tattoo Studio — Prague</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Barlow: headings | JetBrains Mono: labels -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo"><img src="logo-stin.svg" alt="STIN Tattoo"></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">Studio</a></li>
+      <li><a href="#artist">Artist</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#aftercare">Aftercare</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#book" class="nav-cta">Book now</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mob-overlay" id="mobOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
+    <nav class="mob-nav">
+      <a href="#about"     class="mob-link">Studio</a>
+      <a href="#artist"    class="mob-link">Artist</a>
+      <a href="#portfolio" class="mob-link">Portfolio</a>
+      <a href="#aftercare" class="mob-link">Aftercare</a>
+      <a href="#contact"   class="mob-link">Contact</a>
+      <a href="#book"      class="mob-link mob-link--cta">Book a session →</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ══ 00 · HERO ════════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero">
+      <div class="hero-meta">
+        
+      </div>
+
+      <div class="hero-body">
+        <div class="hero-text">
+          <div class="hero-display-wrap">
+            <h1 class="hero-display rv d1">Ink your story</h1>
+            <p class="hero-sub rv d2">Tattoo Studio</p>
+          </div>
+          <div class="hero-foot">
+            <p class="hero-tagline rv d2">
+              Our tattoo studio is located in the heart of Prague — a place where you can slow down, relax, and create something truly
+              personal.
+            </p>
+            <div class="hero-actions rv d3">
+              <a href="#book"      class="btn btn--primary">Book a session</a>
+              <a href="#portfolio" class="btn btn--ghost">View portfolio</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/stin hero.jpg" alt="STIN tattoo studio sign, Prague" loading="eager">
+          <span class="hero-image-label">Míšeňská 73/5 · Praha</span>
+          <span class="hero-ghost" aria-hidden="true">2022</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 01 · ABOUT ═══════════════════════════════════════════ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-grid">
+
+        <div class="about-images rv">
+          <img class="about-img about-img--main"
+               src="images/salon.png"
+               alt="STIN studio interior — Gothic vaulted ceiling, Prague">
+         </div>
+
+        <div class="about-copy">
+          <p class="sec-num rv">01 —</p>
+          <h2 id="about-heading" class="sec-heading rv d1">
+            About<br>the studio
+          </h2>
+          <p class="body-text rv d2">
+            Our tattoo studio is located in the heart of Prague — a place where you can
+            slow down, relax, and create something truly personal.
+          </p>
+          <p class="body-text rv d2">
+            We've built a space where everyone feels comfortable: a cozy atmosphere,
+            a calm environment, and attention to every detail. For us, it's not just
+            about the tattoo itself, but the whole experience — from your first idea
+            to the final result.
+          </p>
+          <p class="body-text rv d2">
+            We work with custom designs and help you find something that will feel
+            right for you for years to come.
+          </p>
+          <p class="note rv d3">
+            To make your session as smooth as possible — eat beforehand, and let us know
+            of any health concerns in advance.
+          </p>
+          <dl class="address rv d3">
+            <dt>Address</dt>
+            <dd>Míšeňská 73/5, 118 00 Malá Strana, Prague</dd>
+            <dt>Hours</dt>
+            <dd>Monday – Sunday &nbsp; 12:00 – 20:00</dd>
+          </dl>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 02 · ARTIST ══════════════════════════════════════════ -->
+    <section id="artist" aria-labelledby="artist-heading">
+      <div class="artist-grid">
+
+        <div class="artist-copy">
+          <p class="sec-num rv">02 —</p>
+          <h2 id="artist-heading" class="artist-name rv d1">
+            <span class="artist-name-sub">The artist</span>
+            Master
+          </h2>
+          <p class="body-text rv d2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. With a deep
+            passion for fine line, illustrative, and traditional work, every tattoo
+            is approached as a unique collaboration between artist and client.
+          </p>
+          <p class="body-text rv d2">
+            Specializing in custom designs — from delicate botanical motifs to bold
+            graphic pieces — each piece is crafted with intention and care.
+          </p>
+          <dl class="stats rv d3">
+            <div class="stat">
+              <dt class="stat-label">Years</dt>
+              <dd class="stat-value">5+</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-label">Tattoos</dt>
+              <dd class="stat-value">500+</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-label">Custom</dt>
+              <dd class="stat-value">100%</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-label">Language</dt>
+              <dd class="stat-value">Eng</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="artist-photo-wrap rv d2">
+          <img class="artist-photo"
+               src="images/ref1.jpg"
+               alt="STIN tattoo artist at work">
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 03 · PORTFOLIO ═══════════════════════════════════════ -->
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <div class="portfolio-header">
+        <div>
+          <p class="sec-num rv">03 —</p>
+          <h2 id="portfolio-heading" class="sec-heading rv d1">
+            Our<br>portfolio
+          </h2>
+        </div>
+        <a href="https://www.instagram.com/stintattoostudio?igsh=NHlxOHMzOWNic3Nv"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--ghost rv">All works →</a>
+      </div>
+
+      <div class="portfolio-grid" role="list">
+        <figure class="port-item rv" role="listitem">
+          <img class="port-img" src="images/portfolio1.jpg"  alt="Illustrative tattoo — ceramic vase with face and daisy flower">
+          <figcaption class="port-caption">Illustrative</figcaption>
+        </figure>
+        <figure class="port-item rv d1" role="listitem">
+          <img class="port-img" src="images/portfolio2.jpg"  alt="Fine line seashell tattoo on forearm">
+          <figcaption class="port-caption">Fine line</figcaption>
+        </figure>
+        <figure class="port-item rv d2" role="listitem">
+          <img class="port-img" src="images/portfolio3.jpg" alt="Botanical floral tattoo on upper back">
+          <figcaption class="port-caption">Cassette</figcaption>
+        </figure>
+        <figure class="port-item rv d1" role="listitem">
+          <img class="port-img" src="images/portfolio10.jpg" alt="Traditional spider with human face tattoo on arm">
+          <figcaption class="port-caption">Traditional</figcaption>
+        </figure>
+        <figure class="port-item rv d2" role="listitem">
+          <img class="port-img" src="images/portfolio11.jpg"  alt="Minimal text tattoo on collarbone — 1+1=11">
+          <figcaption class="port-caption">Minimal</figcaption>
+        </figure>
+        <figure class="port-item rv d1" role="listitem">
+          <img class="port-img" src="images/portfolio6.jpg"   alt="Illustrative skull reliquary tattoo on thigh">
+          <figcaption class="port-caption">Illustrative</figcaption>
+        </figure>
+        <figure class="port-item rv d2" role="listitem">
+          <img class="port-img" src="images/portfolio4.jpg"   alt="Ornamental baroque tattoo on upper back">
+          <figcaption class="port-caption">Ornamental</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 04 · AFTERCARE ══════════════════════════════════════ -->
+    <section id="aftercare" aria-labelledby="aftercare-heading">
+      <div class="aftercare-grid">
+
+        <div class="aftercare-left">
+          <p class="sec-num rv">04 —</p>
+          <h2 id="aftercare-heading" class="sec-heading rv d1">
+            After<br>care
+          </h2>
+        </div>
+
+        <div class="aftercare-right">
+          <p class="care-intro rv">
+            Your tattoo is a fresh wound. Follow these steps carefully
+            for perfect, lasting results.
+          </p>
+          <ol class="care-list" role="list">
+            <li class="care-step rv">
+              <span class="care-num" aria-hidden="true">01</span>
+              <p class="care-text">
+                <strong>Second skin for 4 days.</strong>
+                Keep the film on for the first four days without removing it.
+              </p>
+            </li>
+            <li class="care-step rv d1">
+              <span class="care-num" aria-hidden="true">02</span>
+              <p class="care-text">
+                <strong>Wash and moisturize.</strong>
+                Gently remove the film, wash the tattoo, pat dry with a paper towel,
+                apply the recommended healing cream. Repeat 2–3 times daily for 3 weeks.
+              </p>
+            </li>
+            <li class="care-step rv d2">
+              <span class="care-num" aria-hidden="true">03</span>
+              <p class="care-text">
+                <strong>Avoid sun, pools and saunas</strong>
+                while healing. Direct sunlight and chlorine damage fresh ink.
+              </p>
+            </li>
+            <li class="care-step rv d1">
+              <span class="care-num" aria-hidden="true">04</span>
+              <p class="care-text">
+                <strong>Do not pick or scratch</strong>
+                the tattoo. Let it peel naturally.
+              </p>
+            </li>
+            <li class="care-step rv d2">
+              <span class="care-num" aria-hidden="true">05</span>
+              <p class="care-text">
+                <strong>Have questions?</strong>
+                If something feels wrong or you're unsure about your healing — text us anytime.
+              </p>
+            </li>
+          </ol>
+          <blockquote class="care-quote rv d3">
+            "We care about your tattoo long after you leave the studio.
+            Don't hesitate to reach out."
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 05 · INSTAGRAM ══════════════════════════════════════ -->
+    <section id="instagram" aria-labelledby="ig-heading">
+      <div class="ig-header">
+        <span class="label rv">[ Follow along ]</span>
+        <h2 id="ig-heading" class="ig-title rv d1">@stintattoostudio</h2>
+        <p class="ig-sub rv d2">Fresh work, behind the scenes and studio life</p>
+      </div>
+
+      <div class="ig-grid" role="list" aria-label="Instagram preview grid">
+        <div class="ig-cell rv"    role="listitem"><img src="images/ref1.jpg"    alt="Artist at work" loading="lazy"></div>
+        <div class="ig-cell rv d1" role="listitem"><img src="images/ref2.jpg"  alt="Vase face tattoo" loading="lazy"></div>
+        <div class="ig-cell rv d2" role="listitem"><img src="images/ref3.jpg" alt="Botanical tattoo" loading="lazy"></div>
+        <div class="ig-cell rv d1" role="listitem"><img src="images/ref5.jpg" alt="Spider tattoo" loading="lazy"></div>
+        <div class="ig-cell rv d2" role="listitem"><img src="images/ref4.jpg"   alt="Skull tattoo" loading="lazy"></div>
+        <div class="ig-cell rv d1" role="listitem"><img src="images/ref6.jpg"  alt="Seashell tattoo" loading="lazy"></div>
+      </div>
+
+      <a href="https://www.instagram.com/stintattoostudio?igsh=NHlxOHMzOWNic3Nv"
+         target="_blank" rel="noopener noreferrer"
+         class="ig-btn rv" aria-label="Follow STIN on Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+        Open Instagram
+      </a>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 06 · BOOK ════════════════════════════════════════════ -->
+    <section id="book" aria-labelledby="book-heading">
+      <div class="book-grid">
+
+        <div class="book-intro">
+          <p class="sec-num rv">05 —</p>
+          <h2 id="book-heading" class="sec-heading rv d1">
+            Book<br>your<br>session
+          </h2>
+          <p class="body-text rv d2">
+            Ready to create something permanent? Fill in the form and
+            we'll reply within 24 hours to discuss your idea.
+          </p>
+        </div>
+
+        <form class="book-form" id="bookForm" novalidate>
+          <div class="form-row">
+            <div class="form-field rv">
+              <label for="f-name">Your name</label>
+              <input type="text" id="f-name" name="name"
+                     placeholder="Jane Doe" autocomplete="name" required>
+            </div>
+            <div class="form-field rv d1">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email"
+                     placeholder="jane@example.com" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-field rv d1">
+            <label for="f-style">Tattoo style</label>
+            <select id="f-style" name="style">
+              <option value="" disabled selected>Choose a style</option>
+              <option>Fine line</option>
+              <option>Illustrative</option>
+              <option>Traditional / Neo-traditional</option>
+              <option>Botanical</option>
+              <option>Minimal / Script</option>
+              <option>Blackwork</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field rv d2">
+            <label for="f-idea">Describe your idea</label>
+            <textarea id="f-idea" name="idea"
+                      placeholder="Placement, size, references, inspiration…"></textarea>
+          </div>
+          <div class="form-field rv d2">
+            <label for="f-phone">Phone / Instagram <span class="optional">(optional)</span></label>
+            <input type="text" id="f-phone" name="phone"
+                   placeholder="+420 xxx xxx xxx" autocomplete="tel">
+          </div>
+          <button type="submit" class="btn btn--primary btn--full rv d3">
+            Send inquiry →
+          </button>
+          <p class="form-note rv">We reply within 24 hours. Your data is never shared.</p>
+        </form>
+
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- ══ 07 · CONTACT & MAP ════════════════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <p class="sec-num rv">06 —</p>
+          <h2 id="contact-heading" class="sec-heading rv d1">
+            Visit<br>the studio
+          </h2>
+          <dl class="contact-list">
+            <div class="contact-block rv d2">
+              <dt>Address</dt>
+              <dd>Míšeňská 73/5<br>118 00 Malá Strana<br>Prague, Czech Republic</dd>
+            </div>
+            <div class="contact-block rv d2">
+              <dt>Hours</dt>
+              <dd>Monday – Sunday<br>12:00 – 20:00</dd>
+            </div>
+            <div class="contact-block rv d3">
+              <dt>Instagram</dt>
+              <dd>
+                <a href="https://www.instagram.com/stintattoostudio?igsh=NHlxOHMzOWNic3Nv"
+                   target="_blank" rel="noopener noreferrer">@stintattoostudio</a>
+              </dd>
+            </div>
+            <div class="contact-block rv d3">
+              <dt>Booking</dt>
+              <dd><a href="#book">Via form above ↑</a> or DM on Instagram</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="map-wrap rv d2">
+          <iframe
+            title="STIN Tattoo Studio — Míšeňská 73/5, Malá Strana, Prague"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d650!2d14.4028!3d50.0874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94f3b8e5a5c5%3A0x1!2sM%C3%AD%C5%A1e%C5%88sk%C3%A1+73%2F5%2C+118+00+Mal%C3%A1+Strana!5e0!3m2!1sen!2scz!4v1715000000000"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <span class="map-label">Míšeňská 73/5 · Malá Strana</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <span class="footer-logo"><img src="logo-stin.svg" alt="STIN Tattoo"></span>
+    <ul class="footer-links" role="list">
+      <li><a href="#about">Studio</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#aftercare">Aftercare</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2025 STIN Tattoo Studio, Prague</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
