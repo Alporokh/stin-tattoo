@@ -39,7 +39,7 @@ a { color: inherit; }
 /* ─── DESIGN TOKENS ─────────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg:       #F5F2EC;
+  --color-bg:       #FFFFFF;
   --color-surface:  #EDE8DF;
   --color-ink:      #0A0A0A;
   --color-ink-soft: #6B6560;
@@ -204,7 +204,7 @@ body {
     backdrop-filter var(--dur-fast);
 }
 #nav.scrolled {
-  background: rgba(245, 242, 236, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--color-rule);
@@ -616,7 +616,7 @@ body {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(10, 10, 10, 0.45);
-  background: linear-gradient(to top, rgba(245, 242, 236, 0.6), transparent);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.6), transparent);
   opacity: 0;
   transform: translateY(6px);
   transition: opacity var(--dur-fast), transform var(--dur-fast);
