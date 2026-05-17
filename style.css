@@ -40,7 +40,7 @@ a { color: inherit; }
 :root {
   /* Colors */
   --color-bg:       #FFFFFF;
-  --color-surface:  #F5F2EC;
+  --color-surface:  #FFFFFF;
   --color-ink:      #0A0A0A;
   --color-ink-soft: #6B6560;
   --color-rule:     #C8C2BA;
@@ -119,8 +119,9 @@ body {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--text-h1);
-  line-height: 0.92;
-  letter-spacing: -0.015em;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: var(--s5);
 }
@@ -359,8 +360,9 @@ body {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--text-display);
-  line-height: 0.86;
-  letter-spacing: -0.02em;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
   color: var(--color-ink);
 }
 .hero-sub {
@@ -506,8 +508,9 @@ body {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(2.75rem, 7vw, 6rem);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: var(--s5);
 }
@@ -705,7 +708,9 @@ body {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.75rem, 5.5vw, 4rem);
-  letter-spacing: -0.01em;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
   color: var(--color-ink);
 }
 .ig-sub {
