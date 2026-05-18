@@ -298,7 +298,7 @@ body {
   gap: var(--s2);
 }
 .mob-link {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: clamp(2rem, 8vw, 3.5rem);
   letter-spacing: 0.04em;
@@ -362,7 +362,7 @@ body {
   color: var(--color-ink);
 }
 .hero-sub {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(1.125rem, 2.5vw, 2rem);
   letter-spacing: 0.02em;
@@ -417,7 +417,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: clamp(3rem, 8vw, 6rem);
   color: rgba(10, 10, 10, 0.04);
@@ -537,7 +537,7 @@ body {
   padding: var(--s3) var(--s3);
 }
 .stat-value {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 2.25rem;
   letter-spacing: -0.02em;
@@ -882,7 +882,7 @@ footer {
   background: var(--color-bg);
 }
 .footer-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.2em;
