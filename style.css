@@ -49,7 +49,7 @@ a { color: inherit; }
 
   /* Typography */
   --font-display: 'Inter', 'Helvetica Neue', sans-serif;
-  --font-body:    'Cossette Texte', 'Georgia', sans-serif;
+  --font-body:    'JetBrains Mono', 'Courier New', monospace;
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 
   /* Type scale — H1 is 3× the base h1 size */
@@ -150,7 +150,6 @@ body {
 /* Rule / divider */
 .rule {
   border: none;
-  border-top: 1px solid var(--color-rule);
 }
 
 /* ─── BUTTONS ────────────────────────────────────────────────── */
@@ -208,7 +207,7 @@ body {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom-color: var(--color-rule);
+  border-bottom-color: transparent;
 }
 .nav-logo {
   display: flex;
@@ -307,7 +306,6 @@ body {
   text-decoration: none;
   color: var(--color-ink);
   line-height: 1.2;
-  border-bottom: 1px solid var(--color-rule);
   padding-bottom: var(--s2);
 }
 .mob-link--cta {
@@ -330,7 +328,6 @@ body {
   justify-content: space-between;
   align-items: flex-end;
   padding: var(--s4) var(--gutter) var(--s3);
-  border-bottom: 1px solid var(--color-rule);
 }
 .hero-meta > div {
   display: flex;
@@ -354,7 +351,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(2rem, 5vh, 4rem) var(--gutter);
-  border-right: 1px solid var(--color-rule);
 }
 .hero-display {
   font-family: var(--font-display);
@@ -387,7 +383,6 @@ body {
   line-height: 1.65;
   color: var(--color-ink-soft);
   max-width: 260px;
-  border-left: 1px solid var(--color-rule);
   padding-left: var(--s3);
 }
 .hero-actions {
@@ -463,8 +458,6 @@ body {
 .note {
   margin-top: var(--s4);
   padding: var(--s3) 0;
-  border-top: 1px solid var(--color-rule);
-  border-bottom: 1px solid var(--color-rule);
   font-family: var(--font-body);
   font-size: var(--text-small);
   font-weight: 300;
@@ -538,14 +531,10 @@ body {
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--color-rule);
-  border-left: 1px solid var(--color-rule);
   margin-top: var(--s6);
 }
 .stat {
   padding: var(--s3) var(--s3);
-  border-right: 1px solid var(--color-rule);
-  border-bottom: 1px solid var(--color-rule);
 }
 .stat-value {
   font-family: var(--font-display);
@@ -658,9 +647,7 @@ body {
   grid-template-columns: 32px 1fr;
   gap: var(--s3);
   padding: var(--s4) 0;
-  border-bottom: 1px solid var(--color-rule);
 }
-.care-step:first-child { border-top: 1px solid var(--color-rule); }
 .care-num {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
@@ -681,7 +668,6 @@ body {
 .care-quote {
   margin-top: var(--s4);
   padding: var(--s3) var(--s4);
-  border: 1px solid var(--color-rule);
   font-family: var(--font-body);
   font-size: var(--text-small);
   font-weight: 300;
@@ -781,7 +767,7 @@ body {
   flex-direction: column;
   gap: var(--s1);
   padding-bottom: var(--s4);
-  border-bottom: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-ink);
   margin-bottom: var(--s4);
 }
 .form-field label {
@@ -841,9 +827,7 @@ body {
 .contact-list { display: flex; flex-direction: column; gap: 0; }
 .contact-block {
   padding: var(--s4) 0;
-  border-bottom: 1px solid var(--color-rule);
 }
-.contact-block:first-child { border-top: 1px solid var(--color-rule); }
 .contact-block dt {
   font-family: var(--font-mono);
   font-size: 9px;
@@ -860,10 +844,7 @@ body {
 }
 .contact-block a {
   text-decoration: none;
-  border-bottom: 1px solid var(--color-rule);
-  transition: border-color var(--dur-fast);
 }
-.contact-block a:hover { border-color: var(--color-ink); }
 
 /* Map */
 .map-wrap {
@@ -882,7 +863,6 @@ body {
   position: absolute;
   top: 14px; left: 14px;
   background: var(--color-bg);
-  border: 1px solid var(--color-rule);
   padding: 6px 12px;
   font-family: var(--font-mono);
   font-size: 9px;
@@ -893,7 +873,6 @@ body {
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 footer {
-  border-top: 1px solid var(--color-rule);
   padding: var(--s5) var(--gutter);
   display: flex;
   justify-content: space-between;
@@ -950,7 +929,7 @@ footer {
   .hamburger { display: flex; }
 
   .hero-body { grid-template-columns: 1fr; }
-  .hero-text { border-right: none; border-bottom: 1px solid var(--color-rule); }
+  .hero-text { border-right: none; }
   .hero-image { height: 55vw; min-height: 280px; }
   .hero-image img { min-height: 280px; }
 
