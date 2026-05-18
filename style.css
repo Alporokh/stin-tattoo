@@ -48,7 +48,7 @@ a { color: inherit; }
   --color-graphite: #3A3835;
 
   /* Typography */
-  --font-display: 'Barlow', 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
   --font-body:    'Cossette Texte', 'Georgia', sans-serif;
   --font-mono:    'JetBrains Mono', 'Courier New', monospace;
 
@@ -120,7 +120,7 @@ body {
   font-weight: 500;
   font-size: var(--text-h1);
   line-height: 0.85;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: var(--s5);
@@ -361,7 +361,7 @@ body {
   font-weight: 500;
   font-size: var(--text-display);
   line-height: 0.85;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-ink);
 }
@@ -509,7 +509,7 @@ body {
   font-weight: 500;
   font-size: clamp(2.75rem, 7vw, 6rem);
   line-height: 0.85;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-ink);
   margin-bottom: var(--s5);
@@ -709,7 +709,7 @@ body {
   font-weight: 500;
   font-size: clamp(1.75rem, 5.5vw, 4rem);
   line-height: 0.85;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-ink);
 }
