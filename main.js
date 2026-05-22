@@ -5,6 +5,22 @@
 (function () {
   'use strict';
 
+  /* ── Language toggle ─────────────────────────────────────────── */
+  let currentLang = 'cs';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.body.classList.remove('show-cs', 'show-en');
+    document.body.classList.add('show-' + lang);
+    const btnCs = document.getElementById('btn-cs');
+    const btnEn = document.getElementById('btn-en');
+    if (btnCs) btnCs.classList.toggle('active', lang === 'cs');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+  }
+
+  window.setLang = setLang;
+
+
   /* ── Nav: add .scrolled class on scroll ─────────────────────── */
   const nav = document.getElementById('nav');
 
@@ -32,24 +48,20 @@
   hamburger.addEventListener('click', openMenu);
   mobClose.addEventListener('click', closeMenu);
 
-  // Close on any nav link click
   mobOverlay.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeMenu);
   });
 
-  // Close on Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobOverlay.classList.contains('open')) closeMenu();
   });
 
 
   /* ── Scroll reveal ───────────────────────────────────────────── */
-  const revealEls = document.querySelectorAll('.rv');
-
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('in');
+        entry.target.classList.add('in', 'visible');
         io.unobserve(entry.target);
       }
     });
@@ -58,12 +70,11 @@
     rootMargin: '0px 0px -28px 0px'
   });
 
-  revealEls.forEach(el => io.observe(el));
+  document.querySelectorAll('.rv, .reveal').forEach(el => io.observe(el));
 
   // Hero elements reveal immediately on load
-  const heroEls = document.querySelectorAll('#hero .rv');
-  heroEls.forEach((el, i) => {
-    setTimeout(() => el.classList.add('in'), 60 + i * 70);
+  document.querySelectorAll('#hero .rv').forEach((el, i) => {
+    setTimeout(() => el.classList.add('in', 'visible'), 60 + i * 70);
   });
 
 
@@ -73,6 +84,8 @@
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
+    const btn  = form.querySelector('.submit-btn') || form.querySelector('.btn--primary');
+    const successMsg = document.getElementById('form-success');
 
     const data = {
       name:    form.querySelector('input[type="text"]').value,
@@ -82,34 +95,66 @@
       message: form.querySelector('textarea').value,
     };
 
-    const TELEGRAM_TOKEN = '8928919620:AAGp9MmCcpGCjiIh3vgmreLQoCWS7E4skj0';
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = '...';
+    }
+
+    const TELEGRAM_TOKEN = '8928919620:AAE17qh6UoRyAKJdBcdxoaxh8LYYRpjRVvo';
     const CHAT_ID        = '539368260';
     const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbwz3E0udM-YYhAHFW0d7U_fGYpAjNfyhPVHkJHMhIk07PTn4OxwhEPMtcPqNQOQJMFL/exec';
 
-    const text = `🐾 New booking!\n\n👤 ${data.name}\n📧 ${data.email}\n📱 ${data.phone}\n🎨 ${data.style}\n💬 ${data.message}`;
+    const text =
+      `🐾 Nová rezervace / New booking!\n\n` +
+      `👤 ${data.name}\n` +
+      `📧 ${data.email}\n` +
+      `📱 ${data.phone}\n` +
+      `🎨 ${data.style}\n` +
+      `💬 ${data.message}`;
 
-    await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: CHAT_ID, text })
-    });
+    try {
+      await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text })
+      });
+    } catch (err) {
+      console.error('Telegram error:', err);
+    }
 
-    await fetch(SHEETS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    try {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    } catch (err) {
+      console.error('Sheets error:', err);
+    }
 
-    document.getElementById('form-success').style.display = 'block';
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = btn.dataset.originalText || 'Odeslat rezervaci';
+    }
+    if (successMsg) {
+      successMsg.style.display = 'block';
+      setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+    }
     form.reset();
-    setTimeout(() => {
-      document.getElementById('form-success').style.display = 'none';
-    }, 5000);
   }
 
   if (bookForm) {
     bookForm.addEventListener('submit', handleSubmit);
   }
+
+
+  /* ── Init ────────────────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    setLang('cs');
+
+    const btn = document.querySelector('.submit-btn');
+    if (btn) btn.dataset.originalText = btn.textContent.trim();
+  });
 
 })();
