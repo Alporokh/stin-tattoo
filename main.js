@@ -106,7 +106,7 @@
 
     const TELEGRAM_TOKEN = '8928919620:AAE17qh6UoRyAKJdBcdxoaxh8LYYRpjRVvo';
     const CHAT_ID        = '539368260';
-    const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbwz3E0udM-YYhAHFW0d7U_fGYpAjNfyhPVHkJHMhIk07PTn4OxwhEPMtcPqNQOQJMFL/exec';
+    const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbwVv7enKZ7mSzATWflNO4EYlxYNZRHyYDighcOlolCha4dhxTBaPXJNBxrS9zEBhgzC/exec';
 
     const text =
       `🐾 Nová rezervace / New booking!\n\n` +
