@@ -70,32 +70,46 @@
   /* ── Booking form ────────────────────────────────────────────── */
   const bookForm = document.getElementById('bookForm');
 
-  if (bookForm) {
-    bookForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
 
-      const btn = this.querySelector('.btn--primary');
-      const originalText = btn.textContent;
+    const data = {
+      name:    form.querySelector('input[type="text"]').value,
+      email:   form.querySelector('input[type="email"]').value,
+      phone:   form.querySelector('input[type="tel"]').value,
+      style:   form.querySelector('select').value,
+      message: form.querySelector('textarea').value,
+    };
 
-      // Disable while "sending"
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
+    const TELEGRAM_TOKEN = '8928919620:AAGp9MmCcpGCjiIh3vgmreLQoCWS7E4skj0';
+    const CHAT_ID        = '539368260';
+    const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbwz3E0udM-YYhAHFW0d7U_fGYpAjNfyhPVHkJHMhIk07PTn4OxwhEPMtcPqNQOQJMFL/exec';
 
-      // Simulate async send (replace with real fetch to your endpoint)
-      setTimeout(() => {
-        btn.textContent = 'Sent ✓  We\'ll be in touch soon';
-        btn.style.background = '#2d4a2d';
-        btn.style.borderColor = '#2d4a2d';
+    const text = `🐾 New booking!\n\n👤 ${data.name}\n📧 ${data.email}\n📱 ${data.phone}\n🎨 ${data.style}\n💬 ${data.message}`;
 
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-          bookForm.reset();
-        }, 5000);
-      }, 800);
+    await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: CHAT_ID, text })
     });
+
+    await fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    document.getElementById('form-success').style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 5000);
+  }
+
+  if (bookForm) {
+    bookForm.addEventListener('submit', handleSubmit);
   }
 
 })();
