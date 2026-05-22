@@ -87,13 +87,17 @@
     const btn  = form.querySelector('.submit-btn') || form.querySelector('.btn--primary');
     const successMsg = document.getElementById('form-success');
 
+    console.log('[form] submit triggered');
+
     const data = {
-      name:    form.querySelector('input[type="text"]').value,
-      email:   form.querySelector('input[type="email"]').value,
-      phone:   form.querySelector('input[type="tel"]').value,
-      style:   form.querySelector('select').value,
-      message: form.querySelector('textarea').value,
+      name:    (form.querySelector('input[type="text"]')  || {}).value || '',
+      email:   (form.querySelector('input[type="email"]') || {}).value || '',
+      phone:   (form.querySelector('input[type="tel"]')   || {}).value || '',
+      style:   (form.querySelector('select')              || {}).value || '',
+      message: (form.querySelector('textarea')            || {}).value || '',
     };
+
+    console.log('[form] data collected', data);
 
     if (btn) {
       btn.disabled = true;
@@ -113,13 +117,15 @@
       `💬 ${data.message}`;
 
     try {
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id: CHAT_ID, text })
       });
+      const tgJson = await tgRes.json();
+      console.log('[form] Telegram response', tgJson);
     } catch (err) {
-      console.error('Telegram error:', err);
+      console.error('[form] Telegram error:', err);
     }
 
     try {
@@ -129,13 +135,14 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
+      console.log('[form] Sheets request sent');
     } catch (err) {
-      console.error('Sheets error:', err);
+      console.error('[form] Sheets error:', err);
     }
 
     if (btn) {
       btn.disabled = false;
-      btn.textContent = btn.dataset.originalText || 'Odeslat rezervaci';
+      btn.textContent = btn.dataset.originalText || 'Send inquiry →';
     }
     if (successMsg) {
       successMsg.style.display = 'block';
