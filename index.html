@@ -378,12 +378,15 @@
           </div>
           <div class="form-field rv d2">
             <label for="f-phone">Phone / Instagram <span class="optional">(optional)</span></label>
-            <input type="text" id="f-phone" name="phone"
+            <input type="tel" id="f-phone" name="phone"
                    placeholder="+420 xxx xxx xxx" autocomplete="tel">
           </div>
-          <button type="submit" class="btn btn--primary btn--full rv d3">
+          <button type="submit" class="btn btn--primary btn--full submit-btn rv d3">
             Send inquiry →
           </button>
+          <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">
+            Thank you! We'll be in touch within 24 hours.
+          </p>
           <p class="form-note rv">We reply within 24 hours. Your data is never shared.</p>
         </form>
 
