@@ -105,7 +105,7 @@
     }
 
     const TELEGRAM_TOKEN = '8928919620:AAE17qh6UoRyAKJdBcdxoaxh8LYYRpjRVvo';
-    const CHAT_ID        = '539368260';
+    const CHAT_ID        = '-5178734662';
     const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
 
     const text =
