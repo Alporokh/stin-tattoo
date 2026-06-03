@@ -90,11 +90,13 @@
     console.log('[form] submit triggered');
 
     const data = {
-      name:    (form.querySelector('input[type="text"]')  || {}).value || '',
-      email:   (form.querySelector('input[type="email"]') || {}).value || '',
-      phone:   (form.querySelector('input[type="tel"]')   || {}).value || '',
-      style:   (form.querySelector('select')              || {}).value || '',
-      message: (form.querySelector('textarea')            || {}).value || '',
+      name:               (form.querySelector('input[type="text"]')  || {}).value || '',
+      email:              (form.querySelector('input[type="email"]') || {}).value || '',
+      phone:              (form.querySelector('input[type="tel"]')   || {}).value || '',
+      style:              (form.querySelector('select')              || {}).value || '',
+      message:            (form.querySelector('textarea')            || {}).value || '',
+      consent_photos:     (form.querySelector('#f-photos')    || {}).checked ? 'yes' : 'no',
+      consent_marketing:  (form.querySelector('#f-marketing') || {}).checked ? 'yes' : 'no',
     };
 
     console.log('[form] data collected', data);
@@ -114,7 +116,9 @@
       `📧 ${data.email}\n` +
       `📱 ${data.phone}\n` +
       `🎨 ${data.style}\n` +
-      `💬 ${data.message}`;
+      `💬 ${data.message}\n\n` +
+      `📸 Photos consent: ${data.consent_photos}\n` +
+      `📣 Marketing consent: ${data.consent_marketing}`;
 
     try {
       const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {

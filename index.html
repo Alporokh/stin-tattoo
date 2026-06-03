@@ -381,6 +381,36 @@
             <input type="tel" id="f-phone" name="phone"
                    placeholder="+420 xxx xxx xxx" autocomplete="tel">
           </div>
+          <fieldset class="consent-group rv d2">
+            <legend class="consent-legend">Privacy</legend>
+
+            <label class="consent-item">
+              <input type="checkbox" name="gdpr" id="f-gdpr" required>
+              <span class="consent-check" aria-hidden="true"></span>
+              <span class="consent-text">
+                I agree to the processing of my personal data (name, email, phone) for the purpose of handling my booking inquiry.
+                This processing is necessary to respond to your request.
+                <a href="ochrana-osobnich-udaju.md" target="_blank" rel="noopener noreferrer" class="consent-link">Privacy policy</a>
+              </span>
+            </label>
+
+            <label class="consent-item">
+              <input type="checkbox" name="consent_photos" id="f-photos">
+              <span class="consent-check" aria-hidden="true"></span>
+              <span class="consent-text">
+                I agree that STIN Tattoo may photograph my tattoo and use the images on their website, Instagram, and for promotional purposes. <span class="optional">(optional)</span>
+              </span>
+            </label>
+
+            <label class="consent-item">
+              <input type="checkbox" name="consent_marketing" id="f-marketing">
+              <span class="consent-check" aria-hidden="true"></span>
+              <span class="consent-text">
+                I agree to receive news, promotions, and available appointment updates from STIN Tattoo by email or SMS. <span class="optional">(optional)</span>
+              </span>
+            </label>
+          </fieldset>
+
           <button type="submit" class="btn btn--primary btn--full submit-btn rv d3">
             Send inquiry →
           </button>
