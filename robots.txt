@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alporokh.github.io/stin-tattoo/sitemap.xml
+Sitemap: https://stintattoostudio.com/sitemap.xml
