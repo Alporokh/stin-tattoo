@@ -160,12 +160,34 @@
   }
 
 
+  /* ── Cookie banner ───────────────────────────────────────────── */
+  function initCookieBanner() {
+    const banner  = document.getElementById('cookieBanner');
+    if (!banner) return;
+    if (localStorage.getItem('cookie_consent')) return;
+
+    banner.hidden = false;
+    requestAnimationFrame(() => banner.classList.add('visible'));
+
+    function dismiss(choice) {
+      localStorage.setItem('cookie_consent', choice);
+      banner.classList.remove('visible');
+      banner.addEventListener('transitionend', () => { banner.hidden = true; }, { once: true });
+    }
+
+    document.getElementById('cookieAccept') .addEventListener('click', () => dismiss('accepted'));
+    document.getElementById('cookieDecline').addEventListener('click', () => dismiss('declined'));
+  }
+
+
   /* ── Init ────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     setLang('cs');
 
     const btn = document.querySelector('.submit-btn');
     if (btn) btn.dataset.originalText = btn.textContent.trim();
+
+    initCookieBanner();
   });
 
 })();
