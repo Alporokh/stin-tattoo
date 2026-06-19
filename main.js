@@ -106,8 +106,7 @@
       btn.textContent = '...';
     }
 
-    const TELEGRAM_TOKEN = '8928919620:AAE17qh6UoRyAKJdBcdxoaxh8LYYRpjRVvo';
-    const CHAT_ID        = '-5178734662';
+    const WORKER_URL     = 'https://stin-tattoo.alporokh.workers.dev';
     const SHEETS_URL     = 'https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
 
     const text =
@@ -121,10 +120,10 @@
       `📣 Marketing consent: ${data.consent_marketing}`;
 
     try {
-      const tgRes = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      const tgRes = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: CHAT_ID, text })
+        body: JSON.stringify({ text })
       });
       const tgJson = await tgRes.json();
       console.log('[form] Telegram response', tgJson);
