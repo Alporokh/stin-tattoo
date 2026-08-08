@@ -16,6 +16,7 @@
       const isCs = btn.textContent.trim() === 'CZ';
       btn.classList.toggle('active', lang === (isCs ? 'cs' : 'en'));
     });
+    try { localStorage.setItem('stin-lang', lang); } catch(e) {}
   }
 
   window.setLang = setLang;
@@ -181,7 +182,8 @@
 
   /* ── Init ────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
-    setLang('cs');
+    let saved; try { saved = localStorage.getItem('stin-lang'); } catch(e) {}
+    setLang(saved || 'cs');
 
     const btn = document.querySelector('.submit-btn');
     if (btn) btn.dataset.originalText = btn.textContent.trim();

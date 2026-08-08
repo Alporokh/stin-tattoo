@@ -47,6 +47,14 @@ a{color:inherit;text-decoration:none}
   color:var(--ink-mute);font-weight:500;
 }
 .lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -261,7 +269,7 @@ footer a:hover{color:var(--ink)}
 }
 </style>
 </head>
-<body>
+<body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -280,6 +288,11 @@ footer a:hover{color:var(--ink)}
         <a href="graphic.html">Graphic</a>
         <a href="traditional.html">Traditional</a>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -318,10 +331,10 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow rv">Technika — Styl 02</span>
+      <span class="eyebrow rv"><span class="cs">Technika — Styl 02</span><span class="lang">Technique — Style 02</span></span>
       <h1 class="hero-title rv">Fine Line</h1>
-      <p class="hero-sub rv">Tenké, přesné linie &nbsp;·&nbsp; <span class="lang">Thin, precise lines</span></p>
-      <p class="hero-desc rv">Tenké, přesné linie a minimalistický přístup. Ideální pro první tetování, malé detaily a elegantní kompozice.</p>
+      <p class="hero-sub rv">Tenké, přesné linie<span class="lang"> &nbsp;·&nbsp; Thin, precise lines</span></p>
+      <p class="hero-desc cs rv">Tenké, přesné linie a minimalistický přístup. Ideální pro první tetování, malé detaily a elegantní kompozice.</p>
       <p class="hero-desc lang rv">Thin, precise lines and a minimalist approach. Ideal for first tattoos, small details, and elegant compositions.</p>
       <div class="hero-actions rv">
         <a href="#book" class="btn btn--primary">Rezervovat termín</a>
@@ -348,12 +361,13 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
-      <p class="lead">Fine line je jazyk jemnosti — tetování, které šeptá místo křičí, a zůstává krásné po celé roky.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
+      <p class="lead cs">Fine line je jazyk jemnosti — tetování, které šeptá místo křičí, a zůstává krásné po celé roky.</p>
+      <p class="lead lang">Fine line is the language of subtlety — a tattoo that whispers rather than shouts, and stays beautiful for years.</p>
     </div>
     <div class="rv">
-      <p>Fine line tetování využívá jednu jehlu nebo velmi úzkou skupinu jehel k vytvoření jemných, přesných linií. Výsledkem je tetování, které působí subtilně, rafinovaně a téměř nakresleně.</p>
-      <p style="margin-top:16px">Anna se specializuje na fine line práce s čistými, plynulými kompozicemi — botanické motivy, minimální figury, abstraktní formy a jemný lettering.</p>
+      <p class="cs">Fine line tetování využívá jednu jehlu nebo velmi úzkou skupinu jehel k vytvoření jemných, přesných linií. Výsledkem je tetování, které působí subtilně, rafinovaně a téměř nakresleně.</p>
+      <p class="cs" style="margin-top:16px">Anna se specializuje na fine line práce s čistými, plynulými kompozicemi — botanické motivy, minimální figury, abstraktní formy a jemný lettering.</p>
       <p class="lang" style="margin-top:16px">— Fine line tattooing uses a single needle to create delicate, precise linework — subtle, refined, and almost drawn. Anna specialises in botanical motifs, minimal figures, and delicate lettering.</p>
     </div>
   </div>
@@ -362,29 +376,29 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
 <section id="features" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
-    <h2>Znaky fine line stylu</h2>
+    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
+    <h2><span class="cs">Znaky fine line stylu</span><span class="lang">Characteristics</span></h2>
     <p class="lang">Signatures of the fine line style</p>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3>Jediná jehla<span class="lang">Single needle</span></h3>
+      <h3><span class="cs">Jediná jehla</span><span class="lang">Single needle</span></h3>
       <p>Jedna jehla nebo úzká skupina — maximální přesnost, minimální trauma kůže.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3>Minimalismus<span class="lang">Minimalism</span></h3>
+      <h3><span class="cs">Minimalismus</span><span class="lang">Minimalism</span></h3>
       <p>Méně je více. Fine line funguje s prázdným prostorem a nechá každou linii dýchat.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3>Elegance<span class="lang">Elegance</span></h3>
+      <h3><span class="cs">Elegance</span><span class="lang">Elegance</span></h3>
       <p>Jemné florální motivy, abstrakce nebo lettering — vždy s důrazem na kompozici.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3>Péče o kůži<span class="lang">Skin care</span></h3>
+      <h3><span class="cs">Péče o kůži</span><span class="lang">Skin care</span></h3>
       <p>Jemné linie vyžadují pečlivou péči a ochranu před sluncem pro trvalou krásu.</p>
     </div>
   </div>
@@ -393,8 +407,8 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
-    <h2>Vybrané práce</h2>
+    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
+    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
     <p class="lang">Selected fine line work</p>
   </div>
   <div class="gallery">
@@ -419,26 +433,23 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
-    <h2>Od nápadu k linii</h2>
+    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
+    <h2><span class="cs">Od nápadu k linii</span><span class="lang">From idea to line</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3>Konzultace</h3>
-      <p class="lang">Consultation</p>
+      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
       <p>Probereme váš nápad, umístění a velikost. Fine line funguje nejlépe na místech s méně pohybem kůže.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3>Návrh</h3>
-      <p class="lang">Custom design</p>
+      <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
       <p>Anna navrhne kompozici přímo pro vás — každá linie je promyšlená tak, aby seděla na vašem těle.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3>Tetování</h3>
-      <p class="lang">The session</p>
+      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
       <p>Klidné prostředí, čaj nebo káva. Fine line sezení je díky tenké jehle obvykle méně bolestivé.</p>
     </div>
   </div>
@@ -448,9 +459,9 @@ footer a:hover{color:var(--ink)}
 <section id="book">
   <div class="wrap book-grid">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
-      <h2>Máte v hlavě jemnou linii?</h2>
-      <p style="margin-top:20px">Napište nám pár slov o svém nápadu, umístění a velikosti. Ozveme se s návrhem termínu.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
+      <h2><span class="cs">Máte v hlavě jemnou linii?</span><span class="lang">Got a fine line in mind?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám pár slov o svém nápadu, umístění a velikosti. Ozveme se s návrhem termínu.</p>
       <p class="lang" style="margin-top:12px">Tell us about your idea, placement and size — we'll come back with a proposed date.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
@@ -506,6 +517,18 @@ footer a:hover{color:var(--ink)}
 <script>
 (function(){
   'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
 

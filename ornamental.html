@@ -49,6 +49,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
 .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 .lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -178,7 +186,7 @@ footer a:hover{color:var(--ink)}
 }
 </style>
 </head>
-<body>
+<body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -197,6 +205,11 @@ footer a:hover{color:var(--ink)}
         <a href="graphic.html">Graphic</a>
         <a href="traditional.html">Traditional</a>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -235,10 +248,10 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow rv">Technika — Styl 01</span>
+      <span class="eyebrow rv"><span class="cs">Technika — Styl 01</span><span class="lang">Technique — Style 01</span></span>
       <h1 class="hero-title rv">Ornamental</h1>
-      <p class="hero-sub rv">Dekorativní vzory &nbsp;·&nbsp; <span class="lang">Decorative patterns</span></p>
-      <p class="hero-desc rv">Dekorativní vzory inspirované geometrií, etnickými motivy a symetrií. Zdůrazňují tvar těla a vytvářejí efekt ozdoby.</p>
+      <p class="hero-sub rv">Dekorativní vzory<span class="lang"> &nbsp;·&nbsp; Decorative patterns</span></p>
+      <p class="hero-desc cs rv">Dekorativní vzory inspirované geometrií, etnickými motivy a symetrií. Zdůrazňují tvar těla a vytvářejí efekt ozdoby.</p>
       <p class="hero-desc lang rv">Decorative patterns inspired by geometry, ethnic motifs and symmetry. They emphasise the shape of the body and create the effect of adornment.</p>
       <div class="hero-actions rv">
         <a href="#book" class="btn btn--primary">Rezervovat termín</a>
@@ -246,7 +259,7 @@ footer a:hover{color:var(--ink)}
       </div>
     </div>
     <div class="hero-media rv">
-      <img src="images/tetovací studio praha 1.jpg" alt="Ornamentální barokní tetování / Ornamental baroque tattoo" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
+      <img src="images/tetování jemné květiny.jpg" alt="Ornamentální barokní tetování na zádech / Ornamental baroque tattoo on upper back" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.1)">
     </div>
   </div>
 </header>
@@ -264,12 +277,13 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
-      <p class="lead">Ornamentika je jazyk linie, opakování a rovnováhy — tetování, které plyne s anatomií, ne proti ní.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
+      <p class="lead cs">Ornamentika je jazyk linie, opakování a rovnováhy — tetování, které plyne s anatomií, ne proti ní.</p>
+      <p class="lead lang">Ornamental is the language of line, repetition and balance — a tattoo that flows with the body, not against it.</p>
     </div>
     <div class="rv">
-      <p>Ornamentální tetování čerpá z geometrie, etnických vzorů a přírodní symetrie. Každý motiv je navržen tak, aby zdůraznil tvar těla — výsledkem je dojem luxusního šperku přímo na kůži.</p>
-      <p style="margin-top:16px">Anna pracuje s florálními ornamenty, mandálami, arabeskými vzory i abstraktní geometrií. Každý návrh je vytvořen na míru — s ohledem na umístění, proporce a přirozenou linii těla.</p>
+      <p class="cs">Ornamentální tetování čerpá z geometrie, etnických vzorů a přírodní symetrie. Každý motiv je navržen tak, aby zdůraznil tvar těla — výsledkem je dojem luxusního šperku přímo na kůži.</p>
+      <p class="cs" style="margin-top:16px">Anna pracuje s florálními ornamenty, mandálami, arabeskými vzory i abstraktní geometrií. Každý návrh je vytvořen na míru — s ohledem na umístění, proporce a přirozenou linii těla.</p>
       <p class="lang" style="margin-top:16px">— Ornamental tattooing draws from geometry, ethnic patterns and natural symmetry. Each motif is designed to highlight the body's form — the result resembles a luxury jewel worn on the skin.</p>
     </div>
   </div>
@@ -278,29 +292,29 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
 <section id="features" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
-    <h2>Znaky ornamentálního stylu</h2>
+    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
+    <h2><span class="cs">Znaky ornamentálního stylu</span><span class="lang">Characteristics</span></h2>
     <p class="lang">Signatures of the ornamental style</p>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3>Geometrie<span class="lang">Geometry</span></h3>
+      <h3><span class="cs">Geometrie</span><span class="lang">Geometry</span></h3>
       <p>Přesné linie, opakující se tvary a matematická harmonie — základ každého ornamentálního motivu.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3>Etnické motivy<span class="lang">Ethnic motifs</span></h3>
+      <h3><span class="cs">Etnické motivy</span><span class="lang">Ethnic motifs</span></h3>
       <p>Inspirace z mandál, arabesek, polynéských vzorů a dalších kulturních tradic celého světa.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3>Symetrie<span class="lang">Symmetry</span></h3>
+      <h3><span class="cs">Symetrie</span><span class="lang">Symmetry</span></h3>
       <p>Zrcadlová přesnost a vyvážená kompozice, která přirozeně kopíruje tvar a symetrii lidského těla.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3>Efekt šperku<span class="lang">Jewel effect</span></h3>
+      <h3><span class="cs">Efekt šperku</span><span class="lang">Jewel effect</span></h3>
       <p>Výsledek působí jako luxusní ozdoba — tetování, které zdobí a zároveň vypráví příběh.</p>
     </div>
   </div>
@@ -309,13 +323,13 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
-    <h2>Vybrané práce</h2>
+    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
+    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
     <p class="lang">Selected ornamental work</p>
   </div>
   <div class="gallery">
     <div class="img-wrap rv">
-      <img src="images/tetovací studio praha 1.jpg" alt="Ornamentální barokní tetování na zádech / Ornamental baroque tattoo on upper back" loading="lazy">
+      <img src="images/tetování jemné květiny.jpg" alt="Ornamentální barokní tetování na zádech / Ornamental baroque tattoo on upper back" loading="lazy">
     </div>
     <div class="img-wrap rv">
       <img src="images/ornamental tattoo praha.jpg" alt="Ornamentální mandala na zádech / Ornamental mandala on back" loading="lazy">
@@ -332,26 +346,23 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
-    <h2>Od nápadu k ozdobě</h2>
+    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
+    <h2><span class="cs">Od nápadu k ozdobě</span><span class="lang">From idea to ornament</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3>Konzultace</h3>
-      <p class="lang">Consultation</p>
+      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
       <p>Probereme váš nápad, umístění a velikost. Ornamentální tetování vyžaduje pečlivé naplánování kompozice vzhledem k tvaru těla.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3>Návrh</h3>
-      <p class="lang">Custom design</p>
+      <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
       <p>Anna vytvoří symetrickou kompozici přímo pro vaše tělo — každý vzor je navržen tak, aby seděl přirozeně na zvoleném místě.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3>Tetování</h3>
-      <p class="lang">The session</p>
+      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
       <p>Klidné prostředí, čaj nebo káva. Ornamentální sezení může trvat déle — preciznost a detaily si vyžadují čas a trpělivost.</p>
     </div>
   </div>
@@ -361,9 +372,9 @@ footer a:hover{color:var(--ink)}
 <section id="book">
   <div class="wrap book-grid">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
-      <h2>Máte v hlavě ornament?</h2>
-      <p style="margin-top:20px">Napište nám pár slov o svém nápadu, umístění a velikosti. Ozveme se s návrhem termínu.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
+      <h2><span class="cs">Máte v hlavě ornament?</span><span class="lang">Have an ornament in mind?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám pár slov o svém nápadu, umístění a velikosti. Ozveme se s návrhem termínu.</p>
       <p class="lang" style="margin-top:12px">Tell us about your idea, placement and size — we'll come back with a proposed date.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
@@ -419,6 +430,18 @@ footer a:hover{color:var(--ink)}
 <script>
 (function(){
   'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
 

@@ -49,6 +49,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
 .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 .lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -176,7 +184,7 @@ footer a:hover{color:var(--ink)}
 }
 </style>
 </head>
-<body>
+<body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -195,6 +203,11 @@ footer a:hover{color:var(--ink)}
         <a href="graphic.html">Graphic</a>
         <a href="traditional.html" class="active">Traditional</a>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -233,10 +246,10 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow rv">Technika — Tradice</span>
+      <span class="eyebrow rv"><span class="cs">Technika — Tradice</span><span class="lang">Technique — Traditional</span></span>
       <h1 class="hero-title rv">Traditional</h1>
-      <p class="hero-sub rv">Klasický styl &nbsp;·&nbsp; <span class="lang">Classic style</span></p>
-      <p class="hero-desc rv">Klasický tetovací styl s výraznými barvami, plnými konturami a nezaměnitelnými motivy. Nadčasová estetika a vysoká trvanlivost.</p>
+      <p class="hero-sub rv">Klasický styl<span class="lang"> &nbsp;·&nbsp; Classic style</span></p>
+      <p class="hero-desc cs rv">Klasický tetovací styl s výraznými barvami, plnými konturami a nezaměnitelnými motivy. Nadčasová estetika a vysoká trvanlivost.</p>
       <p class="hero-desc lang rv">Classic tattoo style with bold colours, dense outlines and iconic motifs. Timeless aesthetics and outstanding durability.</p>
       <div class="hero-actions rv">
         <a href="#book" class="btn btn--primary">Rezervovat termín</a>
@@ -263,12 +276,13 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
-      <p class="lead">Styl, který obstál zkouškou času — a proto se nikdy nepřestane nosit.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
+      <p class="lead cs">Styl, který obstál zkouškou času — a proto se nikdy nepřestane nosit.</p>
+      <p class="lead lang">Traditional is the language of legacy — bold lines, rich colours and motifs that have stood the test of time.</p>
     </div>
     <div class="rv">
-      <p>Tradiční tetování vznikalo v přístavních a námořnických kulturách přelomu 19. a 20. století. Jeho znaky jsou jasné: silné kontury, sytá barevná výplň a motivy s jasným významem — kotvy, orli, hadi, portréty.</p>
-      <p style="margin-top:16px">Síla tohoto stylu spočívá právě v jeho jednoduchosti. Žádné kompromisy, žádné polotóny — jen čistý záměr vyjádřený tuší. Tradiční tetování stárne nejlépe ze všech stylů a po desetiletích si zachovává svůj charakter.</p>
+      <p class="cs">Tradiční tetování vznikalo v přístavních a námořnických kulturách přelomu 19. a 20. století. Jeho znaky jsou jasné: silné kontury, sytá barevná výplň a motivy s jasným významem — kotvy, orli, hadi, portréty.</p>
+      <p class="cs" style="margin-top:16px">Síla tohoto stylu spočívá právě v jeho jednoduchosti. Žádné kompromisy, žádné polotóny — jen čistý záměr vyjádřený tuší. Tradiční tetování stárne nejlépe ze všech stylů a po desetiletích si zachovává svůj charakter.</p>
       <p class="lang" style="margin-top:16px">— Traditional tattooing grew from the port and sailor cultures of the late 19th and early 20th century. Bold outlines, saturated fills and motifs with clear meaning. Of all styles, traditional ages the best — holding its character for decades.</p>
     </div>
   </div>
@@ -277,29 +291,29 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
 <section id="features" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
-    <h2>Znaky tradičního stylu</h2>
+    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
+    <h2><span class="cs">Znaky tradičního stylu</span><span class="lang">Characteristics</span></h2>
     <p class="lang">Signatures of the traditional style</p>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3>Plné kontury<span class="lang">Bold outlines</span></h3>
+      <h3><span class="cs">Plné kontury</span><span class="lang">Bold outlines</span></h3>
       <p>Silné, definované linie, které drží kompozici pohromadě a zajišťují čitelnost motivu i po letech.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3>Výrazné barvy<span class="lang">Bold colours</span></h3>
+      <h3><span class="cs">Výrazné barvy</span><span class="lang">Bold colours</span></h3>
       <p>Sytá, kontrastní paleta — červená, zelená, žlutá, modrá — nebo klasická černobílá. Žádné kompromisní polotóny.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3>Ikonické motivy<span class="lang">Iconic motifs</span></h3>
+      <h3><span class="cs">Ikonické motivy</span><span class="lang">Iconic motifs</span></h3>
       <p>Orlové, hadi, portréty, květy, kotvičky — motivy s historií a jasným vizuálním jazykem, který je okamžitě čitelný.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3>Trvanlivost<span class="lang">Durability</span></h3>
+      <h3><span class="cs">Trvanlivost</span><span class="lang">Durability</span></h3>
       <p>Styl navržený tak, aby vydržel dekády. Silné linie a sytá výplň odolávají rozpadání a zastarávání lépe než jakýkoli jiný styl.</p>
     </div>
   </div>
@@ -308,8 +322,8 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
-    <h2>Vybrané práce</h2>
+    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
+    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
     <p class="lang">Selected traditional work</p>
   </div>
   <div class="trad-gallery rv">
@@ -328,26 +342,23 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
-    <h2>Od motivu k tradici</h2>
+    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
+    <h2><span class="cs">Od motivu k tradici</span><span class="lang">From motif to tradition</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3>Konzultace</h3>
-      <p class="lang">Consultation</p>
+      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
       <p>Probereme motiv — vlastní nápad, flash design nebo klasický vzor. Tradiční styl nabízí bohatý jazyk symbolů, ze kterého lze vybírat.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3>Návrh</h3>
-      <p class="lang">Design</p>
+      <h3><span class="cs">Návrh</span><span class="lang">Design</span></h3>
       <p>Anna připraví návrh v tradičním stylu — propracované kontury a barevná schémata přizpůsobená vaší kůži a umístění.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3>Tetování</h3>
-      <p class="lang">The session</p>
+      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
       <p>Tradiční tetování je přímočaré a efektivní. Výsledek je okamžitě silný — a zůstane silným i za dvacet let.</p>
     </div>
   </div>
@@ -357,9 +368,9 @@ footer a:hover{color:var(--ink)}
 <section id="book">
   <div class="wrap book-grid">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
-      <h2>Jaký motiv vás láká?</h2>
-      <p style="margin-top:20px">Napište nám — klasický flash, vlastní motiv nebo jen styl, který chcete. Tradiční tetování má odpověď na každou otázku.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
+      <h2><span class="cs">Jaký motiv vás láká?</span><span class="lang">What motif speaks to you?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám — klasický flash, vlastní motiv nebo jen styl, který chcete. Tradiční tetování má odpověď na každou otázku.</p>
       <p class="lang" style="margin-top:12px">Write to us — classic flash, your own motif or just the style you want. Traditional tattooing has an answer for every question.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
@@ -415,6 +426,18 @@ footer a:hover{color:var(--ink)}
 <script>
 (function(){
   'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
 

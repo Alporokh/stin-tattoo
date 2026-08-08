@@ -49,6 +49,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
 .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 .lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -177,7 +185,7 @@ footer a:hover{color:var(--ink)}
 }
 </style>
 </head>
-<body>
+<body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -196,6 +204,11 @@ footer a:hover{color:var(--ink)}
         <a href="graphic.html">Graphic</a>
         <a href="traditional.html">Traditional</a>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -234,10 +247,10 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow rv">Technika — Botanika</span>
+      <span class="eyebrow rv"><span class="cs">Technika — Botanika</span><span class="lang">Technique — Botanical</span></span>
       <h1 class="hero-title rv">Floral</h1>
-      <p class="hero-sub rv">Květinové kompozice &nbsp;·&nbsp; <span class="lang">Floral compositions</span></p>
-      <p class="hero-desc rv">Květinové kompozice, listy, větve a botanické prvky. Vhodné jak pro jemné miniatury, tak pro velké dekorativní práce.</p>
+      <p class="hero-sub rv">Květinové kompozice<span class="lang"> &nbsp;·&nbsp; Floral compositions</span></p>
+      <p class="hero-desc cs rv">Květinové kompozice, listy, větve a botanické prvky. Vhodné jak pro jemné miniatury, tak pro velké dekorativní práce.</p>
       <p class="hero-desc lang rv">Floral compositions, leaves, branches and botanical elements. Suitable for delicate miniatures as well as large decorative works.</p>
       <div class="hero-actions rv">
         <a href="#book" class="btn btn--primary">Rezervovat termín</a>
@@ -263,12 +276,13 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
-      <p class="lead">Příroda jako inspirace — tetování, která rostou s vámi a zůstávají živá po celý život.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
+      <p class="lead cs">Příroda jako inspirace — tetování, která rostou s vámi a zůstávají živá po celý život.</p>
+      <p class="lead lang">Floral is the language of growth — organic, breathing compositions that bloom on the skin.</p>
     </div>
     <div class="rv">
-      <p>Florální tetování zachycují krásu přírody v její nejčistší podobě. Květ, větev, list — každý motiv v sobě nese příběh a hluboký osobní význam. Anna pracuje jak s jemnými botanickými skicami, tak s plnými kompozicemi, které pokrývají větší plochu těla.</p>
-      <p style="margin-top:16px">Styl se přirozeně propojuje s fine line technikou i ornamentikou — výsledkem je tetování, které působí jako živá ilustrace na kůži.</p>
+      <p class="cs">Florální tetování zachycují krásu přírody v její nejčistší podobě. Květ, větev, list — každý motiv v sobě nese příběh a hluboký osobní význam. Anna pracuje jak s jemnými botanickými skicami, tak s plnými kompozicemi, které pokrývají větší plochu těla.</p>
+      <p class="cs" style="margin-top:16px">Styl se přirozeně propojuje s fine line technikou i ornamentikou — výsledkem je tetování, které působí jako živá ilustrace na kůži.</p>
       <p class="lang" style="margin-top:16px">— Floral tattoos capture the beauty of nature in its purest form. A flower, a branch, a leaf — each motif carries a story and deep personal meaning. The style pairs naturally with fine line technique and ornamental work.</p>
     </div>
   </div>
@@ -277,29 +291,29 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
 <section id="features" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
-    <h2>Znaky florálního stylu</h2>
+    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
+    <h2><span class="cs">Znaky florálního stylu</span><span class="lang">Characteristics</span></h2>
     <p class="lang">Signatures of the floral style</p>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3>Botanika<span class="lang">Botany</span></h3>
+      <h3><span class="cs">Botanika</span><span class="lang">Botany</span></h3>
       <p>Věrné zachycení rostlinných tvarů — od přesných botanických ilustrací po stylizované, snové motivy.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3>Miniatury<span class="lang">Miniatures</span></h3>
+      <h3><span class="cs">Miniatury</span><span class="lang">Miniatures</span></h3>
       <p>Drobné, jemné kompozice pro zápěstí, kotník nebo za uchem. Velký dopad v malém formátu.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3>Velké práce<span class="lang">Large works</span></h3>
+      <h3><span class="cs">Velké práce</span><span class="lang">Large works</span></h3>
       <p>Květinové rukávy, zádové kompozice nebo stehno — florální styl se rozrůstá krásně na jakékoliv ploše.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3>Osobní příběh<span class="lang">Personal story</span></h3>
+      <h3><span class="cs">Osobní příběh</span><span class="lang">Personal story</span></h3>
       <p>Každý květ nebo rostlina může symbolizovat vzpomínku, místo nebo člověka, který je vám blízký.</p>
     </div>
   </div>
@@ -308,8 +322,8 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
-    <h2>Vybrané práce</h2>
+    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
+    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
     <p class="lang">Selected floral work</p>
   </div>
   <div class="gallery">
@@ -331,26 +345,23 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
-    <h2>Od nápadu k rozkvětu</h2>
+    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
+    <h2><span class="cs">Od nápadu k rozkvětu</span><span class="lang">From idea to blossom</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3>Konzultace</h3>
-      <p class="lang">Consultation</p>
+      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
       <p>Probereme oblíbené rostliny, symboly nebo reference. Důležitá je velikost, umístění a míra detailu, kterou chcete dosáhnout.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3>Botanický návrh</h3>
-      <p class="lang">Botanical design</p>
+      <h3><span class="cs">Botanický návrh</span><span class="lang">Botanical design</span></h3>
       <p>Anna vytvoří kompozici na míru — volně skicovanou nebo přesnou botanickou ilustraci, přesně podle vašeho přání a místa na těle.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3>Tetování</h3>
-      <p class="lang">The session</p>
+      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
       <p>Klidné prostředí, čaj nebo káva. Florální motivy mohou být velmi jemné — preciznost si vyžaduje klid a soustředění.</p>
     </div>
   </div>
@@ -360,9 +371,9 @@ footer a:hover{color:var(--ink)}
 <section id="book">
   <div class="wrap book-grid">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
-      <h2>Máte v mysli květ?</h2>
-      <p style="margin-top:20px">Napište nám o svém nápadu — druh rostliny, umístění, velikost. Ozveme se s návrhem termínu.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
+      <h2><span class="cs">Máte v mysli květ?</span><span class="lang">Got a flower in mind?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám o svém nápadu — druh rostliny, umístění, velikost. Ozveme se s návrhem termínu.</p>
       <p class="lang" style="margin-top:12px">Tell us about your idea — flower or plant type, placement, size. We'll get back to you with a date.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
@@ -418,6 +429,18 @@ footer a:hover{color:var(--ink)}
 <script>
 (function(){
   'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
 

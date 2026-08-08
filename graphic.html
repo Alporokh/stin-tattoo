@@ -49,6 +49,14 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
 .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
 .lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -178,7 +186,7 @@ footer a:hover{color:var(--ink)}
 }
 </style>
 </head>
-<body>
+<body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -197,6 +205,11 @@ footer a:hover{color:var(--ink)}
         <a href="graphic.html" class="active">Graphic</a>
         <a href="traditional.html">Traditional</a>
       </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -235,10 +248,10 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow rv">Technika — Grafika</span>
+      <span class="eyebrow rv"><span class="cs">Technika — Grafika</span><span class="lang">Technique — Graphic</span></span>
       <h1 class="hero-title rv">Graphic</h1>
-      <p class="hero-sub rv">Umělecká grafika &nbsp;·&nbsp; <span class="lang">Artistic graphics</span></p>
-      <p class="hero-desc rv">Čisté linie, kontrast a umělecká grafika. Vhodné pro neobvyklé kompozice, symboly a autorské návrhy.</p>
+      <p class="hero-sub rv">Umělecká grafika<span class="lang"> &nbsp;·&nbsp; Artistic graphics</span></p>
+      <p class="hero-desc cs rv">Čisté linie, kontrast a umělecká grafika. Vhodné pro neobvyklé kompozice, symboly a autorské návrhy.</p>
       <p class="hero-desc lang rv">Clean lines, contrast and artistic graphics. Suitable for unusual compositions, symbols and original sketches.</p>
       <div class="hero-actions rv">
         <a href="#book" class="btn btn--primary">Rezervovat termín</a>
@@ -264,12 +277,13 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
-      <p class="lead">Tetování jako plakát — každý tah záměrný, každý kontrast promyšlený.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
+      <p class="lead cs">Tetování jako plakát — každý tah záměrný, každý kontrast promyšlený.</p>
+      <p class="lead lang">Graphic is the language of contrast — bold compositions that speak through shape and negative space.</p>
     </div>
     <div class="rv">
-      <p>Graphic styl staví na síle čisté linie a kontrastu. Nevypráví příběh přirozeností ani texturou — místo toho mluví jazykem designu: kompozicí, hmotou a prázdným prostorem jako rovnocenným prvkem.</p>
-      <p style="margin-top:16px">Vhodný pro abstrakt, geometrii, symboly nebo neobvyklé kombinace motivů. Výsledek je vždy vizuálně silný, autorský a okamžitě čitelný — tetování, které zaujme na první pohled.</p>
+      <p class="cs">Graphic styl staví na síle čisté linie a kontrastu. Nevypráví příběh přirozeností ani texturou — místo toho mluví jazykem designu: kompozicí, hmotou a prázdným prostorem jako rovnocenným prvkem.</p>
+      <p class="cs" style="margin-top:16px">Vhodný pro abstrakt, geometrii, symboly nebo neobvyklé kombinace motivů. Výsledek je vždy vizuálně silný, autorský a okamžitě čitelný — tetování, které zaujme na první pohled.</p>
       <p class="lang" style="margin-top:16px">— Graphic style is built on the power of clean line and contrast. It speaks the language of design: composition, mass and negative space as an equal element. Ideal for abstract shapes, geometry, symbols or unusual combinations of motifs.</p>
     </div>
   </div>
@@ -278,29 +292,29 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
 <section id="features" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
-    <h2>Znaky graphic stylu</h2>
+    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
+    <h2><span class="cs">Znaky graphic stylu</span><span class="lang">Characteristics</span></h2>
     <p class="lang">Signatures of the graphic style</p>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3>Čisté linie<span class="lang">Clean lines</span></h3>
+      <h3><span class="cs">Čisté linie</span><span class="lang">Clean lines</span></h3>
       <p>Přesné, ostré kontury bez přechodů a rozmazání — každá linie nese váhu a má své místo.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3>Kontrast<span class="lang">Contrast</span></h3>
+      <h3><span class="cs">Kontrast</span><span class="lang">Contrast</span></h3>
       <p>Silný kontrast plné černě a prázdného prostoru vytváří vizuální napětí a čitelnost i z dálky.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3>Kompozice<span class="lang">Composition</span></h3>
+      <h3><span class="cs">Kompozice</span><span class="lang">Composition</span></h3>
       <p>Neobvyklá rozvržení, netradiční úhly a autorský přístup k prostoru — tetování jako grafický objekt.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3>Symbolika<span class="lang">Symbolism</span></h3>
+      <h3><span class="cs">Symbolika</span><span class="lang">Symbolism</span></h3>
       <p>Ikony, znaky a abstraktní tvary s osobním nebo kulturním významem — forma, která nese obsah.</p>
     </div>
   </div>
@@ -309,8 +323,8 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ GALLERY ═══════════════ -->
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
-    <h2>Vybrané práce</h2>
+    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
+    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
     <p class="lang">Selected graphic work</p>
   </div>
   <div class="grph-gallery rv">
@@ -329,26 +343,23 @@ footer a:hover{color:var(--ink)}
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
-    <h2>Od nápadu ke grafice</h2>
+    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
+    <h2><span class="cs">Od nápadu ke grafice</span><span class="lang">From idea to graphic</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3>Konzultace</h3>
-      <p class="lang">Consultation</p>
+      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
       <p>Probereme váš nápad, reference a umístění. Graphic styl má velký prostor pro interpretaci — čím více sdílíte, tím přesnější návrh dostanete.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3>Grafický návrh</h3>
-      <p class="lang">Graphic sketch</p>
+      <h3><span class="cs">Grafický návrh</span><span class="lang">Graphic sketch</span></h3>
       <p>Anna sestaví kompozici přímo pro vaše tělo — tvar, proporce a kontrast jsou navrženy tak, aby fungovaly jako celek.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3>Tetování</h3>
-      <p class="lang">The session</p>
+      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
       <p>Graphic styl klade důraz na přesnost — čisté linie a silné plochy vyžadují soustředěnou práci. Výsledek je čitelný a nadčasový.</p>
     </div>
   </div>
@@ -358,9 +369,9 @@ footer a:hover{color:var(--ink)}
 <section id="book">
   <div class="wrap book-grid">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
-      <h2>Máte motiv v mysli?</h2>
-      <p style="margin-top:20px">Napište nám o svém nápadu — symbol, tvar, kompozice nebo jen pocit, který chcete vyjádřit. Zbytek nechte na nás.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
+      <h2><span class="cs">Máte motiv v mysli?</span><span class="lang">Got a motif in mind?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám o svém nápadu — symbol, tvar, kompozice nebo jen pocit, který chcete vyjádřit. Zbytek nechte na nás.</p>
       <p class="lang" style="margin-top:12px">Tell us your idea — a symbol, shape, composition, or just a feeling you want to express. Leave the rest to us.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
@@ -416,6 +427,18 @@ footer a:hover{color:var(--ink)}
 <script>
 (function(){
   'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
 

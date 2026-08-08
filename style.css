@@ -1157,18 +1157,19 @@ footer {
 }
 .lang-btn {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
-  padding: 2px 5px;
-  transition: color var(--dur-fast);
+  padding: 2px 7px;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
   line-height: 1;
+  cursor: pointer;
 }
 .lang-btn:hover { color: var(--color-ink); }
-.lang-btn.active { color: var(--color-ink); font-weight: 500; }
+.lang-btn.active { color: var(--color-ink); font-weight: 500; border-color: var(--color-ink); }
 .lang-sep {
   color: var(--color-rule);
   font-size: var(--text-micro);
