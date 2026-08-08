@@ -162,6 +162,17 @@ section{padding-block:clamp(70px,11vw,150px)}
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
 .field textarea{resize:vertical;min-height:120px}
 #bookForm .btn{justify-self:start;margin-top:6px}
+.field select{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237d7a73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.field select:focus{outline:none;border-color:var(--ink)}
+.field select option{background:var(--bg);color:var(--ink)}
+.consent-group{border:none;padding:0;margin:0}
+.consent-legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;display:block}
+.consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin-bottom:12px}
+.consent-item input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
+.consent-check{flex-shrink:0;width:16px;height:16px;border:1px solid var(--line);margin-top:3px;display:block;transition:background .2s,border-color .2s}
+.consent-item input:checked~.consent-check{background:var(--ink);border-color:var(--ink)}
+.consent-text{font-size:.78rem;color:var(--ink-mute);line-height:1.5}
+.consent-link{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
 
 /* ── Footer ── */
 footer{padding-block:70px;border-top:1px solid var(--line-soft)}
@@ -399,20 +410,56 @@ footer a:hover{color:var(--ink)}
       <p class="lang" style="margin-top:12px">Tell us your idea — motif, reference style, placement. We'll draft something straight out of an old atlas.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
-      <div class="field">
-        <label for="bf-name">Jméno / Name</label>
-        <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
-      </div>
-      <div class="field">
-        <label for="bf-email">E-mail</label>
-        <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
-      </div>
-      <div class="field">
-        <label for="bf-idea">Váš nápad / Your idea</label>
-        <textarea id="bf-idea" name="message" placeholder="Portrét, botanická ilustrace, zvíře, architektura…"></textarea>
-      </div>
-      <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
-    </form>
+  <div class="field">
+    <label for="bf-name">Jméno / Name</label>
+    <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
+  </div>
+  <div class="field">
+    <label for="bf-email">E-mail</label>
+    <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
+  </div>
+  <div class="field">
+    <label for="bf-style">Styl tetování / Tattoo style</label>
+    <select id="bf-style" name="style">
+      <option value="" disabled selected>Vyberte styl / Choose a style</option>
+      <option>Fine line</option>
+      <option>Illustrative</option>
+      <option>Traditional / Neo-traditional</option>
+      <option>Botanical</option>
+      <option>Minimal / Script</option>
+      <option>Blackwork</option>
+      <option>Not sure yet</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="bf-idea">Váš nápad / Your idea</label>
+    <textarea id="bf-idea" name="message" placeholder="Umístění, velikost, reference, inspirace…"></textarea>
+  </div>
+  <div class="field">
+    <label for="bf-phone">Telefon / Instagram <span style="opacity:.55;font-size:.85em">(nepovinné / optional)</span></label>
+    <input id="bf-phone" name="phone" type="tel" placeholder="+420 xxx xxx xxx">
+  </div>
+  <fieldset class="consent-group">
+    <legend class="consent-legend">Soukromí / Privacy</legend>
+    <label class="consent-item">
+      <input type="checkbox" name="gdpr" id="bf-gdpr" required>
+      <span class="consent-check"></span>
+      <span class="consent-text">Souhlasím se zpracováním osobních údajů (jméno, e-mail, telefon) za účelem vyřízení mé poptávky. / I agree to the processing of my personal data for the purpose of handling my booking inquiry. <a href="ochrana-osobnich-udaju.md" target="_blank" rel="noopener noreferrer" class="consent-link">Zásady ochrany / Privacy policy</a></span>
+    </label>
+    <label class="consent-item">
+      <input type="checkbox" name="consent_photos" id="bf-photos">
+      <span class="consent-check"></span>
+      <span class="consent-text">Souhlasím s použitím fotografií mého tetování pro propagační účely. <span style="opacity:.55">(nepovinné / optional)</span></span>
+    </label>
+    <label class="consent-item">
+      <input type="checkbox" name="consent_marketing" id="bf-marketing">
+      <span class="consent-check"></span>
+      <span class="consent-text">Souhlasím s příjmáním novinek od STIN Tattoo e-mailem nebo SMS. <span style="opacity:.55">(nepovinné / optional)</span></span>
+    </label>
+  </fieldset>
+  <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
+  <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">Děkujeme! Ozveme se do 24 hodin. / Thank you! We'll be in touch within 24 hours.</p>
+</form>
   </div>
 </section>
 
@@ -485,12 +532,30 @@ footer a:hover{color:var(--ink)}
   var bookForm=document.getElementById('bookForm');
   if(bookForm){bookForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var btn=this.querySelector('.btn--primary'),t=btn.textContent;
-    btn.disabled=true;btn.textContent='Odesílám…';
+    var gdpr=bookForm.querySelector('#bf-gdpr');
+    if(gdpr&&!gdpr.checked){gdpr.focus();return;}
+    var btn=this.querySelector('.btn--primary');
+    var successMsg=document.getElementById('form-success');
+    var data={
+      name:(bookForm.querySelector('#bf-name')||{}).value||'',
+      email:(bookForm.querySelector('#bf-email')||{}).value||'',
+      phone:(bookForm.querySelector('#bf-phone')||{}).value||'',
+      style:(bookForm.querySelector('#bf-style')||{}).value||'',
+      message:(bookForm.querySelector('#bf-idea')||{}).value||'',
+      consent_photos:(bookForm.querySelector('#bf-photos')||{}).checked?'yes':'no',
+      consent_marketing:(bookForm.querySelector('#bf-marketing')||{}).checked?'yes':'no'
+    };
+    var text='🐾 Nová rezervace / New booking!\n\n👤 '+data.name+'\n📧 '+data.email+'\n📱 '+data.phone+'\n🎨 '+data.style+'\n💬 '+data.message+'\n\n📸 Photos: '+data.consent_photos+'\n📣 Marketing: '+data.consent_marketing;
+    var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
+    var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
+    if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
+    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).catch(function(){});
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
     setTimeout(function(){
-      btn.textContent='Odesláno ✓  Ozveme se';btn.style.background='#2d4a2d';btn.style.borderColor='#2d4a2d';
-      setTimeout(function(){btn.textContent=t;btn.style.background='';btn.style.borderColor='';btn.disabled=false;bookForm.reset();},5000);
-    },800);
+      if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
+      if(successMsg){successMsg.style.display='block';setTimeout(function(){successMsg.style.display='none';},5000);}
+      bookForm.reset();
+    },1000);
   });}
 })();
 </script>
