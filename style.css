@@ -237,6 +237,49 @@ body {
   transition: color var(--dur-fast);
 }
 .nav-links a:hover { color: var(--color-ink); }
+
+/* Techniques dropdown */
+.nav-item--has-sub { position: relative; }
+.nav-item--has-sub > a::after {
+  content: ' ▾';
+  font-size: 0.55em;
+  opacity: 0.5;
+}
+.nav-sub {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg);
+  border: 1px solid var(--color-rule);
+  min-width: 160px;
+  padding: var(--s2) 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast);
+  z-index: 10;
+}
+.nav-item--has-sub:hover .nav-sub,
+.nav-item--has-sub:focus-within .nav-sub {
+  opacity: 1;
+  pointer-events: all;
+}
+.nav-sub li a {
+  display: block;
+  padding: var(--s2) var(--s4);
+  font-size: var(--text-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+.nav-sub li a:hover { color: var(--color-ink); }
+.nav-sub li a.active { color: var(--color-ink); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
 .nav-cta {
   font-family: var(--font-body);
   font-weight: 500;
@@ -996,6 +1039,7 @@ footer {
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
+  .nav-right { gap: var(--s2); }
   .hamburger { display: flex; }
 
   .hero-body { grid-template-columns: 1fr; }
@@ -1100,4 +1144,44 @@ footer {
     align-items: flex-start;
     bottom: var(--s3);
   }
+}
+
+/* ─── LANGUAGE TOGGLE ────────────────────────────────────────── */
+.show-en .cs,
+.show-cs .en { display: none; }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  padding: 2px 5px;
+  transition: color var(--dur-fast);
+  line-height: 1;
+}
+.lang-btn:hover { color: var(--color-ink); }
+.lang-btn.active { color: var(--color-ink); font-weight: 500; }
+.lang-sep {
+  color: var(--color-rule);
+  font-size: var(--text-micro);
+  line-height: 1;
+  pointer-events: none;
+}
+@media (max-width: 960px) {
+  .nav-lang { display: none; }
+  .mob-lang {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--s4);
+    gap: var(--s2);
+  }
+  .mob-lang .lang-btn { font-size: 0.85rem; padding: 4px 8px; }
 }

@@ -12,10 +12,10 @@
     currentLang = lang;
     document.body.classList.remove('show-cs', 'show-en');
     document.body.classList.add('show-' + lang);
-    const btnCs = document.getElementById('btn-cs');
-    const btnEn = document.getElementById('btn-en');
-    if (btnCs) btnCs.classList.toggle('active', lang === 'cs');
-    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const isCs = btn.textContent.trim() === 'CZ';
+      btn.classList.toggle('active', lang === (isCs ? 'cs' : 'en'));
+    });
   }
 
   window.setLang = setLang;

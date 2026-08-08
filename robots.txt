@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://stintattoostudio.com/sitemap.xml
+
+# LLM guidance
+LLMs-txt: https://stintattoostudio.com/llms.txt

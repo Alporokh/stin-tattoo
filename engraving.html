@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engraving — STIN Tattoo Studio</title>
+<meta name="description" content="Engraving tetování Praha — styl připomínající staré rytiny a ilustrace. Šrafování, textury a vintage estetika. STIN Tattoo Studio Praha.">
+
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7g4b9hw3k");
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3Q554XP679');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0b0c;
+  --bg-2:#111113;
+  --ink:#f2efe9;
+  --ink-soft:#b9b5ad;
+  --ink-mute:#7d7a73;
+  --line:#26262a;
+  --line-soft:#1b1b1e;
+  --maxw:1200px;
+  --gutter:clamp(20px,5vw,64px);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,-apple-system,Segoe UI,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
+.lang{color:var(--ink-mute);font-style:italic;font-family:var(--serif);font-size:.92em}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+h3{font-size:clamp(1.3rem,2.5vw,1.7rem)}
+p{color:var(--ink-soft);font-weight:300}
+
+.btn{display:inline-block;padding:15px 34px;font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid var(--ink);cursor:pointer;transition:.35s ease;background:none;color:var(--ink)}
+.btn--primary{background:var(--ink);color:var(--bg)}
+.btn--primary:hover{background:transparent;color:var(--ink)}
+.btn--outline:hover{background:var(--ink);color:var(--bg)}
+
+/* ── Nav ── */
+#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+#nav.scrolled{background:rgba(11,11,12,.82);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px;border-bottom-color:var(--line-soft)}
+.brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
+#hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+#hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
+
+/* ── Dropdown ── */
+.tech-dropdown{position:relative;display:flex;align-items:center}
+.tech-sub{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:var(--bg);border:1px solid var(--line);min-width:160px;padding:8px 0;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
+.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
+
+/* ── Mobile overlay ── */
+#mobOverlay{position:fixed;inset:0;z-index:60;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+#mobOverlay.open{transform:translateY(0)}
+#mobOverlay a{font-family:var(--serif);font-size:1.8rem;color:var(--ink-soft)}
+#mobOverlay a:hover{color:var(--ink)}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+
+/* ── Reveal ── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── Divider ── */
+.divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto;color:var(--ink-mute)}
+.divider svg{width:clamp(180px,40vw,340px);height:26px;opacity:.7}
+
+/* ── Sections ── */
+section{padding-block:clamp(70px,11vw,150px)}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head .eyebrow{margin-bottom:18px;display:block}
+.sec-head p{margin-top:20px}
+
+.crumb{padding-top:120px;padding-bottom:0}
+.crumb ol{list-style:none;display:flex;gap:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.crumb a:hover{color:var(--ink)}
+.crumb li[aria-current]{color:var(--ink)}
+
+/* ── Hero ── */
+#hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
+.hero-title{font-size:clamp(3rem,10vw,7.5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
+.hero-desc{max-width:34ch;font-size:1.02rem}
+.hero-desc+.hero-desc{margin-top:14px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hero-media{aspect-ratio:4/5;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-soft);display:flex;align-items:center;justify-content:center}
+
+/* ── Engraving hero illustration ── */
+.hero-etching{width:70%;opacity:.18;color:var(--ink)}
+
+/* ── Two-col ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.lead{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;color:var(--ink)}
+
+/* ── Grid-4 ── */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+.feat{background:var(--bg);padding:40px 30px;min-height:230px;display:flex;flex-direction:column;gap:14px}
+.feat .no{font-family:var(--serif);font-size:1.1rem;color:var(--ink-mute)}
+.feat h3{margin-top:auto}
+.feat .lang{display:block}
+.feat p{font-size:.92rem}
+
+/* ── Gallery ── */
+.eng-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
+.eng-fig{margin:0;overflow:hidden;background:var(--bg-2)}
+.eng-fig--large{grid-row:span 2}
+.eng-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.eng-fig:hover img{transform:scale(1.03)}
+.eng-fig:not(.eng-fig--large){aspect-ratio:4/5}
+
+/* ── Steps ── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.step{border-top:1px solid var(--line);padding-top:26px}
+.step .no{font-family:var(--serif);font-size:2.6rem;color:var(--ink-mute);line-height:1;display:block;margin-bottom:16px}
+.step p{font-size:.92rem;margin-top:10px}
+
+/* ── Booking ── */
+#book{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px);align-items:start}
+#bookForm{display:grid;gap:18px}
+.field label{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:9px}
+.field input,.field textarea{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+.field textarea{resize:vertical;min-height:120px}
+#bookForm .btn{justify-self:start;margin-top:6px}
+
+/* ── Footer ── */
+footer{padding-block:70px;border-top:1px solid var(--line-soft)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+footer .brand{display:block;margin-bottom:16px}
+footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
+footer a:hover{color:var(--ink)}
+.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
+.foot-col a{display:block;margin-bottom:8px}
+.copyright{margin-top:54px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  #hamburger{display:flex}
+  .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
+  .hero-media{max-width:420px;margin-inline:auto}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .grid-4{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav">
+  <a href="index.html" class="brand">STIN</a>
+  <div class="nav-links">
+    <a href="index.html">Domů / <span style="font-style:italic;opacity:.7">Home</span></a>
+    <a href="index.html#about">O nás / <span style="font-style:italic;opacity:.7">About</span></a>
+    <a href="index.html#artist">Umělkyně / <span style="font-style:italic;opacity:.7">Artist</span></a>
+    <div class="tech-dropdown">
+      <a href="#" class="tech-toggle active">Techniky / <span style="font-style:italic;opacity:.7">Techniques</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <div class="tech-sub">
+        <a href="fine-line.html">Fine Line</a>
+        <a href="ornamental.html">Ornamental</a>
+        <a href="floral.html">Floral</a>
+        <a href="engraving.html" class="active">Engraving</a>
+        <a href="graphic.html">Graphic</a>
+        <a href="traditional.html">Traditional</a>
+      </div>
+    </div>
+    <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
+  </div>
+  <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobOverlay">
+  <button id="mobClose" aria-label="Zavřít menu">×</button>
+  <a href="index.html">Domů / <em style="opacity:.6">Home</em></a>
+  <a href="index.html#about">O nás / <em style="opacity:.6">About</em></a>
+  <a href="index.html#artist">Umělkyně / <em style="opacity:.6">Artist</em></a>
+  <a href="fine-line.html" style="font-size:1.4rem">↳ Fine Line</a>
+  <a href="ornamental.html" style="font-size:1.4rem">↳ Ornamental</a>
+  <a href="floral.html" style="font-size:1.4rem">↳ Floral</a>
+  <a href="engraving.html" style="font-size:1.4rem;color:var(--ink)">↳ Engraving</a>
+  <a href="graphic.html" style="font-size:1.4rem">↳ Graphic</a>
+  <a href="traditional.html" style="font-size:1.4rem">↳ Traditional</a>
+  <a href="#book">Rezervace</a>
+</div>
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<div class="wrap crumb">
+  <ol>
+    <li><a href="index.html">Domů</a></li>
+    <li>/</li>
+    <li><a href="#">Techniky</a></li>
+    <li>/</li>
+    <li aria-current="page">Engraving</li>
+  </ol>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header id="hero" class="wrap">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow rv">Technika — Rytina</span>
+      <h1 class="hero-title rv">Engraving</h1>
+      <p class="hero-sub rv">Rytinová estetika &nbsp;·&nbsp; <span class="lang">Engraving aesthetics</span></p>
+      <p class="hero-desc rv">Styl připomínající staré rytiny a ilustrace. Charakteristické šrafování, textury a vintage estetika.</p>
+      <p class="hero-desc lang rv">A style reminiscent of old engravings and illustrations. Characteristic hatching, textures and vintage aesthetics.</p>
+      <div class="hero-actions rv">
+        <a href="#book" class="btn btn--primary">Rezervovat termín</a>
+        <a href="#gallery" class="btn btn--outline">Galerie stylu</a>
+      </div>
+    </div>
+    <div class="hero-media rv">
+      <!-- placeholder until photo is added -->
+      <svg class="hero-etching" viewBox="0 0 300 400" fill="none" stroke="currentColor" stroke-width="0.8">
+        <rect x="20" y="20" width="260" height="360" stroke-width="1.5"/>
+        <rect x="30" y="30" width="240" height="340" stroke-width=".5"/>
+        <!-- hatching lines -->
+        <line x1="40" y1="60" x2="260" y2="60"/><line x1="40" y1="68" x2="260" y2="68"/>
+        <line x1="40" y1="76" x2="200" y2="76"/><line x1="40" y1="84" x2="220" y2="84"/>
+        <!-- central motif - rose sketch -->
+        <circle cx="150" cy="200" r="60" stroke-width="1"/>
+        <circle cx="150" cy="200" r="45"/>
+        <circle cx="150" cy="200" r="30"/>
+        <path d="M120 170 Q150 140 180 170 Q190 200 150 230 Q110 200 120 170Z" stroke-width="1.2"/>
+        <path d="M135 155 Q150 130 165 155" stroke-width=".6"/>
+        <path d="M125 165 Q140 145 155 160" stroke-width=".6"/>
+        <path d="M145 165 Q160 145 175 165" stroke-width=".6"/>
+        <!-- cross-hatching bottom -->
+        <line x1="40" y1="300" x2="260" y2="300"/><line x1="40" y1="308" x2="260" y2="308"/>
+        <line x1="40" y1="316" x2="220" y2="316"/><line x1="60" y1="324" x2="260" y2="324"/>
+        <line x1="40" y1="332" x2="200" y2="332"/>
+        <line x1="50" y1="300" x2="50" y2="340"/><line x1="70" y1="300" x2="70" y2="340"/>
+        <line x1="90" y1="300" x2="90" y2="340"/><line x1="110" y1="300" x2="110" y2="340"/>
+        <line x1="130" y1="300" x2="130" y2="340"/>
+        <!-- decorative border -->
+        <path d="M40 350 Q150 360 260 350" stroke-width=".6"/>
+        <path d="M40 355 Q150 365 260 355" stroke-width=".4"/>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ DIVIDER ═══════════════ -->
+<div class="divider rv" aria-hidden="true">
+  <svg viewBox="0 0 340 26" fill="none" stroke="currentColor" stroke-width="1">
+    <path d="M0 13 H120"/><path d="M220 13 H340"/>
+    <path d="M150 13l10-8 10 8-10 8z"/><circle cx="170" cy="13" r="11"/>
+    <path d="M132 13h8M200 13h8"/>
+  </svg>
+</div>
+
+<!-- ═══════════════ INTRO ═══════════════ -->
+<section id="intro" class="wrap">
+  <div class="two-col">
+    <div class="rv">
+      <span class="eyebrow" style="display:block;margin-bottom:18px">O stylu / <span class="lang">About the style</span></span>
+      <p class="lead">Tetování jako stránka ze starého atlasu — každá linie vypravuje, každý stín má váhu.</p>
+    </div>
+    <div class="rv">
+      <p>Engraving vychází ze světa historických rytin, botanických atlasů a knižních ilustrací. Místo plných výplní pracuje s hustým šrafováním a překřižujícími se liniemi, které vytvářejí bohatou škálu tónů a jedinečné textury.</p>
+      <p style="margin-top:16px">Výsledek působí jako vytištěná grafika z 18. nebo 19. století — sofistikovaně, nadčasově a s příběhem. Styl se skvěle hodí pro portréty, zvířata, rostliny i architektonické motivy.</p>
+      <p class="lang" style="margin-top:16px">— Engraving draws from the world of historical prints, botanical atlases and book illustrations. Instead of solid fills it works with dense hatching and cross-hatching, creating rich tonal ranges and unique textures. The result reads like a printed graphic from the 18th or 19th century.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
+<section id="features" class="wrap">
+  <div class="sec-head rv">
+    <span class="eyebrow">Charakteristika / <span class="lang">Characteristics</span></span>
+    <h2>Znaky engraving stylu</h2>
+    <p class="lang">Signatures of the engraving style</p>
+  </div>
+  <div class="grid-4">
+    <div class="feat rv">
+      <span class="no">01</span>
+      <h3>Šrafování<span class="lang">Hatching</span></h3>
+      <p>Hustě kladené rovnoběžné a křížové linie nahrazují výplně — vytvářejí hloubku, stíny a tónové přechody.</p>
+    </div>
+    <div class="feat rv">
+      <span class="no">02</span>
+      <h3>Vintage estetika<span class="lang">Vintage aesthetics</span></h3>
+      <p>Inspirace historickými rytinami, starými mapami, botanickými ilustracemi a encyklopedickými kresbami.</p>
+    </div>
+    <div class="feat rv">
+      <span class="no">03</span>
+      <h3>Textury<span class="lang">Textures</span></h3>
+      <p>Bohatost tónů bez použití plné černě — různá hustota šrafování dává každému motivu materiálnost a hloubku.</p>
+    </div>
+    <div class="feat rv">
+      <span class="no">04</span>
+      <h3>Detailnost<span class="lang">Fine detail</span></h3>
+      <p>Precizní práce s jemnou linkou, která vyžaduje soustředění a zkušenost — každý milimetr je záměrný.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<section id="gallery" class="wrap">
+  <div class="sec-head rv">
+    <span class="eyebrow">Galerie / <span class="lang">Gallery</span></span>
+    <h2>Vybrané práce</h2>
+    <p class="lang">Selected engraving work</p>
+  </div>
+  <div class="eng-gallery rv">
+    <figure class="eng-fig eng-fig--large">
+      <img src="images/tetování bez objednání praha stin tattoo.jpg" alt="Engraving tetování — okřídlené zvíře s šipkou, rytinový styl, žebra" loading="lazy">
+    </figure>
+    <figure class="eng-fig">
+      <img src="images/jemné tetování na rameno.jpg" alt="Engraving tetování — lebka v relikviáři se slunečními paprsky, stehno" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESS ═══════════════ -->
+<section id="process" class="wrap">
+  <div class="sec-head rv">
+    <span class="eyebrow">Jak to probíhá / <span class="lang">The process</span></span>
+    <h2>Od skici k rytině</h2>
+  </div>
+  <div class="steps">
+    <div class="step rv">
+      <span class="no">01</span>
+      <h3>Konzultace</h3>
+      <p class="lang">Consultation</p>
+      <p>Probereme motiv, referenční rytiny nebo ilustrace, které vás inspirují. Důležitá je velikost — engraving vyžaduje dostatek místa pro šrafování.</p>
+    </div>
+    <div class="step rv">
+      <span class="no">02</span>
+      <h3>Kresba</h3>
+      <p class="lang">Illustration draft</p>
+      <p>Anna vytvoří návrh ve stylu historické ilustrace — přesně propracovaný s ohledem na to, jak bude šrafování fungovat na kůži.</p>
+    </div>
+    <div class="step rv">
+      <span class="no">03</span>
+      <h3>Tetování</h3>
+      <p class="lang">The session</p>
+      <p>Engraving je technicky náročný styl, který vyžaduje delší sezení. Výsledek stojí za každou minutu — tetování, které vypadá jako umělecký tisk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BOOKING ═══════════════ -->
+<section id="book">
+  <div class="wrap book-grid">
+    <div class="rv">
+      <span class="eyebrow" style="display:block;margin-bottom:18px">Rezervace / <span class="lang">Book</span></span>
+      <h2>Chcete vlastní rytinu?</h2>
+      <p style="margin-top:20px">Napište nám o svém nápadu — motiv, styl reference a umístění. Připravíme návrh jako ze starého atlasu.</p>
+      <p class="lang" style="margin-top:12px">Tell us your idea — motif, reference style, placement. We'll draft something straight out of an old atlas.</p>
+    </div>
+    <form id="bookForm" class="rv" novalidate>
+      <div class="field">
+        <label for="bf-name">Jméno / Name</label>
+        <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
+      </div>
+      <div class="field">
+        <label for="bf-email">E-mail</label>
+        <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
+      </div>
+      <div class="field">
+        <label for="bf-idea">Váš nápad / Your idea</label>
+        <textarea id="bf-idea" name="message" placeholder="Portrét, botanická ilustrace, zvíře, architektura…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="wrap">
+  <div class="foot-grid">
+    <div class="rv">
+      <a href="index.html" class="brand">STIN</a>
+      <p>Tattoo Studio</p>
+      <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
+      <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
+    </div>
+    <div class="foot-col rv">
+      <h4>Techniky / Techniques</h4>
+      <a href="fine-line.html">Fine Line</a>
+      <a href="ornamental.html">Ornamental</a>
+      <a href="floral.html">Floral</a>
+      <a href="engraving.html" style="color:var(--ink)">Engraving</a>
+      <a href="graphic.html">Graphic</a>
+      <a href="traditional.html">Traditional</a>
+    </div>
+    <div class="foot-col rv">
+      <h4>Studio</h4>
+      <a href="index.html#about">O nás / About</a>
+      <a href="index.html#artist">Umělkyně / Artist</a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#contact">Kontakt / Contact</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2025 STIN Tattoo Studio, Praha</span>
+    <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
+
+  var hamburger=document.getElementById('hamburger'),
+      mobOverlay=document.getElementById('mobOverlay'),
+      mobClose=document.getElementById('mobClose');
+  function openMenu(){mobOverlay.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){mobOverlay.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openMenu);
+  mobClose.addEventListener('click',closeMenu);
+  mobOverlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobOverlay.classList.contains('open'))closeMenu();});
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:0.1,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('#hero .rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},60+i*70);});
+
+  var bookForm=document.getElementById('bookForm');
+  if(bookForm){bookForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=this.querySelector('.btn--primary'),t=btn.textContent;
+    btn.disabled=true;btn.textContent='Odesílám…';
+    setTimeout(function(){
+      btn.textContent='Odesláno ✓  Ozveme se';btn.style.background='#2d4a2d';btn.style.borderColor='#2d4a2d';
+      setTimeout(function(){btn.textContent=t;btn.style.background='';btn.style.borderColor='';btn.disabled=false;bookForm.reset();},5000);
+    },800);
+  });}
+})();
+</script>
+</body>
+</html>

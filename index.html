@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -19,13 +19,13 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tattoo studio in the heart of Prague. Custom tattoos, artistic designs, fine line work, and a warm atmosphere where every tattoo becomes part of your story.">
-  <meta property="og:title" content="STIN Tattoo Studio — Prague">
-  <meta property="og:description" content="Tattoo studio in the heart of Prague. Custom tattoos, artistic designs, fine line work, and a warm atmosphere where every tattoo becomes part of your story.">
+  <meta name="description" content="Tetovací studio v srdci Prahy. Zakázková tetování, umělecké návrhy, fine line a příjemná atmosféra, kde každé tetování vypráví váš příběh. / Tattoo studio in the heart of Prague. Custom tattoos, fine line, ornamental and a warm atmosphere.">
+  <meta property="og:title" content="STIN Tattoo Studio — Praha / Prague">
+  <meta property="og:description" content="Tetovací studio v srdci Prahy. Zakázková tetování, fine line, ornamentální styly. / Tattoo studio in the heart of Prague — custom, fine line, ornamental.">
   <meta property="og:image" content="https://stintattoostudio.com/images/stin-website.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stintattoostudio.com/">
-  <title>STIN Tattoo Studio — Prague</title>
+  <title>STIN Tattoo Studio — Praha / Prague</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,19 +33,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="show-cs">
 
   <!-- ══ NAVIGATION ══════════════════════════════════════════════ -->
   <nav id="nav">
     <a href="#" class="nav-logo"><img src="logo-stin.svg" alt="STIN Tattoo"></a>
     <ul class="nav-links" role="list">
-      <li><a href="#about">Studio</a></li>
-      <li><a href="#artist">Artist</a></li>
+      <li><a href="#about"><span class="en">Studio</span><span class="cs">Studio</span></a></li>
+      <li><a href="#artist"><span class="en">Artist</span><span class="cs">Umělkyně</span></a></li>
       <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#aftercare">Aftercare</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li class="nav-item--has-sub">
+        <a href="#"><span class="en">Techniques</span><span class="cs">Techniky</span></a>
+        <ul class="nav-sub" role="menu">
+          <li><a href="fine-line.html">Fine Line</a></li>
+          <li><a href="ornamental.html">Ornamental</a></li>
+          <li><a href="floral.html">Floral</a></li>
+          <li><a href="engraving.html">Engraving</a></li>
+          <li><a href="graphic.html">Graphic</a></li>
+          <li><a href="traditional.html">Traditional</a></li>
+        </ul>
+      </li>
+      <li><a href="#aftercare"><span class="en">Aftercare</span><span class="cs">Péče</span></a></li>
+      <li><a href="#contact"><span class="en">Contact</span><span class="cs">Kontakt</span></a></li>
     </ul>
-    <a href="#book" class="nav-cta">Book now</a>
+    <div class="nav-right">
+      <div class="lang-toggle nav-lang" role="group" aria-label="Language / Jazyk">
+        <button id="btn-cs" class="lang-btn" onclick="setLang('cs')">CZ</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#book" class="nav-cta"><span class="en">Book now</span><span class="cs">Rezervace</span></a>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -55,13 +73,24 @@
   <div class="mob-overlay" id="mobOverlay" role="dialog" aria-modal="true" aria-label="Navigation">
     <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
     <nav class="mob-nav">
-      <a href="#about"     class="mob-link">Studio</a>
-      <a href="#artist"    class="mob-link">Artist</a>
+      <a href="#about"     class="mob-link"><span class="en">Studio</span><span class="cs">Studio</span></a>
+      <a href="#artist"    class="mob-link"><span class="en">Artist</span><span class="cs">Umělkyně</span></a>
       <a href="#portfolio" class="mob-link">Portfolio</a>
-      <a href="#aftercare" class="mob-link">Aftercare</a>
-      <a href="#contact"   class="mob-link">Contact</a>
-      <a href="#book"      class="mob-link mob-link--cta">Book a session →</a>
+      <a href="fine-line.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Fine Line</a>
+      <a href="ornamental.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Ornamental</a>
+      <a href="floral.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Floral</a>
+      <a href="engraving.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Engraving</a>
+      <a href="graphic.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Graphic</a>
+      <a href="traditional.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Traditional</a>
+      <a href="#aftercare" class="mob-link"><span class="en">Aftercare</span><span class="cs">Péče</span></a>
+      <a href="#contact"   class="mob-link"><span class="en">Contact</span><span class="cs">Kontakt</span></a>
+      <a href="#book"      class="mob-link mob-link--cta"><span class="en">Book a session →</span><span class="cs">Rezervovat →</span></a>
     </nav>
+    <div class="lang-toggle mob-lang" role="group" aria-label="Language / Jazyk">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep" aria-hidden="true">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 
   <main>
@@ -80,12 +109,14 @@
           </div>
           <div class="hero-foot">
             <p class="hero-tagline rv d2">
-            Warm welcome from our tattoo studio in the heart of Prague.
-            Take a sip of tea or freshly brewed coffee while we turn your memories, symbols, and stories into timeless ink.
+            <span class="en">Warm welcome from our tattoo studio in the heart of Prague.
+            Take a sip of tea or freshly brewed coffee while we turn your memories, symbols, and stories into timeless ink.</span>
+            <span class="cs">Srdečně vás vítáme v našem tetovacím studiu v srdci Prahy.
+            Dejte si čaj nebo čerstvě uvařenou kávu, zatímco proměníme vaše vzpomínky, symboly a příběhy v nesmazatelný inkoust.</span>
             </p>
             <div class="hero-actions rv d3">
-              <a href="#book"      class="btn btn--primary">Book a session</a>
-              <a href="#portfolio" class="btn btn--ghost">View portfolio</a>
+              <a href="#book"      class="btn btn--primary"><span class="en">Book a session</span><span class="cs">Rezervovat</span></a>
+              <a href="#portfolio" class="btn btn--ghost"><span class="en">View portfolio</span><span class="cs">Zobrazit portfolio</span></a>
             </div>
           </div>
         </div>
@@ -113,31 +144,36 @@
         <div class="about-copy">
           <p class="sec-num rv">01 —</p>
           <h2 id="about-heading" class="sec-heading rv d1">
-            About<br>the studio
+            <span class="en">About<br>the studio</span>
+            <span class="cs">O studiu</span>
           </h2>
           <p class="body-text rv d2">
-            Our tattoo studio is located in the heart of Prague — a place where you can
-            slow down, relax, and create something truly personal.
+            <span class="en">Our tattoo studio is located in the heart of Prague — a place where you can
+            slow down, relax, and create something truly personal.</span>
+            <span class="cs">Naše tetovací studio se nachází v srdci Prahy — místě, kde si můžete odpočinout, zrelaxovat a vytvořit něco skutečně osobního.</span>
           </p>
           <p class="body-text rv d2">
-            We've built a space where everyone feels comfortable: a cozy atmosphere,
+            <span class="en">We've built a space where everyone feels comfortable: a cozy atmosphere,
             a calm environment, and attention to every detail. For us, it's not just
             about the tattoo itself, but the whole experience — from your first idea
-            to the final result.
+            to the final result.</span>
+            <span class="cs">Vybudovali jsme prostor, kde se každý cítí pohodlně: útulná atmosféra, klidné prostředí a péče o každý detail. Pro nás nejde jen o tetování samotné, ale o celý zážitek — od první myšlenky až po výsledek.</span>
           </p>
           <p class="body-text rv d2">
-            We work with custom designs and help you find something that will feel
-            right for you for years to come.
+            <span class="en">We work with custom designs and help you find something that will feel
+            right for you for years to come.</span>
+            <span class="cs">Pracujeme s vlastními návrhy a pomůžeme vám najít něco, co vám bude sedět i za roky.</span>
           </p>
           <p class="note rv d3">
-            To make your session as smooth as possible — eat beforehand, and let us know
-            of any health concerns in advance.
+            <span class="en">To make your session as smooth as possible — eat beforehand, and let us know
+            of any health concerns in advance.</span>
+            <span class="cs">Aby vaše sezení proběhlo co nejlépe — jezte předem a dejte nám vědět o případných zdravotních problémech.</span>
           </p>
           <dl class="address rv d3">
-            <dt>Address</dt>
+            <dt><span class="en">Address</span><span class="cs">Adresa</span></dt>
             <dd>Míšeňská 73/5, 118 00 Malá Strana, Prague</dd>
-            <dt>Hours</dt>
-            <dd>Monday – Sunday &nbsp; 12:00 – 20:00</dd>
+            <dt><span class="en">Hours</span><span class="cs">Otevírací doba</span></dt>
+            <dd><span class="en">Monday – Sunday</span><span class="cs">Pondělí – Neděle</span> &nbsp; 12:00 – 20:00</dd>
           </dl>
         </div>
 
@@ -153,38 +189,40 @@
         <div class="artist-copy">
           <p class="sec-num rv">02 —</p>
           <h2 id="artist-heading" class="artist-name rv d1">
-            <span class="artist-name-sub">The artist</span>
+            <span class="artist-name-sub"><span class="en">The artist</span><span class="cs">Umělkyně</span></span>
             OUR ARTIST-ANNA
           </h2>
           <p class="body-text rv d2">
-            Anna is a tattoo artist whose work is built around individuality, aesthetics, and attention to detail. Her main styles
-            are ornamental, floral, and graphic tattoos — combining clean composition, delicate flow, and strong visual character.
-
+            <span class="en">Anna is a tattoo artist whose work is built around individuality, aesthetics, and attention to detail. Her main styles
+            are ornamental, floral, and graphic tattoos — combining clean composition, delicate flow, and strong visual character.</span>
+            <span class="cs">Anna je tetovací umělkyně, jejíž práce stojí na individualitě, estetice a pozornosti k detailu. Její hlavní styly jsou ornamentální, florální a grafická tetování — kombinující čistou kompozici, delikátní tok a silný vizuální charakter.</span>
           </p>
           <p class="body-text rv d2">
-            At the same time, she works confidently across many styles, including micro realism, traditional, neo traditional, fine
+            <span class="en">At the same time, she works confidently across many styles, including micro realism, traditional, neo traditional, fine
             line, blackwork, minimalism, lettering, and more. Whether in color or black and grey, each tattoo is created with care
-            to match the person wearing it.
+            to match the person wearing it.</span>
+            <span class="cs">Zároveň pracuje sebejistě v mnoha stylech, včetně micro realismu, tradičního, neo-tradičního, fine line, blackwork, minimalismu, letteringu a dalších. Ať v barvě nebo černé a šedé, každé tetování je vytvořeno s péčí, aby odpovídalo tomu, kdo ho nosí.</span>
           </p>
-          <p>
-          For her, tattooing is more than just art on skin — it’s a personal story, a feeling, and something that should stay
-          meaningful and beautiful for years to come.
+          <p class="body-text rv d2">
+            <span class="en">For her, tattooing is more than just art on skin — it’s a personal story, a feeling, and something that should stay
+            meaningful and beautiful for years to come.</span>
+            <span class="cs">Pro ni je tetování více než jen umění na kůži — je to osobní příběh, pocit a něco, co by mělo zůstat smysluplné a krásné po celé roky.</span>
           </p>
           <dl class="stats rv d3">
             <div class="stat">
-              <dt class="stat-label">Years</dt>
+              <dt class="stat-label"><span class="en">Years</span><span class="cs">Roky</span></dt>
               <dd class="stat-value">5+</dd>
             </div>
             <div class="stat">
-              <dt class="stat-label">Tattoos</dt>
+              <dt class="stat-label"><span class="en">Tattoos</span><span class="cs">Tetování</span></dt>
               <dd class="stat-value">500+</dd>
             </div>
             <div class="stat">
-              <dt class="stat-label">Custom</dt>
+              <dt class="stat-label"><span class="en">Custom</span><span class="cs">Na míru</span></dt>
               <dd class="stat-value">100%</dd>
             </div>
             <div class="stat">
-              <dt class="stat-label">Language</dt>
+              <dt class="stat-label"><span class="en">Language</span><span class="cs">Jazyk</span></dt>
               <dd class="stat-value">eng · cz</dd>
             </div>
           </dl>
@@ -256,56 +294,64 @@
         <div class="aftercare-left">
           <p class="sec-num rv">04 —</p>
           <h2 id="aftercare-heading" class="sec-heading rv d1">
-            Aftercare
+            <span class="en">Aftercare</span><span class="cs">Péče po tetování</span>
           </h2>
         </div>
 
         <div class="aftercare-right">
           <p class="care-intro rv">
-            Your tattoo is a fresh wound. Follow these steps carefully
-            for perfect, lasting results.
+            <span class="en">Your tattoo is a fresh wound. Follow these steps carefully
+            for perfect, lasting results.</span>
+            <span class="cs">Vaše tetování je čerstvá rána. Pečlivě dodržujte tyto kroky pro dokonalé a trvanlivé výsledky.</span>
           </p>
           <ol class="care-list" role="list">
             <li class="care-step rv">
               <span class="care-num" aria-hidden="true">01</span>
               <p class="care-text">
-                <strong>Second skin for 4 days.</strong>
-                Keep the film on for the first four days without removing it.
+                <strong><span class="en">Second skin for 4 days.</span><span class="cs">Druhá kůže na 4 dny.</span></strong>
+                <span class="en">Keep the film on for the first four days without removing it.</span>
+                <span class="cs">Nechte fólii po první čtyři dny bez odstraňování.</span>
               </p>
             </li>
             <li class="care-step rv d1">
               <span class="care-num" aria-hidden="true">02</span>
               <p class="care-text">
-                <strong>Wash and moisturize.</strong>
-                Gently remove the film, wash the tattoo, pat dry with a paper towel,
-                apply the recommended healing cream. Repeat 2–3 times daily for 3 weeks.
+                <strong><span class="en">Wash and moisturize.</span><span class="cs">Umývejte a hydratujte.</span></strong>
+                <span class="en">Gently remove the film, wash the tattoo, pat dry with a paper towel,
+                apply the recommended healing cream. Repeat 2–3 times daily for 3 weeks.</span>
+                <span class="cs">Jemně odstraňte fólii, umyjte tetování, otřete papírovým ručníkem a naneste doporučený hojivý krém. Opakujte 2–3× denně po dobu 3 týdnů.</span>
               </p>
             </li>
             <li class="care-step rv d2">
               <span class="care-num" aria-hidden="true">03</span>
               <p class="care-text">
-                <strong>Avoid sun, pools and saunas</strong>
-                while healing. Direct sunlight and chlorine damage fresh ink.
+                <strong><span class="en">Avoid sun, pools and saunas</span><span class="cs">Vyhýbejte se slunci, bazénům a saunám</span></strong>
+                <span class="en">while healing. Direct sunlight and chlorine damage fresh ink.</span>
+                <span class="cs">při hojení. Přímé sluneční záření a chlór poškozují čerstvý inkoust.</span>
               </p>
             </li>
             <li class="care-step rv d1">
               <span class="care-num" aria-hidden="true">04</span>
               <p class="care-text">
-                <strong>Do not pick or scratch</strong>
-                the tattoo. Let it peel naturally.
+                <strong><span class="en">Do not pick or scratch</span><span class="cs">Neškvrkejte ani neškrábejte</span></strong>
+                <span class="en">the tattoo. Let it peel naturally.</span>
+                <span class="cs">tetování. Nechte ho přirozeně sloupnout.</span>
               </p>
             </li>
             <li class="care-step rv d2">
               <span class="care-num" aria-hidden="true">05</span>
               <p class="care-text">
-                <strong>Have questions?</strong>
-                If something feels wrong or you're unsure about your healing — text us anytime.
+                <strong><span class="en">Have questions?</span><span class="cs">Máte otázky?</span></strong>
+                <span class="en">If something feels wrong or you're unsure about your healing — text us anytime.</span>
+                <span class="cs">Pokud se něco zdá špatné nebo si nejste jisti hojením — napište nám kdykoli.</span>
               </p>
             </li>
           </ol>
           <blockquote class="care-quote rv d3">
-            "We care about your tattoo long after you leave the studio.
-            Don't hesitate to reach out."
+            <span class="en">"We care about your tattoo long after you leave the studio.
+            Don't hesitate to reach out."</span>
+            <span class="cs">„Staráme se o vaše tetování dlouho po odchodu ze studia.
+            Neváhejte nás kontaktovat."</span>
           </blockquote>
         </div>
 
@@ -353,11 +399,13 @@
         <div class="book-intro">
           <p class="sec-num rv">05 —</p>
           <h2 id="book-heading" class="sec-heading rv d1">
-            Book your<br>session
+            <span class="en">Book your<br>session</span>
+            <span class="cs">Rezervujte<br>svou session</span>
           </h2>
           <p class="body-text rv d2">
-            Ready to create something permanent? Fill in the form and
-            we'll reply within 24 hours to discuss your idea.
+            <span class="en">Ready to create something permanent? Fill in the form and
+            we'll reply within 24 hours to discuss your idea.</span>
+            <span class="cs">Připraveni vytvořit něco trvalého? Vyplňte formulář a odpovíme do 24 hodin, abychom prodiskutovali váš nápad.</span>
           </p>
         </div>
 
@@ -448,19 +496,20 @@
         <div class="contact-info">
           <p class="sec-num rv">06 —</p>
           <h2 id="contact-heading" class="sec-heading rv d1">
-            Visit<br>the studio
+            <span class="en">Visit<br>the studio</span>
+            <span class="cs">Navštivte<br>studio</span>
           </h2>
           <dl class="contact-list">
             <div class="contact-block rv d2">
-              <dt>Address</dt>
+              <dt><span class="en">Address</span><span class="cs">Adresa</span></dt>
               <dd>Míšeňská 73/5<br>118 00 Malá Strana<br>Prague, Czech Republic</dd>
             </div>
             <div class="contact-block rv d2">
-              <dt>Hours</dt>
-              <dd>Monday – Sunday<br>12:00 – 20:00</dd>
+              <dt><span class="en">Hours</span><span class="cs">Otevírací doba</span></dt>
+              <dd><span class="en">Monday – Sunday</span><span class="cs">Pondělí – Neděle</span><br>12:00 – 20:00</dd>
             </div>
             <div class="contact-block rv d3">
-              <dt>Phone</dt>
+              <dt><span class="en">Phone</span><span class="cs">Telefon</span></dt>
               <dd><a href="tel:+420724266125">+420 724 266 125</a></dd>
             </div>
             <div class="contact-block rv d3">
@@ -470,13 +519,13 @@
             <div class="contact-block rv d3">
               <dt>Instagram</dt>
               <dd>
-                <a href="https://www.instagram.com/stintattoostudio?igsh=NHlxOHMzOWNic3Nv"
+                <a href="https://www.instagram.com/stintattoostudio?igsh=NHlxOWNic3Nv"
                    target="_blank" rel="noopener noreferrer">@stintattoostudio</a>
               </dd>
             </div>
             <div class="contact-block rv d3">
-              <dt>Booking</dt>
-              <dd><a href="#book">Via form above ↑</a> or DM on Instagram</dd>
+              <dt><span class="en">Booking</span><span class="cs">Rezervace</span></dt>
+              <dd><a href="#book"><span class="en">Via form above ↑</span><span class="cs">Přes formulář výše ↑</span></a> <span class="en">or DM on Instagram</span><span class="cs">nebo DM na Instagramu</span></dd>
             </div>
           </dl>
         </div>
