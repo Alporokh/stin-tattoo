@@ -435,6 +435,13 @@ body {
   gap: var(--s2);
   align-items: flex-end;
 }
+.hero-walkin {
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  text-align: right;
+  margin: 0;
+  line-height: 1.4;
+}
 .hero-image {
   position: relative;
   overflow: hidden;
