@@ -58,9 +58,9 @@ a{color:inherit;text-decoration:none}
 .show-en .cs{display:none}
 .show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
 .lang-toggle{display:flex;align-items:center;gap:8px}
-.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,239,233,.5);padding:2px 7px;transition:color .3s,border-color .3s}
-.lang-btn.active{color:#f2efe9;font-weight:500;border-color:#f2efe9}
-.lang-sep{color:#3a3a3e}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -73,31 +73,29 @@ p{color:var(--ink-soft);font-weight:300}
 .btn--outline:hover{background:var(--ink);color:var(--bg)}
 
 /* ── Nav ── */
-#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid #26262a;background:#0b0b0c}
-#nav.scrolled{background:rgba(11,11,12,.95);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px}
-#nav .btn{border-color:rgba(242,239,233,.6);color:#f2efe9}
-#nav .btn:hover{background:#f2efe9;color:#0b0b0c;border-color:#f2efe9}
+#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid var(--line-soft);background:#FFFFFF}
+#nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px}
 .brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
 .nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,239,233,.65);transition:color .3s;position:relative}
-.nav-links a:hover,.nav-links a.active{color:#f2efe9}
-.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:#f2efe9}
+.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
 #hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
-#hamburger span{width:26px;height:1.5px;background:#f2efe9;display:block}
+#hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
 
 /* ── Dropdown ── */
 .tech-dropdown{position:relative;display:flex;align-items:center}
-.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#0b0b0c;border:1px solid #26262a;min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
 .tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
-.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,239,233,.65);transition:color .3s}
-.tech-sub a:hover,.tech-sub a.active{color:#f2efe9}
+.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
 
 /* ── Mobile overlay ── */
-#mobOverlay{position:fixed;inset:0;z-index:60;background:#0b0b0c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+#mobOverlay{position:fixed;inset:0;z-index:60;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
 #mobOverlay.open{transform:translateY(0)}
-#mobOverlay a{font-family:var(--serif);font-size:1.8rem;color:rgba(242,239,233,.65)}
-#mobOverlay a:hover{color:#f2efe9}
-#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:#f2efe9;font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+#mobOverlay a{font-family:var(--sans);font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+#mobOverlay a:hover{color:var(--ink)}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
 
 /* ── Reveal ── */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -178,15 +176,15 @@ section{padding-block:clamp(70px,11vw,150px)}
 .consent-text{font-size:.78rem;color:var(--ink-mute);line-height:1.5}
 .consent-link{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
 
-/* ── Footer ── */
-footer{padding-block:70px;border-top:1px solid #26262a;background:#0b0b0c}
+/* ── Footer ──────────────────────────────────────────────────── */
+footer{padding-block:70px;border-top:1px solid var(--line-soft);background:#FFFFFF}
 .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
 footer .brand{display:block;margin-bottom:16px}
-footer p,footer a{font-size:.88rem;color:rgba(242,239,233,.65)}
-footer a:hover{color:#f2efe9}
-.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,239,233,.35);margin-bottom:16px;font-family:var(--sans);font-weight:500}
+footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
+footer a:hover{color:var(--ink)}
+.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
 .foot-col a{display:block;margin-bottom:8px}
-.copyright{margin-top:54px;padding-top:24px;border-top:1px solid #26262a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:rgba(242,239,233,.35);letter-spacing:.06em}
+.copyright{margin-top:54px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
 
 /* ── Responsive ── */
 @media(max-width:900px){
@@ -207,7 +205,7 @@ footer a:hover{color:#f2efe9}
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
-  <a href="index.html" class="brand"><img src="images/logo-white.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
+  <a href="index.html" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
   <div class="nav-links">
     <a href="index.html"><span class="cs">Domů</span><span class="lang">Home</span></a>
     <a href="index.html#about"><span class="cs">O nás</span><span class="lang">About</span></a>
@@ -448,7 +446,7 @@ footer a:hover{color:#f2efe9}
 <footer class="wrap">
   <div class="foot-grid">
     <div class="rv">
-      <a href="index.html" class="brand"><img src="images/logo-white.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
+      <a href="index.html" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
       <p>Tattoo Studio</p>
       <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
       <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
