@@ -1047,6 +1047,22 @@ footer {
 .d2 { transition-delay: 0.22s; }
 .d3 { transition-delay: 0.36s; }
 
+/* Hero elements animate via CSS — no JS needed, avoids LCP penalty */
+@keyframes rv-hero {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+#hero .rv {
+  animation: rv-hero var(--dur-base) var(--ease-expo) both;
+  transition: none;
+}
+#hero .rv.d1 { animation-delay: 0.10s; }
+#hero .rv.d2 { animation-delay: 0.22s; }
+#hero .rv.d3 { animation-delay: 0.36s; }
+@media (prefers-reduced-motion: reduce) {
+  #hero .rv { animation: none; opacity: 1; transform: none; }
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }

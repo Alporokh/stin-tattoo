@@ -71,11 +71,9 @@
     rootMargin: '0px 0px -28px 0px'
   });
 
-  document.querySelectorAll('.rv, .reveal').forEach(el => io.observe(el));
-
-  // Hero elements reveal immediately on load
-  document.querySelectorAll('#hero .rv').forEach((el, i) => {
-    setTimeout(() => el.classList.add('in', 'visible'), 60 + i * 70);
+  // Skip hero — it animates via CSS without JS (avoids LCP delay)
+  document.querySelectorAll('.rv, .reveal').forEach(el => {
+    if (!el.closest('#hero')) io.observe(el);
   });
 
 
