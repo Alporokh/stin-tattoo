@@ -164,13 +164,23 @@
   function initCookieBanner() {
     const banner  = document.getElementById('cookieBanner');
     if (!banner) return;
+    if (localStorage.getItem('cookie_consent') === 'accepted') { loadClarity(); return; }
     if (localStorage.getItem('cookie_consent')) return;
 
     banner.hidden = false;
     requestAnimationFrame(() => banner.classList.add('visible'));
 
+    function loadClarity() {
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window,document,"clarity","script","x7g4b9hw3k");
+    }
+
     function dismiss(choice) {
       localStorage.setItem('cookie_consent', choice);
+      if (choice === 'accepted') loadClarity();
       banner.classList.remove('visible');
       banner.addEventListener('transitionend', () => { banner.hidden = true; }, { once: true });
     }
