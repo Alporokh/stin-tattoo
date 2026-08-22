@@ -162,7 +162,11 @@
   function initCookieBanner() {
     const banner  = document.getElementById('cookieBanner');
     if (!banner) return;
-    if (localStorage.getItem('cookie_consent') === 'accepted') { loadClarity(); return; }
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      // Defer until after LCP to avoid blocking paint
+      (window.requestIdleCallback || setTimeout)(loadClarity, 3000);
+      return;
+    }
     if (localStorage.getItem('cookie_consent')) return;
 
     banner.hidden = false;
