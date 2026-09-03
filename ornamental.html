@@ -6,13 +6,6 @@
 <title>Ornamental — STIN Tattoo Studio</title>
 <meta name="description" content="Ornamentální tetování Praha — dekorativní vzory, geometrie, mandály a etnické motivy. Tattoo studio Praha 1. / Ornamental tattoo Prague — decorative patterns, geometry, mandalas and ethnic motifs. Tattoo studio Prague 1.">
 
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "x7g4b9hw3k");
-</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -238,6 +231,7 @@ footer a:hover{color:var(--ink)}
         <a href="engraving.html">Engraving</a>
         <a href="graphic.html">Graphic</a>
         <a href="traditional.html">Traditional</a>
+        <a href="color-micro-realism.html">Color Micro-realism</a>
       </div>
     </div>
     <div class="lang-toggle">
@@ -264,6 +258,7 @@ footer a:hover{color:var(--ink)}
   <a href="engraving.html" style="font-size:1.4rem">↳ Engraving</a>
   <a href="graphic.html" style="font-size:1.4rem">↳ Graphic</a>
   <a href="traditional.html" style="font-size:1.4rem">↳ Traditional</a>
+  <a href="color-micro-realism.html" style="font-size:1.4rem">↳ Color Micro-realism</a>
   <a href="#book">Rezervace</a>
 </div>
 
@@ -481,6 +476,7 @@ footer a:hover{color:var(--ink)}
       <a href="engraving.html">Engraving</a>
       <a href="graphic.html">Graphic</a>
       <a href="traditional.html">Traditional</a>
+      <a href="color-micro-realism.html">Color Micro-realism</a>
     </div>
     <div class="foot-col rv">
       <h4>Studio</h4>
@@ -558,6 +554,21 @@ footer a:hover{color:var(--ink)}
       bookForm.reset();
     },1000);
   });}
+
+  /* ── Deferred Clarity (cookie consent only) ── */
+  (function(){
+    var consent;
+    try{consent=localStorage.getItem('cookie_consent')}catch(e){}
+    if(consent==='accepted'){
+      (window.requestIdleCallback||setTimeout)(function(){
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window,document,'clarity','script','x7g4b9hw3k');
+      },3000);
+    }
+  })();
 })();
 </script>
 </body>

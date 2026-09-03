@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphic — STIN Tattoo Studio</title>
-<meta name="description" content="Graphic tetování Praha — čisté linie, kontrast a umělecká grafika. Autorské návrhy, symboly a kompozice. Tattoo studio Praha 1. / Graphic tattoo Prague — clean lines, contrast and artistic graphics. Custom designs and compositions. Tattoo studio Prague 1.">
+<title>Color Micro-realism — STIN Tattoo Studio Praha</title>
+<meta name="description" content="Color micro-realism tetování Praha — fotorealistická barevná tetování v detailu. Portréty, příroda, živé barvy na kůži. STIN Tattoo Studio Praha 1. / Color micro-realism tattoo Prague — photorealistic colour tattoos in vivid detail. Portraits, nature, vibrant colours. Praha 1.">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
 <script>
@@ -16,6 +16,7 @@
 
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="images/favicon.p.png" sizes="32x32" type="image/png">
+<link rel="preload" as="image" href="images/color-micro-realism.jpg" fetchpriority="high">
 <link rel="preload" as="font" href="fonts/inter-latin.woff2" type="font/woff2" crossorigin>
 <link rel="preload" as="font" href="fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
@@ -66,29 +67,47 @@ p{color:var(--ink-soft);font-weight:300}
 .btn--outline:hover{background:var(--ink);color:var(--bg)}
 
 /* ── Nav ── */
-#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid var(--line-soft);background:#FFFFFF}
-#nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px}
+#nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;
+  border-bottom:1px solid var(--line-soft);background:#FFFFFF;
+}
+#nav.scrolled{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  padding-top:14px;padding-bottom:14px;
+}
 .brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
 .nav-links{display:flex;gap:34px;align-items:center}
-.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s;position:relative}
+.nav-links a{
+  font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  transition:color .3s;position:relative;
+}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
+.nav-links a.active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink);
+}
 #hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
 #hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
 
 /* ── Dropdown ── */
 .tech-dropdown{position:relative;display:flex;align-items:center}
-.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);min-width:180px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
 .tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
 .tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
-.tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
+.tech-sub a:hover,.tech-sub a.active{color:var(--ink);}
 
 /* ── Mobile overlay ── */
-#mobOverlay{position:fixed;inset:0;z-index:60;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+#mobOverlay{
+  position:fixed;inset:0;z-index:60;background:#FFFFFF;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);
+}
 #mobOverlay.open{transform:translateY(0)}
 #mobOverlay a{font-family:var(--sans);font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
 #mobOverlay a:hover{color:var(--ink)}
-#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);
+  font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
 
 /* ── Reveal ── */
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -112,15 +131,12 @@ section{padding-block:clamp(70px,11vw,150px)}
 /* ── Hero ── */
 #hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
-.hero-title{font-size:clamp(3rem,10vw,7.5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
+.hero-title{font-size:clamp(2.4rem,8vw,6.5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
 .hero-sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
 .hero-desc{max-width:34ch;font-size:1.02rem}
 .hero-desc+.hero-desc{margin-top:14px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
-.hero-media{aspect-ratio:4/5;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-soft);display:flex;align-items:center;justify-content:center}
-
-/* ── Hero graphic illustration ── */
-.hero-graphic{width:72%;opacity:.16;color:var(--ink)}
+.hero-media{aspect-ratio:4/5;overflow:hidden}
 
 /* ── Two-col ── */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
@@ -135,12 +151,12 @@ section{padding-block:clamp(70px,11vw,150px)}
 .feat p{font-size:.92rem}
 
 /* ── Gallery ── */
-.grph-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
-.grph-fig{margin:0;overflow:hidden;background:var(--bg-2)}
-.grph-fig--large{grid-row:span 2}
-.grph-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.grph-fig:hover img{transform:scale(1.03)}
-.grph-fig:not(.grph-fig--large){aspect-ratio:4/5}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.img-wrap{overflow:hidden;background:var(--bg-2);border:1px solid var(--line-soft)}
+.img-wrap:nth-child(1){grid-row:span 2}
+.img-wrap img{width:100%;height:100%;object-fit:cover;transition:filter .4s}
+.img-wrap img:hover{filter:brightness(1.05)}
+.gallery-note{margin-top:26px;font-size:.82rem;color:var(--ink-mute);text-align:center;letter-spacing:.04em}
 
 /* ── Steps ── */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
@@ -169,7 +185,7 @@ section{padding-block:clamp(70px,11vw,150px)}
 .consent-text{font-size:.78rem;color:var(--ink-mute);line-height:1.5}
 .consent-link{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
 
-/* ── Footer ──────────────────────────────────────────────────── */
+/* ── Footer ── */
 footer{padding-block:70px;border-top:1px solid var(--line-soft);background:#FFFFFF}
 .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
 footer .brand{display:block;margin-bottom:16px}
@@ -177,7 +193,8 @@ footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
 footer a:hover{color:var(--ink)}
 .foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
 .foot-col a{display:block;margin-bottom:8px}
-.copyright{margin-top:54px;padding-top:24px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
+.copyright{margin-top:54px;padding-top:24px;border-top:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
 
 /* ── Responsive ── */
 @media(max-width:900px){
@@ -186,11 +203,14 @@ footer a:hover{color:var(--ink)}
   .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
   .hero-media{max-width:420px;margin-inline:auto}
   .grid-4{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr}
+  .img-wrap:nth-child(1){grid-row:auto}
   .steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   .grid-4{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -210,9 +230,9 @@ footer a:hover{color:var(--ink)}
         <a href="ornamental.html">Ornamental</a>
         <a href="floral.html">Floral</a>
         <a href="engraving.html">Engraving</a>
-        <a href="graphic.html" class="active">Graphic</a>
+        <a href="graphic.html">Graphic</a>
         <a href="traditional.html">Traditional</a>
-        <a href="color-micro-realism.html">Color Micro-realism</a>
+        <a href="color-micro-realism.html" class="active">Color Micro-realism</a>
       </div>
     </div>
     <div class="lang-toggle">
@@ -237,9 +257,9 @@ footer a:hover{color:var(--ink)}
   <a href="ornamental.html" style="font-size:1.4rem">↳ Ornamental</a>
   <a href="floral.html" style="font-size:1.4rem">↳ Floral</a>
   <a href="engraving.html" style="font-size:1.4rem">↳ Engraving</a>
-  <a href="graphic.html" style="font-size:1.4rem;color:#f2efe9">↳ Graphic</a>
+  <a href="graphic.html" style="font-size:1.4rem">↳ Graphic</a>
   <a href="traditional.html" style="font-size:1.4rem">↳ Traditional</a>
-  <a href="color-micro-realism.html" style="font-size:1.4rem">↳ Color Micro-realism</a>
+  <a href="color-micro-realism.html" style="font-size:1.4rem;color:#f2efe9">↳ Color Micro-realism</a>
   <a href="#book">Rezervace</a>
 </div>
 
@@ -250,7 +270,7 @@ footer a:hover{color:var(--ink)}
     <li>/</li>
     <li><a href="#">Techniky</a></li>
     <li>/</li>
-    <li aria-current="page">Graphic</li>
+    <li aria-current="page">Color Micro-realism</li>
   </ol>
 </div>
 
@@ -258,17 +278,20 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <h1 class="hero-title rv">Graphic</h1>
-      <p class="hero-sub rv">Umělecká grafika<span class="lang"> &nbsp;·&nbsp; Artistic graphics</span></p>
-      <p class="hero-desc cs rv">Čisté linie, kontrast a umělecká grafika. Vhodné pro neobvyklé kompozice, symboly a autorské návrhy.</p>
-      <p class="hero-desc lang rv">Clean lines, contrast and artistic graphics. Suitable for unusual compositions, symbols and original sketches.</p>
+      <h1 class="hero-title rv">Color<br>Micro-realism</h1>
+      <p class="hero-sub rv"><span class="cs">Barevný realismus v detailu</span><span class="lang">Colour realism on a smaller scale</span></p>
+      <p class="hero-desc cs rv">Fotorealistická barevná tetování v malém měřítku — přesný detail, živé barvy a hloubka obrazu přímo na vaší kůži.</p>
+      <p class="hero-desc lang rv">Photorealistic colour tattoos in a compact format — precise detail, vivid colours and painterly depth on your skin.</p>
       <div class="hero-actions rv">
-        <a href="#book" class="btn btn--primary">Rezervovat termín</a>
-        <a href="#gallery" class="btn btn--outline">Galerie stylu</a>
+        <a href="#book" class="btn btn--primary"><span class="cs">Rezervovat termín</span><span class="lang">Book a session</span></a>
+        <a href="#gallery" class="btn btn--outline"><span class="cs">Galerie stylu</span><span class="lang">Style gallery</span></a>
       </div>
     </div>
     <div class="hero-media rv">
-      <img src="images/tetovací studio praha 1.jpg" alt="Graphic tetování — dva vlaštovky, horní paže" style="width:100%;height:100%;object-fit:cover">
+      <img src="images/color-micro-realism.jpg"
+           alt="Color micro-realism tetování Praha — barevný fotorealistický motiv, STIN Tattoo Studio"
+           loading="eager" fetchpriority="high"
+           style="width:100%;height:100%;object-fit:cover">
     </div>
   </div>
 </header>
@@ -277,7 +300,7 @@ footer a:hover{color:var(--ink)}
 <div class="divider rv" aria-hidden="true">
   <svg viewBox="0 0 340 26" fill="none" stroke="currentColor" stroke-width="1">
     <path d="M0 13 H120"/><path d="M220 13 H340"/>
-    <rect x="148" y="5" width="16" height="16"/><rect x="151" y="8" width="10" height="10" fill="currentColor" opacity=".4"/>
+    <path d="M150 13l10-8 10 8-10 8z"/><circle cx="170" cy="13" r="11"/>
     <path d="M132 13h8M200 13h8"/>
   </svg>
 </div>
@@ -287,13 +310,13 @@ footer a:hover{color:var(--ink)}
   <div class="two-col">
     <div class="rv">
       <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
-      <p class="lead cs">Tetování jako plakát — každý tah záměrný, každý kontrast promyšlený.</p>
-      <p class="lead lang">Graphic is the language of contrast — bold compositions that speak through shape and negative space.</p>
+      <p class="lead cs">Color micro-realism je fotografická přesnost v živých barvách — miniatura malovaného obrazu, která překvapí každého, kdo se přiblíží.</p>
+      <p class="lead lang">Color micro-realism is photographic precision in vivid colour — a miniature painted canvas that surprises everyone who looks closely.</p>
     </div>
     <div class="rv">
-      <p class="cs">Graphic styl staví na síle čisté linie a kontrastu. Nevypráví příběh přirozeností ani texturou — místo toho mluví jazykem designu: kompozicí, hmotou a prázdným prostorem jako rovnocenným prvkem.</p>
-      <p class="cs" style="margin-top:16px">Vhodný pro abstrakt, geometrii, symboly nebo neobvyklé kombinace motivů. Výsledek je vždy vizuálně silný, autorský a okamžitě čitelný — tetování, které zaujme na první pohled.</p>
-      <p class="lang" style="margin-top:16px">— Graphic style is built on the power of clean line and contrast. It speaks the language of design: composition, mass and negative space as an equal element. Ideal for abstract shapes, geometry, symbols or unusual combinations of motifs.</p>
+      <p class="cs">Tento styl kombinuje hyperrealistický přístup s barevnou hloubkou a detailem na ploše, která by jiné techniky nevyužily naplno. Ideální pro portréty, florální motivy, zvířata nebo abstraktní barevné kompozice.</p>
+      <p class="cs" style="margin-top:16px">Anna pracuje s jemným přechodem barev, přirozenými texturami pokožky a světelnými efekty, které dávají tetování trojrozměrný, malovaný charakter. Každý motiv je navržen s ohledem na dlouhodobou čitelnost barev.</p>
+      <p class="lang" style="margin-top:16px">— This style combines a hyperrealistic approach with colour depth and detail in a space that other techniques would not use to the full. Ideal for portraits, floral motifs, animals or abstract colour compositions.</p>
     </div>
   </div>
 </section>
@@ -302,29 +325,32 @@ footer a:hover{color:var(--ink)}
 <section id="features" class="wrap">
   <div class="sec-head rv">
     <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
-    <h2><span class="cs">Znaky graphic stylu</span><span class="lang">Characteristics</span></h2>
-    <p class="lang">Signatures of the graphic style</p>
+    <h2><span class="cs">Znaky color micro-realismu</span><span class="lang">Defining features</span></h2>
   </div>
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3><span class="cs">Čisté linie</span><span class="lang">Clean lines</span></h3>
-      <p>Přesné, ostré kontury bez přechodů a rozmazání — každá linie nese váhu a má své místo.</p>
+      <h3><span class="cs">Fotorealistický detail</span><span class="lang">Photorealistic detail</span></h3>
+      <p class="cs">Každý motiv je vykreslen s přesností fotografie — jemné přechody, struktury a světelné body vytvářejí iluzi hloubky.</p>
+      <p class="lang">Every motif is rendered with photographic precision — subtle gradients, textures and highlights create the illusion of depth.</p>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3><span class="cs">Kontrast</span><span class="lang">Contrast</span></h3>
-      <p>Silný kontrast plné černě a prázdného prostoru vytváří vizuální napětí a čitelnost i z dálky.</p>
+      <h3><span class="cs">Živé barvy</span><span class="lang">Vivid colours</span></h3>
+      <p class="cs">Saturované, kontrastní palety i jemné pastely — barevná hloubka dává motivu obraz na plátně, ne tetování na kůži.</p>
+      <p class="lang">Saturated contrasting palettes or soft pastels — colour depth gives the motif the feel of paint on canvas, not ink on skin.</p>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3><span class="cs">Kompozice</span><span class="lang">Composition</span></h3>
-      <p>Neobvyklá rozvržení, netradiční úhly a autorský přístup k prostoru — tetování jako grafický objekt.</p>
+      <h3><span class="cs">Hloubka a textura</span><span class="lang">Depth and texture</span></h3>
+      <p class="cs">Vícevrstvé stínování a světelné přechody vytvářejí trojrozměrný efekt — reliéf, který oko vnímá jako skutečný povrch.</p>
+      <p class="lang">Multi-layered shading and light transitions create a three-dimensional effect — a relief the eye perceives as a real surface.</p>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3><span class="cs">Symbolika</span><span class="lang">Symbolism</span></h3>
-      <p>Ikony, znaky a abstraktní tvary s osobním nebo kulturním významem — forma, která nese obsah.</p>
+      <h3><span class="cs">Kompaktní formát</span><span class="lang">Compact format</span></h3>
+      <p class="cs">Velký vizuální dopad v malém měřítku. Ideální pro zápěstí, kotník, rameno nebo hrudník — bez nutnosti velkých ploch.</p>
+      <p class="lang">A big visual impact on a small scale. Ideal for wrist, ankle, shoulder or chest — without needing large areas of skin.</p>
     </div>
   </div>
 </section>
@@ -334,42 +360,45 @@ footer a:hover{color:var(--ink)}
   <div class="sec-head rv">
     <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
     <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
-    <p class="lang">Selected graphic work</p>
   </div>
-  <div class="grph-gallery rv">
-    <figure class="grph-fig grph-fig--large">
-      <img src="images/tetovací studio praha 1.jpg" alt="Graphic tetování — dva vlaštovky na paži, jemná kresba" loading="lazy">
-    </figure>
-    <figure class="grph-fig">
-      <img src="images/tattoo shop praha.jpg" alt="Graphic tetování — zkřížené meče, koruna a křídla s grafickými prvky, rameno" loading="lazy">
-    </figure>
-    <figure class="grph-fig">
-      <img src="images/portfolio3.jpg" alt="Graphic tetování — kazetová páska Elephant Love Medley, ilustrativní styl" loading="lazy">
-    </figure>
+  <div class="gallery">
+    <div class="img-wrap rv">
+      <img src="images/color-micro-realism.jpg" alt="Color micro-realism tetování Praha — barevný fotorealistický motiv" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div class="img-wrap rv" style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--bg-2)">
+      <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)">Brzy k dispozici / Coming soon</span>
+    </div>
+    <div class="img-wrap rv" style="aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--bg-2)">
+      <span style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)">Brzy k dispozici / Coming soon</span>
+    </div>
   </div>
+  <p class="gallery-note rv"><span class="cs">Galerie se průběžně doplňuje. Sledujte nás na </span><span class="lang">Gallery is updated regularly. Follow us on </span><a href="https://www.instagram.com/stintattoostudio" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;text-underline-offset:3px">@stintattoostudio</a></p>
 </section>
 
 <!-- ═══════════════ PROCESS ═══════════════ -->
 <section id="process" class="wrap">
   <div class="sec-head rv">
     <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
-    <h2><span class="cs">Od nápadu ke grafice</span><span class="lang">From idea to graphic</span></h2>
+    <h2><span class="cs">Od fotografie k tetování</span><span class="lang">From photograph to skin</span></h2>
   </div>
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
-      <p>Probereme váš nápad, reference a umístění. Graphic styl má velký prostor pro interpretaci — čím více sdílíte, tím přesnější návrh dostanete.</p>
+      <h3><span class="cs">Konzultace a reference</span><span class="lang">Consultation &amp; references</span></h3>
+      <p class="cs">Probereme motiv, umístění a barevnou paletu. Čím více referencí přinesete, tím přesněji zachytíme charakter, který hledáte.</p>
+      <p class="lang">We discuss the motif, placement and colour palette. The more references you bring, the more precisely we capture the character you are after.</p>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3><span class="cs">Grafický návrh</span><span class="lang">Graphic sketch</span></h3>
-      <p>Anna sestaví kompozici přímo pro vaše tělo — tvar, proporce a kontrast jsou navrženy tak, aby fungovaly jako celek.</p>
+      <h3><span class="cs">Návrh a paleta</span><span class="lang">Design &amp; palette</span></h3>
+      <p class="cs">Anna připraví detailní digitální návrh s výběrem barev. Barvy jsou voleny s ohledem na dlouhodobou životnost a tón vaší pokožky.</p>
+      <p class="lang">Anna prepares a detailed digital design with colour selection. Colours are chosen with long-term durability and your skin tone in mind.</p>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
-      <p>Graphic styl klade důraz na přesnost — čisté linie a silné plochy vyžadují soustředěnou práci. Výsledek je čitelný a nadčasový.</p>
+      <h3><span class="cs">Sezení</span><span class="lang">The session</span></h3>
+      <p class="cs">Barevný realism vyžaduje čas — přináším přestávky a plynulé tempo. Složitější motivy mohou vyžadovat dvě sezení pro nejlepší výsledek.</p>
+      <p class="lang">Colour realism takes time — we build in breaks and work at a steady pace. More complex motifs may need two sessions for the best result.</p>
     </div>
   </div>
 </section>
@@ -379,61 +408,62 @@ footer a:hover{color:var(--ink)}
   <div class="wrap book-grid">
     <div class="rv">
       <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
-      <h2><span class="cs">Máte motiv v mysli?</span><span class="lang">Got a motif in mind?</span></h2>
-      <p class="cs" style="margin-top:20px">Napište nám o svém nápadu — symbol, tvar, kompozice nebo jen pocit, který chcete vyjádřit. Zbytek nechte na nás.</p>
-      <p class="lang" style="margin-top:12px">Tell us your idea — a symbol, shape, composition, or just a feeling you want to express. Leave the rest to us.</p>
+      <h2><span class="cs">Máte motiv v barvách?</span><span class="lang">Have a motif in colour?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám o svém nápadu, přiložte reference a my se ozveme s termínem. Color realism vyžaduje pečlivou přípravu — začněte co nejdříve.</p>
+      <p class="lang" style="margin-top:12px">Tell us about your idea, attach references and we will come back with a date. Colour realism takes careful preparation — the sooner you start, the better.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
-  <div class="field">
-    <label for="bf-name">Jméno / Name</label>
-    <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
-  </div>
-  <div class="field">
-    <label for="bf-email">E-mail</label>
-    <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
-  </div>
-  <div class="field">
-    <label for="bf-style">Styl tetování / Tattoo style</label>
-    <select id="bf-style" name="style">
-      <option value="" disabled selected>Vyberte styl / Choose a style</option>
-      <option>Fine line</option>
-      <option>Illustrative</option>
-      <option>Traditional / Neo-traditional</option>
-      <option>Botanical</option>
-      <option>Minimal / Script</option>
-      <option>Blackwork</option>
-      <option>Not sure yet</option>
-    </select>
-  </div>
-  <div class="field">
-    <label for="bf-idea">Váš nápad / Your idea</label>
-    <textarea id="bf-idea" name="message" placeholder="Umístění, velikost, reference, inspirace…"></textarea>
-  </div>
-  <div class="field">
-    <label for="bf-phone">Telefon / Instagram <span style="opacity:.55;font-size:.85em">(nepovinné / optional)</span></label>
-    <input id="bf-phone" name="phone" type="tel" placeholder="+420 xxx xxx xxx">
-  </div>
-  <fieldset class="consent-group">
-    <legend class="consent-legend">Soukromí / Privacy</legend>
-    <label class="consent-item">
-      <input type="checkbox" name="gdpr" id="bf-gdpr" required>
-      <span class="consent-check"></span>
-      <span class="consent-text">Souhlasím se zpracováním osobních údajů (jméno, e-mail, telefon) za účelem vyřízení mé poptávky. / I agree to the processing of my personal data for the purpose of handling my booking inquiry. <a href="ochrana-osobnich-udaju.md" target="_blank" rel="noopener noreferrer" class="consent-link">Zásady ochrany / Privacy policy</a></span>
-    </label>
-    <label class="consent-item">
-      <input type="checkbox" name="consent_photos" id="bf-photos">
-      <span class="consent-check"></span>
-      <span class="consent-text">Souhlasím s použitím fotografií mého tetování pro propagační účely. <span style="opacity:.55">(nepovinné / optional)</span></span>
-    </label>
-    <label class="consent-item">
-      <input type="checkbox" name="consent_marketing" id="bf-marketing">
-      <span class="consent-check"></span>
-      <span class="consent-text">Souhlasím s příjmáním novinek od STIN Tattoo e-mailem nebo SMS. <span style="opacity:.55">(nepovinné / optional)</span></span>
-    </label>
-  </fieldset>
-  <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
-  <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">Děkujeme! Ozveme se do 24 hodin. / Thank you! We'll be in touch within 24 hours.</p>
-</form>
+      <div class="field">
+        <label for="bf-name">Jméno / Name</label>
+        <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
+      </div>
+      <div class="field">
+        <label for="bf-email">E-mail</label>
+        <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
+      </div>
+      <div class="field">
+        <label for="bf-style">Styl tetování / Tattoo style</label>
+        <select id="bf-style" name="style">
+          <option value="" disabled selected>Vyberte styl / Choose a style</option>
+          <option>Color Micro-realism</option>
+          <option>Fine line</option>
+          <option>Illustrative</option>
+          <option>Traditional / Neo-traditional</option>
+          <option>Botanical</option>
+          <option>Minimal / Script</option>
+          <option>Blackwork</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="bf-idea">Váš nápad / Your idea</label>
+        <textarea id="bf-idea" name="message" placeholder="Umístění, velikost, reference, inspirace…"></textarea>
+      </div>
+      <div class="field">
+        <label for="bf-phone">Telefon / Instagram <span style="opacity:.55;font-size:.85em">(nepovinné / optional)</span></label>
+        <input id="bf-phone" name="phone" type="tel" placeholder="+420 xxx xxx xxx">
+      </div>
+      <fieldset class="consent-group">
+        <legend class="consent-legend">Soukromí / Privacy</legend>
+        <label class="consent-item">
+          <input type="checkbox" name="gdpr" id="bf-gdpr" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">Souhlasím se zpracováním osobních údajů za účelem vyřízení mé poptávky. / I agree to the processing of my personal data for the purpose of handling my inquiry. <a href="ochrana-osobnich-udaju.md" target="_blank" rel="noopener noreferrer" class="consent-link">Zásady ochrany / Privacy policy</a></span>
+        </label>
+        <label class="consent-item">
+          <input type="checkbox" name="consent_photos" id="bf-photos">
+          <span class="consent-check"></span>
+          <span class="consent-text">Souhlasím s použitím fotografií mého tetování pro propagační účely. <span style="opacity:.55">(nepovinné / optional)</span></span>
+        </label>
+        <label class="consent-item">
+          <input type="checkbox" name="consent_marketing" id="bf-marketing">
+          <span class="consent-check"></span>
+          <span class="consent-text">Souhlasím s příjmáním novinek od STIN Tattoo e-mailem nebo SMS. <span style="opacity:.55">(nepovinné / optional)</span></span>
+        </label>
+      </fieldset>
+      <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
+      <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">Děkujeme! Ozveme se do 24 hodin. / Thank you! We'll be in touch within 24 hours.</p>
+    </form>
   </div>
 </section>
 
@@ -452,9 +482,9 @@ footer a:hover{color:var(--ink)}
       <a href="ornamental.html">Ornamental</a>
       <a href="floral.html">Floral</a>
       <a href="engraving.html">Engraving</a>
-      <a href="graphic.html" style="color:#f2efe9">Graphic</a>
+      <a href="graphic.html">Graphic</a>
       <a href="traditional.html">Traditional</a>
-      <a href="color-micro-realism.html">Color Micro-realism</a>
+      <a href="color-micro-realism.html" style="color:#f2efe9">Color Micro-realism</a>
     </div>
     <div class="foot-col rv">
       <h4>Studio</h4>
@@ -465,7 +495,7 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
   <div class="copyright">
-    <span>© 2025 STIN Tattoo Studio, Praha</span>
+    <span>© 2026 STIN Tattoo Studio, Praha</span>
     <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
   </div>
 </footer>
@@ -474,7 +504,7 @@ footer a:hover{color:var(--ink)}
 (function(){
   'use strict';
 
-  /* ── Language toggle ──────────────────────────────────────────── */
+  /* ── Language toggle ── */
   function setLang(l){
     document.body.className='show-'+l;
     document.querySelectorAll('.lang-btn').forEach(function(b){
@@ -501,7 +531,9 @@ footer a:hover{color:var(--ink)}
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
   },{threshold:0.1,rootMargin:'0px 0px -28px 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('.rv').forEach(function(el){
+    if(!el.closest('#hero'))io.observe(el);
+  });
   document.querySelectorAll('#hero .rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},60+i*70);});
 
   var bookForm=document.getElementById('bookForm');
