@@ -147,7 +147,7 @@
         form_id: 'bookForm',
         form_name: 'booking_inquiry',
         currency: 'CZK',
-        value: 0
+        value: 3000
       });
     }
 
