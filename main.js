@@ -142,6 +142,15 @@
       console.error('[form] Sheets error:', err);
     }
 
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        form_id: 'bookForm',
+        form_name: 'booking_inquiry',
+        currency: 'CZK',
+        value: 0
+      });
+    }
+
     if (btn) {
       btn.disabled = false;
       btn.textContent = btn.dataset.originalText || 'Send inquiry →';

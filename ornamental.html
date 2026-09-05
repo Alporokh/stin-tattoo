@@ -548,6 +548,7 @@ footer a:hover{color:var(--ink)}
     if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
     fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).catch(function(){});
     fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
+    gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',currency:'CZK',value:0});
     setTimeout(function(){
       if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
       if(successMsg){successMsg.style.display='block';setTimeout(function(){successMsg.style.display='none';},5000);}
