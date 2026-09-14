@@ -26,14 +26,14 @@
     }
   };
 
-  // Style pages don't load style.css, so the banner carries its own styles
+  // Style pages don't load style.css, so the banner carries its own styles.
+  // No entrance fade: a consent banner must be fully visible even when
+  // animation frames are throttled (background tabs, low-power mode).
   var CSS =
     '.stin-consent{position:fixed;left:50%;bottom:24px;z-index:1000;box-sizing:border-box;' +
     'width:calc(100% - 40px);max-width:680px;display:flex;align-items:center;justify-content:space-between;' +
     'gap:24px;padding:16px 24px;background:#1C1A18;border:1px solid #3A3835;color:#C8C2BA;' +
-    "font-family:'JetBrains Mono','Courier New',monospace;opacity:0;transform:translate(-50%,12px);" +
-    'transition:opacity .25s ease,transform .25s ease}' +
-    '.stin-consent.is-visible{opacity:1;transform:translate(-50%,0)}' +
+    "font-family:'JetBrains Mono','Courier New',monospace;transform:translateX(-50%)}" +
     '.stin-consent[hidden]{display:none}' +
     '.stin-consent p{margin:0;font-size:10px;letter-spacing:.08em;line-height:1.7}' +
     '.stin-consent__actions{display:flex;gap:8px;flex-shrink:0}' +
@@ -45,8 +45,7 @@
     '.stin-consent button[data-choice="declined"]:hover{border-color:#C8C2BA;color:#fff}' +
     '.stin-consent button:focus-visible{outline:2px solid #fff;outline-offset:2px}' +
     '[data-cookie-settings]{text-decoration:underline;text-underline-offset:3px;cursor:pointer}' +
-    '@media (max-width:600px){.stin-consent{flex-direction:column;align-items:flex-start;gap:12px;bottom:16px}}' +
-    '@media (prefers-reduced-motion:reduce){.stin-consent{transition:none}}';
+    '@media (max-width:600px){.stin-consent{flex-direction:column;align-items:flex-start;gap:12px;bottom:16px}}';
 
   var banner, messageEl, acceptBtn, declineBtn;
 
@@ -123,14 +122,10 @@
   function showBanner() {
     if (!banner) buildBanner();
     banner.hidden = false;
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { banner.classList.add('is-visible'); });
-    });
   }
 
   function hideBanner() {
-    banner.classList.remove('is-visible');
-    setTimeout(function () { banner.hidden = true; }, 250);
+    banner.hidden = true;
   }
 
   function applyChoice(choice) {
