@@ -118,14 +118,16 @@
       `📸 Photos consent: ${data.consent_photos}\n` +
       `📣 Marketing consent: ${data.consent_marketing}`;
 
+    let delivered = false;
     try {
       const tgRes = await fetch(WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text })
       });
-      const tgJson = await tgRes.json();
+      const tgJson = await tgRes.json().catch(() => ({}));
       console.log('[form] Telegram response', tgJson);
+      delivered = tgRes.ok && tgJson.ok !== false;
     } catch (err) {
       console.error('[form] Telegram error:', err);
     }
@@ -142,10 +144,12 @@
       console.error('[form] Sheets error:', err);
     }
 
-    if (typeof gtag === 'function') {
+    // Count a lead only when the enquiry actually reached Telegram
+    if (delivered && typeof gtag === 'function') {
       gtag('event', 'generate_lead', {
         form_id: 'bookForm',
         form_name: 'booking_inquiry',
+        tattoo_style: data.style || 'not_selected',
         currency: 'CZK',
         value: 3000
       });

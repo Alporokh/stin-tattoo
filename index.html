@@ -8,7 +8,19 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-3Q554XP679', {'debug_mode': true});
+    gtag('config', 'G-3Q554XP679');
+
+    // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href') || '';
+      var section = link.closest('[id]');
+      var params = { link_placement: section ? section.id : 'page' };
+      if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', params);
+      else if (href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') !== -1) gtag('event', 'email_click', params);
+      else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
+    });
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

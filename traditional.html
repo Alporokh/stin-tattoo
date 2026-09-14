@@ -11,7 +11,19 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-3Q554XP679', {'debug_mode': true});
+  gtag('config', 'G-3Q554XP679');
+
+  // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var section = link.closest('[id]');
+    var params = { link_placement: section ? section.id : 'page' };
+    if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', params);
+    else if (href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') !== -1) gtag('event', 'email_click', params);
+    else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
+  });
 </script>
 
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -523,9 +535,8 @@ footer a:hover{color:var(--ink)}
     var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
     var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
     if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
-    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).catch(function(){});
+    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(r.ok&&j.ok!==false){gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',tattoo_style:data.style||'not_selected',currency:'CZK',value:3000});}});}).catch(function(){});
     fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
-    gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',currency:'CZK',value:3000});
     setTimeout(function(){
       if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
       if(successMsg){successMsg.style.display='block';setTimeout(function(){successMsg.style.display='none';},5000);}
