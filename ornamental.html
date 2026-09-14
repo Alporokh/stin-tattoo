@@ -10,6 +10,15 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: (function () {
+      try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+    })()
+  });
   gtag('js', new Date());
   gtag('config', 'G-3Q554XP679');
 
@@ -499,7 +508,7 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
   <div class="copyright">
-    <span>© 2025 STIN Tattoo Studio, Praha</span>
+    <span>© 2025 STIN Tattoo Studio, Praha · <a href="#cookies" data-cookie-settings>Cookies</a></span>
     <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
   </div>
 </footer>
@@ -567,21 +576,8 @@ footer a:hover{color:var(--ink)}
     },1000);
   });}
 
-  /* ── Deferred Clarity (cookie consent only) ── */
-  (function(){
-    var consent;
-    try{consent=localStorage.getItem('cookie_consent')}catch(e){}
-    if(consent==='accepted'){
-      (window.requestIdleCallback||setTimeout)(function(){
-        (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window,document,'clarity','script','x7g4b9hw3k');
-      },3000);
-    }
-  })();
 })();
 </script>
+<script src="consent.js"></script>
 </body>
 </html>

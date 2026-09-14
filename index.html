@@ -6,6 +6,15 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: (function () {
+        try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+      })()
+    });
     gtag('js', new Date());
 
     gtag('config', 'G-3Q554XP679');
@@ -613,21 +622,10 @@
         <li style="margin-bottom:8px"><a href="color-micro-realism.html" style="font-size:.88rem;color:#6B6560">Color Micro-realism</a></li>
       </ul>
     </nav>
-    <span class="footer-copy">© 2025 STIN Tattoo Studio, Prague</span>
+    <span class="footer-copy">© 2025 STIN Tattoo Studio, Prague · <a href="#cookies" data-cookie-settings>Cookies</a></span>
   </footer>
 
-  <!-- ══ COOKIE BANNER ════════════════════════════════════════════ -->
-  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
-    <p class="cookie-text">
-      We use cookies to ensure the website works correctly. No tracking or advertising cookies are used.
-      <a href="ochrana-osobnich-udaju.md" target="_blank" rel="noopener noreferrer" class="cookie-link">Privacy policy</a>
-    </p>
-    <div class="cookie-actions">
-      <button id="cookieAccept" class="cookie-btn cookie-btn--accept">Accept</button>
-      <button id="cookieDecline" class="cookie-btn cookie-btn--decline">Decline</button>
-    </div>
-  </div>
-
   <script src="main.js"></script>
+  <script src="consent.js"></script>
 </body>
 </html>

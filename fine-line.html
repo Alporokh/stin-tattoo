@@ -5,6 +5,15 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: (function () {
+      try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+    })()
+  });
   gtag('js', new Date());
   gtag('config', 'G-3Q554XP679');
 
@@ -579,7 +588,7 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
   <div class="copyright">
-    <span>© 2025 STIN Tattoo Studio, Praha</span>
+    <span>© 2025 STIN Tattoo Studio, Praha · <a href="#cookies" data-cookie-settings>Cookies</a></span>
     <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
   </div>
 </footer>
@@ -648,5 +657,6 @@ footer a:hover{color:var(--ink)}
   });}
 })();
 </script>
+<script src="consent.js"></script>
 </body>
 </html>
