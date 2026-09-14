@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: (function () {
+      try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+    })()
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-3Q554XP679');
+
+  // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var section = link.closest('[id]');
+    var params = { link_placement: section ? section.id : 'page' };
+    if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', params);
+    else if (href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') !== -1) gtag('event', 'email_click', params);
+    else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zásady ochrany osobních údajů / Privacy Policy — STIN Tattoo Studio</title>
+<meta name="description" content="Jak STIN Tattoo Studio Praha zpracovává osobní údaje z webu, poptávek a cookies. / How STIN Tattoo Studio Prague handles personal data from the website, booking enquiries and cookies.">
+<link rel="canonical" href="https://stintattoostudio.com/ochrana-osobnich-udaju">
+
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.p.png" sizes="32x32" type="image/png">
+<link rel="preload" as="font" href="fonts/inter-latin.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+
+<style>
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-soft:#6B6560;
+  --ink-mute:#9B9490;
+  --line:#C8C2BA;
+  --line-soft:#E8E4DF;
+  --maxw:1200px;
+  --gutter:clamp(20px,5vw,64px);
+  --serif:'Inter',system-ui,-apple-system,sans-serif;
+  --sans:'JetBrains Mono','Courier New',monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.lang{color:var(--ink-mute);font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em;text-transform:uppercase}
+p{color:var(--ink-soft);font-weight:300}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn{
+  display:inline-block;padding:15px 34px;font-family:var(--sans);
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  border:1px solid var(--ink);cursor:pointer;transition:.35s ease;background:none;color:var(--ink);
+}
+.btn--outline:hover{background:var(--ink);color:var(--bg)}
+
+/* ── Nav ─────────────────────────────────────────────────────── */
+#nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;
+  border-bottom:1px solid var(--line-soft);background:#FFFFFF;
+}
+#nav.scrolled{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  padding-top:14px;padding-bottom:14px;
+}
+.brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{
+  font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+  transition:color .3s;position:relative;
+}
+.nav-links a:hover{color:var(--ink)}
+#hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+#hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
+
+/* ── Mobile overlay ──────────────────────────────────────────── */
+#mobOverlay{
+  position:fixed;inset:0;z-index:60;background:#FFFFFF;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1);
+}
+#mobOverlay.open{transform:translateY(0)}
+#mobOverlay a{font-family:var(--sans);font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+#mobOverlay a:hover{color:var(--ink)}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);
+  font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+
+/* ── Breadcrumb ──────────────────────────────────────────────── */
+.crumb{padding-top:120px;padding-bottom:0}
+.crumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:12px;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink-mute)}
+.crumb a:hover{color:var(--ink)}
+.crumb li[aria-current]{color:var(--ink)}
+
+/* ── Techniques dropdown ─────────────────────────────────────── */
+.tech-dropdown{position:relative;display:flex;align-items:center}
+.tech-toggle{cursor:pointer}
+.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);
+  min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
+.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.tech-sub a:hover{color:var(--ink)}
+
+/* ── Policy ──────────────────────────────────────────────────── */
+.policy-wrap{padding-top:40px;padding-bottom:clamp(70px,10vw,130px)}
+.policy{max-width:780px}
+.policy .effective{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+.policy h1{font-size:clamp(2.2rem,6.5vw,4.4rem);line-height:.98;margin:16px 0 22px;letter-spacing:.02em}
+.policy .intro{font-size:1rem;max-width:62ch}
+.policy h2{font-size:clamp(1.05rem,2vw,1.3rem);letter-spacing:.06em;line-height:1.3;margin:60px 0 18px;padding-top:26px;
+  border-top:1px solid var(--line-soft);scroll-margin-top:110px}
+.policy h3{font-family:var(--sans);font-size:.8rem;font-weight:500;letter-spacing:.18em;margin:34px 0 12px;color:var(--ink)}
+.policy p,.policy li{font-size:.92rem;line-height:1.8}
+.policy p + p,.policy dl + p,.policy .table-scroll + p{margin-top:14px}
+.policy ul{margin:12px 0 0 1.1em;display:grid;gap:6px;color:var(--ink-soft)}
+.policy strong{color:var(--ink);font-weight:500}
+.policy a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.policy dl{display:grid;grid-template-columns:minmax(120px,170px) minmax(0,1fr);gap:8px 22px;margin-top:4px}
+.policy dt{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);padding-top:4px}
+.policy dd{font-size:.92rem;line-height:1.75;color:var(--ink-soft)}
+.policy code{font-family:var(--sans);font-size:.84em;color:var(--ink)}
+.table-scroll{overflow-x:auto;margin-top:16px;border:1px solid var(--line-soft)}
+.policy table{width:100%;min-width:620px;border-collapse:collapse}
+.policy th,.policy td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line-soft);font-size:.84rem;line-height:1.6;color:var(--ink-soft)}
+.policy th{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
+.policy tr:last-child td{border-bottom:0}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer{padding-block:70px;border-top:1px solid var(--line-soft);background:#FFFFFF}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+footer .brand{display:block;margin-bottom:16px}
+footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
+footer a:hover{color:var(--ink)}
+.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
+.foot-col a{display:block;margin-bottom:8px}
+.copyright{margin-top:54px;padding-top:24px;border-top:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  #hamburger{display:flex}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .policy dl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .policy dt{padding-top:12px}
+}
+</style>
+</head>
+<body class="show-cs">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav">
+  <a href="index.html" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
+  <div class="nav-links">
+    <a href="index.html"><span class="cs">Domů</span><span class="lang">Home</span></a>
+    <a href="index.html#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+    <a href="index.html#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+    <div class="tech-dropdown">
+      <a href="#" class="tech-toggle"><span class="cs">Techniky</span><span class="lang">Techniques</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <div class="tech-sub">
+        <a href="fine-line.html">Fine Line</a>
+        <a href="ornamental.html">Ornamental</a>
+        <a href="floral.html">Floral</a>
+        <a href="engraving.html">Engraving</a>
+        <a href="graphic.html">Graphic</a>
+        <a href="traditional.html">Traditional</a>
+        <a href="color-micro-realism.html">Color Micro-realism</a>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html#book" class="btn btn--outline" style="padding:11px 24px"><span class="cs">Rezervace</span><span class="lang">Book</span></a>
+  </div>
+  <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobOverlay">
+  <button id="mobClose" aria-label="Zavřít menu">×</button>
+  <a href="index.html"><span class="cs">Domů</span><span class="lang">Home</span></a>
+  <a href="index.html#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+  <a href="index.html#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+  <a href="fine-line.html">↳ Fine Line</a>
+  <a href="ornamental.html">↳ Ornamental</a>
+  <a href="floral.html">↳ Floral</a>
+  <a href="engraving.html">↳ Engraving</a>
+  <a href="graphic.html">↳ Graphic</a>
+  <a href="traditional.html">↳ Traditional</a>
+  <a href="color-micro-realism.html">↳ Color Micro-realism</a>
+  <a href="index.html#book"><span class="cs">Rezervace</span><span class="lang">Book</span></a>
+</div>
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<div class="wrap crumb">
+  <ol>
+    <li><a href="index.html"><span class="cs">Domů</span><span class="lang">Home</span></a></li>
+    <li>/</li>
+    <li aria-current="page"><span class="cs">Ochrana osobních údajů</span><span class="lang">Privacy policy</span></li>
+  </ol>
+</div>
+
+<main class="wrap policy-wrap">
+
+<!-- ═══════════════ ČESKY ═══════════════ -->
+<article class="policy cs" lang="cs">
+  <p class="effective">Účinné od 14. září 2026</p>
+  <h1>Zásady ochrany osobních údajů</h1>
+  <p class="intro">Tyto zásady vysvětlují, jaké osobní údaje zpracováváme, když navštívíte web stintattoostudio.com, pošlete nám poptávku nebo nás jinak kontaktujete, a jaká máte práva.</p>
+
+  <h2 id="spravce">1. Kdo vaše údaje zpracovává</h2>
+  <p>Správcem osobních údajů je <strong>Liudmyla Yemelianova</strong>, fyzická osoba podnikající, IČO 23110716, se sídlem Karlínské náměstí 170/3, 186 00 Praha 8 – Karlín, která provozuje STIN Tattoo Studio, Míšeňská 73/5, 118 00 Praha 1 – Malá Strana.</p>
+  <dl>
+    <dt>Ochrana údajů</dt><dd><a href="mailto:lelyuk360@gmail.com">lelyuk360@gmail.com</a></dd>
+    <dt>Studio</dt><dd><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a> · <a href="tel:+420724266125">+420 724 266 125</a></dd>
+  </dl>
+  <p>Pověřence pro ochranu osobních údajů jsme nejmenovali, protože to pro nás není povinné.</p>
+
+  <h2 id="ucely">2. Jaké údaje zpracováváme a proč</h2>
+
+  <h3>Poptávka a rezervace</h3>
+  <dl>
+    <dt>Údaje</dt><dd>Jméno, e-mail, telefon nebo Instagram, zvolený styl tetování, popis vašeho nápadu a vše, co nám sami napíšete formulářem, e-mailem, telefonicky nebo přes Instagram.</dd>
+    <dt>Účel</dt><dd>Odpovědět na poptávku a domluvit konzultaci, návrh a termín.</dd>
+    <dt>Právní základ</dt><dd>Jednání o smlouvě na vaši žádost (čl. 6 odst. 1 písm. b) GDPR).</dd>
+    <dt>Doba uložení</dt><dd>Pokud se rezervace neuskuteční, údaje smažeme nejpozději 12 měsíců od poslední komunikace. Pokud se stanete klientkou nebo klientem, uchováváme je po dobu spolupráce; daňové a účetní doklady po dobu, kterou ukládají právní předpisy.</dd>
+  </dl>
+  <p>Do formuláře prosím nepište údaje o svém zdraví. Zdravotní otázky, například alergie, probereme osobně ve studiu.</p>
+
+  <h3>Fotografie vašeho tetování</h3>
+  <dl>
+    <dt>Údaje</dt><dd>Fotografie a videa hotového tetování.</dd>
+    <dt>Účel</dt><dd>Ukázky práce na webu, na Instagramu a v propagaci studia.</dd>
+    <dt>Právní základ</dt><dd>Váš souhlas (čl. 6 odst. 1 písm. a) GDPR), který udělujete ve formuláři nebo ve studiu.</dd>
+    <dt>Doba uložení</dt><dd>Do odvolání souhlasu. Poté fotografie odstraníme z webu a z našich profilů; kopie, které mezitím sdílely jiné osoby, ovlivnit nemůžeme.</dd>
+  </dl>
+
+  <h3>Novinky a volné termíny</h3>
+  <dl>
+    <dt>Údaje</dt><dd>E-mail nebo telefonní číslo.</dd>
+    <dt>Účel</dt><dd>Posílat novinky, nabídky a informace o volných termínech e-mailem nebo SMS.</dd>
+    <dt>Právní základ</dt><dd>Váš souhlas (čl. 6 odst. 1 písm. a) GDPR).</dd>
+    <dt>Doba uložení</dt><dd>Do odvolání souhlasu, nejdéle 3 roky od poslední komunikace.</dd>
+  </dl>
+
+  <h3>Analytika návštěvnosti</h3>
+  <dl>
+    <dt>Údaje</dt><dd>Navštívené stránky, kliknutí, typ zařízení a prohlížeče, přibližná poloha odvozená z IP adresy a online identifikátory uložené v cookies. Microsoft Clarity navíc zaznamenává pohyb po stránce (záznamy relací a heatmapy) a ve výchozím nastavení maskuje citlivé údaje zadané do formulářů.</dd>
+    <dt>Účel</dt><dd>Zjistit, jak web používáte a které stránky vedou k rezervaci, a web podle toho zlepšovat.</dd>
+    <dt>Právní základ</dt><dd>Váš souhlas v cookie liště (čl. 6 odst. 1 písm. a) GDPR a § 89 odst. 3 zákona č. 127/2005 Sb., o elektronických komunikacích).</dd>
+    <dt>Doba uložení</dt><dd>Google Analytics nejdéle 14 měsíců, Microsoft Clarity nejdéle 13 měsíců (záznamy relací 30 dní).</dd>
+  </dl>
+  <p>Dokud souhlas neudělíte, Google Analytics neukládá cookies ani identifikátory a posíláme mu jen omezené signály bez vazby na vaše zařízení (Google Consent Mode). Microsoft Clarity se bez souhlasu nespustí.</p>
+
+  <h3>Provoz a zabezpečení webu</h3>
+  <dl>
+    <dt>Údaje</dt><dd>IP adresa, údaje o prohlížeči a o požadavku na server.</dd>
+    <dt>Účel</dt><dd>Doručit web, chránit ho před útoky a automatizovaným provozem a přeposlat zprávu z formuláře.</dd>
+    <dt>Právní základ</dt><dd>Oprávněný zájem na bezpečném a funkčním provozu webu (čl. 6 odst. 1 písm. f) GDPR).</dd>
+    <dt>Doba uložení</dt><dd>Technické záznamy krátkodobě podle nastavení poskytovatele Cloudflare.</dd>
+  </dl>
+
+  <h3>Mapa Google</h3>
+  <p>Na úvodní stránce je vložena mapa Google Maps, abyste viděli, kde studio najdete. Při načtení mapy se vaše IP adresa předá společnosti Google, která může použít vlastní cookies podle svých <a href="https://policies.google.com/privacy?hl=cs" target="_blank" rel="noopener noreferrer">zásad ochrany soukromí</a>.</p>
+
+  <h2 id="prijemci">3. Komu údaje předáváme</h2>
+  <p>Údaje neprodáváme. Pomáhají nám s nimi tito zpracovatelé a poskytovatelé služeb:</p>
+  <ul>
+    <li><strong>Cloudflare, Inc.</strong> (USA) – hosting webu, zabezpečení a přeposlání zprávy z formuláře.</li>
+    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Tabulky Google (evidence poptávek), Gmail a Google Maps.</li>
+    <li><strong>Microsoft Corporation</strong> (USA) – Microsoft Clarity.</li>
+    <li><strong>Telegram FZ-LLC</strong> (Spojené arabské emiráty) – upozornění na novou poptávku v komunikátoru studia.</li>
+    <li><strong>Meta Platforms Ireland Limited</strong> – pokud nám napíšete přes Instagram.</li>
+  </ul>
+  <p>Údaje můžeme předat také orgánům veřejné moci, pokud to vyžaduje zákon.</p>
+
+  <h2 id="mimo-eu">4. Předávání mimo EU</h2>
+  <p>Společnosti Cloudflare, Google a Microsoft jsou certifikovány v rámci EU-U.S. Data Privacy Framework. Pro předání údajů do USA těmto společnostem proto platí rozhodnutí Evropské komise o odpovídající úrovni ochrany.</p>
+  <p>Telegram sídlí ve Spojených arabských emirátech, pro které takové rozhodnutí neexistuje. Zprávu s vaší poptávkou tam předáváme, protože je to nezbytné pro vyřízení vaší žádosti (čl. 49 odst. 1 písm. b) GDPR). Pokud si to nepřejete, napište nám přímo e-mailem nebo zavolejte.</p>
+
+  <h2 id="cookies">5. Cookies a úložiště v prohlížeči</h2>
+  <p>Nezbytné položky ukládáme vždy, analytické jen s vaším souhlasem. Svou volbu můžete kdykoli <a href="#cookies" data-cookie-settings>změnit v nastavení cookies</a>.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Název</th><th>Poskytovatel</th><th>Účel</th><th>Typ</th><th>Platnost</th></tr></thead>
+      <tbody>
+        <tr><td><code>stin_consent_v2</code></td><td>STIN</td><td>Vaše volba v cookie liště</td><td>Nezbytné</td><td>Do smazání</td></tr>
+        <tr><td><code>stin-lang</code></td><td>STIN</td><td>Zvolený jazyk webu</td><td>Nezbytné</td><td>Do smazání</td></tr>
+        <tr><td><code>__cf_bm</code></td><td>Cloudflare</td><td>Ochrana proti automatizovanému provozu</td><td>Nezbytné</td><td>30 minut</td></tr>
+        <tr><td><code>_ga</code>, <code>_ga_3Q554XP679</code></td><td>Google Analytics</td><td>Rozlišení návštěvníků a relací</td><td>Analytické (souhlas)</td><td>2 roky</td></tr>
+        <tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Rozlišení návštěvníků a propojení záznamu relace</td><td>Analytické (souhlas)</td><td>1 rok / 1 den</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Položky <code>stin_consent_v2</code> a <code>stin-lang</code> jsou uloženy v místním úložišti prohlížeče (localStorage), ne v cookies. Když souhlas odmítnete, cookies Google Analytics a Clarity z vašeho prohlížeče smažeme.</p>
+
+  <h2 id="prava">6. Vaše práva</h2>
+  <p>Máte právo:</p>
+  <ul>
+    <li>získat přístup ke svým údajům a jejich kopii,</li>
+    <li>požadovat opravu nepřesných údajů,</li>
+    <li>požadovat výmaz údajů,</li>
+    <li>požadovat omezení zpracování,</li>
+    <li>získat své údaje ve strojově čitelném formátu (přenositelnost),</li>
+    <li>vznést námitku proti zpracování na základě oprávněného zájmu,</li>
+    <li>kdykoli odvolat souhlas; zákonnost zpracování před odvoláním tím není dotčena.</li>
+  </ul>
+  <p>Stačí napsat na <a href="mailto:lelyuk360@gmail.com">lelyuk360@gmail.com</a>. Odpovíme bez zbytečného odkladu, nejpozději do jednoho měsíce.</p>
+  <p>Můžete také podat stížnost u Úřadu pro ochranu osobních údajů, Pplk. Sochora 727/27, 170 00 Praha 7, <a href="https://uoou.gov.cz" target="_blank" rel="noopener noreferrer">uoou.gov.cz</a>.</p>
+
+  <h2 id="automatizace">7. Automatizované rozhodování</h2>
+  <p>Nepoužíváme automatizované rozhodování ani profilování, které by pro vás mělo právní nebo podobně závažné účinky.</p>
+
+  <h2 id="zmeny">8. Změny zásad</h2>
+  <p>Zásady můžeme aktualizovat, například když změníme používané služby. Aktuální verze je vždy na této stránce i s datem účinnosti.</p>
+</article>
+
+<!-- ═══════════════ ENGLISH ═══════════════ -->
+<article class="policy lang" lang="en">
+  <p class="effective">Effective from 14 September 2026</p>
+  <h1>Privacy policy</h1>
+  <p class="intro">This policy explains what personal data we process when you visit stintattoostudio.com, send us a booking enquiry or contact us in another way, and what rights you have.</p>
+
+  <h2 id="controller-en">1. Who processes your data</h2>
+  <p>The data controller is <strong>Liudmyla Yemelianova</strong>, a self-employed sole trader, company ID (IČO) 23110716, registered at Karlínské náměstí 170/3, 186 00 Prague 8 – Karlín, Czech Republic, who runs STIN Tattoo Studio, Míšeňská 73/5, 118 00 Prague 1 – Malá Strana.</p>
+  <dl>
+    <dt>Data protection</dt><dd><a href="mailto:lelyuk360@gmail.com">lelyuk360@gmail.com</a></dd>
+    <dt>Studio</dt><dd><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a> · <a href="tel:+420724266125">+420 724 266 125</a></dd>
+  </dl>
+  <p>We have not appointed a data protection officer, as we are not required to.</p>
+
+  <h2 id="purposes-en">2. What data we process and why</h2>
+
+  <h3>Booking enquiries</h3>
+  <dl>
+    <dt>Data</dt><dd>Name, email, phone number or Instagram handle, chosen tattoo style, a description of your idea, and anything else you send us through the form, by email, by phone or on Instagram.</dd>
+    <dt>Purpose</dt><dd>Replying to your enquiry and arranging a consultation, design and appointment.</dd>
+    <dt>Legal basis</dt><dd>Steps taken at your request before entering into a contract (Art. 6(1)(b) GDPR).</dd>
+    <dt>Retention</dt><dd>If no appointment follows, we delete the data no later than 12 months after our last contact. If you become a client, we keep it for as long as we work together, and tax and accounting records for as long as the law requires.</dd>
+  </dl>
+  <p>Please don't include health information in the form. We discuss health questions, such as allergies, in person at the studio.</p>
+
+  <h3>Photos of your tattoo</h3>
+  <dl>
+    <dt>Data</dt><dd>Photos and videos of the finished tattoo.</dd>
+    <dt>Purpose</dt><dd>Showing our work on the website, on Instagram and in studio promotion.</dd>
+    <dt>Legal basis</dt><dd>Your consent (Art. 6(1)(a) GDPR), given in the form or at the studio.</dd>
+    <dt>Retention</dt><dd>Until you withdraw consent. We then remove the photos from the website and our profiles; we cannot control copies other people have already shared.</dd>
+  </dl>
+
+  <h3>News and available dates</h3>
+  <dl>
+    <dt>Data</dt><dd>Email address or phone number.</dd>
+    <dt>Purpose</dt><dd>Sending news, offers and available appointment dates by email or SMS.</dd>
+    <dt>Legal basis</dt><dd>Your consent (Art. 6(1)(a) GDPR).</dd>
+    <dt>Retention</dt><dd>Until you withdraw consent, and no longer than 3 years after our last contact.</dd>
+  </dl>
+
+  <h3>Website analytics</h3>
+  <dl>
+    <dt>Data</dt><dd>Pages visited, clicks, device and browser type, approximate location derived from your IP address, and online identifiers stored in cookies. Microsoft Clarity also records how you move around a page (session recordings and heatmaps) and, by default, masks sensitive information typed into forms.</dd>
+    <dt>Purpose</dt><dd>Understanding how the website is used and which pages lead to bookings, so we can improve it.</dd>
+    <dt>Legal basis</dt><dd>Your consent in the cookie banner (Art. 6(1)(a) GDPR and Section 89(3) of Czech Act No. 127/2005 Coll., on Electronic Communications).</dd>
+    <dt>Retention</dt><dd>Google Analytics up to 14 months; Microsoft Clarity up to 13 months (session recordings 30 days).</dd>
+  </dl>
+  <p>Until you give consent, Google Analytics stores no cookies or identifiers and receives only limited signals that are not linked to your device (Google Consent Mode). Microsoft Clarity does not run without consent.</p>
+
+  <h3>Running and securing the website</h3>
+  <dl>
+    <dt>Data</dt><dd>IP address, browser details and details of the request to the server.</dd>
+    <dt>Purpose</dt><dd>Delivering the website, protecting it against attacks and automated traffic, and forwarding form messages.</dd>
+    <dt>Legal basis</dt><dd>Our legitimate interest in running the website securely and reliably (Art. 6(1)(f) GDPR).</dd>
+    <dt>Retention</dt><dd>Technical logs are kept briefly, according to our provider Cloudflare's settings.</dd>
+  </dl>
+
+  <h3>Google Maps</h3>
+  <p>The home page includes an embedded Google Maps map so you can see where the studio is. When the map loads, your IP address is sent to Google, which may use its own cookies under its <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">privacy policy</a>.</p>
+
+  <h2 id="recipients-en">3. Who we share data with</h2>
+  <p>We don't sell your data. These processors and service providers help us handle it:</p>
+  <ul>
+    <li><strong>Cloudflare, Inc.</strong> (USA) – website hosting, security and forwarding of form messages.</li>
+    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Google Sheets (enquiry records), Gmail and Google Maps.</li>
+    <li><strong>Microsoft Corporation</strong> (USA) – Microsoft Clarity.</li>
+    <li><strong>Telegram FZ-LLC</strong> (United Arab Emirates) – notifications of new enquiries in the studio's messaging app.</li>
+    <li><strong>Meta Platforms Ireland Limited</strong> – if you message us on Instagram.</li>
+  </ul>
+  <p>We may also share data with public authorities where the law requires it.</p>
+
+  <h2 id="transfers-en">4. Transfers outside the EU</h2>
+  <p>Cloudflare, Google and Microsoft are certified under the EU-U.S. Data Privacy Framework, so transfers of data to these companies in the USA are covered by the European Commission's adequacy decision.</p>
+  <p>Telegram is based in the United Arab Emirates, for which no such decision exists. We send your enquiry message there because it is necessary to handle your request (Art. 49(1)(b) GDPR). If you would rather we didn't, contact us directly by email or phone instead.</p>
+
+  <h2 id="cookies-en">5. Cookies and browser storage</h2>
+  <p>We always store what is strictly necessary, and analytics only with your consent. You can <a href="#cookies" data-cookie-settings>change your cookie settings</a> at any time.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Name</th><th>Provider</th><th>Purpose</th><th>Type</th><th>Expiry</th></tr></thead>
+      <tbody>
+        <tr><td><code>stin_consent_v2</code></td><td>STIN</td><td>Your choice in the cookie banner</td><td>Necessary</td><td>Until deleted</td></tr>
+        <tr><td><code>stin-lang</code></td><td>STIN</td><td>Selected website language</td><td>Necessary</td><td>Until deleted</td></tr>
+        <tr><td><code>__cf_bm</code></td><td>Cloudflare</td><td>Protection against automated traffic</td><td>Necessary</td><td>30 minutes</td></tr>
+        <tr><td><code>_ga</code>, <code>_ga_3Q554XP679</code></td><td>Google Analytics</td><td>Distinguishing visitors and sessions</td><td>Analytics (consent)</td><td>2 years</td></tr>
+        <tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Distinguishing visitors and linking session recordings</td><td>Analytics (consent)</td><td>1 year / 1 day</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><code>stin_consent_v2</code> and <code>stin-lang</code> are kept in your browser's local storage (localStorage), not in cookies. If you decline, we delete the Google Analytics and Clarity cookies from your browser.</p>
+
+  <h2 id="rights-en">6. Your rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li>access your data and get a copy of it,</li>
+    <li>have inaccurate data corrected,</li>
+    <li>have your data erased,</li>
+    <li>restrict processing,</li>
+    <li>receive your data in a machine-readable format (portability),</li>
+    <li>object to processing based on legitimate interest,</li>
+    <li>withdraw consent at any time, without affecting processing carried out before you withdrew it.</li>
+  </ul>
+  <p>Just write to <a href="mailto:lelyuk360@gmail.com">lelyuk360@gmail.com</a>. We reply without undue delay, and within one month at the latest.</p>
+  <p>You can also lodge a complaint with the Czech Office for Personal Data Protection (Úřad pro ochranu osobních údajů), Pplk. Sochora 727/27, 170 00 Prague 7, <a href="https://uoou.gov.cz/en" target="_blank" rel="noopener noreferrer">uoou.gov.cz</a>.</p>
+
+  <h2 id="automated-en">7. Automated decision-making</h2>
+  <p>We don't use automated decision-making or profiling that has legal or similarly significant effects on you.</p>
+
+  <h2 id="changes-en">8. Changes to this policy</h2>
+  <p>We may update this policy, for example when we change the services we use. The current version, with its effective date, is always on this page.</p>
+</article>
+
+</main>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="wrap">
+  <div class="foot-grid">
+    <div>
+      <a href="index.html" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
+      <p>Tattoo Studio</p>
+      <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
+      <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
+    </div>
+    <div class="foot-col">
+      <h4><span class="cs">Techniky</span><span class="lang">Techniques</span></h4>
+      <a href="fine-line.html">Fine Line</a>
+      <a href="ornamental.html">Ornamental</a>
+      <a href="floral.html">Floral</a>
+      <a href="engraving.html">Engraving</a>
+      <a href="graphic.html">Graphic</a>
+      <a href="traditional.html">Traditional</a>
+      <a href="color-micro-realism.html">Color Micro-realism</a>
+    </div>
+    <div class="foot-col">
+      <h4>Studio</h4>
+      <a href="index.html#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+      <a href="index.html#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+      <a href="index.html#portfolio">Portfolio</a>
+      <a href="index.html#contact"><span class="cs">Kontakt</span><span class="lang">Contact</span></a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 STIN Tattoo Studio, Praha · <a href="#cookies" data-cookie-settings>Cookies</a> · <a href="/ochrana-osobnich-udaju">GDPR</a></span>
+    <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
+  // The banner's "learn more" link points to #cookies; in English, scroll to the English section instead
+  if(location.hash==='#cookies'&&document.body.className==='show-en'){
+    var target=document.getElementById('cookies-en');
+    if(target)target.scrollIntoView();
+  }
+
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
+
+  var hamburger=document.getElementById('hamburger'),
+      mobOverlay=document.getElementById('mobOverlay'),
+      mobClose=document.getElementById('mobClose');
+  function openMenu(){mobOverlay.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){mobOverlay.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openMenu);
+  mobClose.addEventListener('click',closeMenu);
+  mobOverlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobOverlay.classList.contains('open'))closeMenu();});
+})();
+</script>
+<script src="consent.js"></script>
+</body>
+</html>

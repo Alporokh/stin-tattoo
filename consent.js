@@ -12,15 +12,18 @@
   // Keep in sync with the consent default in each page's <head>
   var STORAGE_KEY = 'stin_consent_v2';
   var CLARITY_ID = 'x7g4b9hw3k';
+  var POLICY_URL = '/ochrana-osobnich-udaju#cookies';
 
   var TEXT = {
     cs: {
       message: 'Používáme analytické cookies (Google Analytics a Microsoft Clarity), abychom viděli, jak web používáte a které stránky vedou k rezervaci. Spustíme je jen s vaším souhlasem.',
+      more: 'Více informací',
       accept: 'Přijmout',
       decline: 'Odmítnout'
     },
     en: {
       message: 'We use analytics cookies (Google Analytics and Microsoft Clarity) to see how the site is used and which pages lead to bookings. They only run if you agree.',
+      more: 'Learn more',
       accept: 'Accept',
       decline: 'Decline'
     }
@@ -35,7 +38,8 @@
     'gap:24px;padding:16px 24px;background:#1C1A18;border:1px solid #3A3835;color:#C8C2BA;' +
     "font-family:'JetBrains Mono','Courier New',monospace;transform:translateX(-50%)}" +
     '.stin-consent[hidden]{display:none}' +
-    '.stin-consent p{margin:0;font-size:10px;letter-spacing:.08em;line-height:1.7}' +
+    '.stin-consent p{margin:0;font-size:10px;letter-spacing:.08em;line-height:1.7;color:#C8C2BA}' +
+    '.stin-consent p a{color:#fff;text-decoration:underline;text-underline-offset:3px}' +
     '.stin-consent__actions{display:flex;gap:8px;flex-shrink:0}' +
     '.stin-consent button{font:inherit;font-size:9px;letter-spacing:.14em;text-transform:uppercase;' +
     'padding:8px 14px;border:1px solid #3A3835;background:transparent;color:#C8C2BA;cursor:pointer;' +
@@ -43,7 +47,7 @@
     '.stin-consent button[data-choice="accepted"]{background:#fff;color:#1C1A18;border-color:#fff}' +
     '.stin-consent button[data-choice="accepted"]:hover{background:#C8C2BA;border-color:#C8C2BA}' +
     '.stin-consent button[data-choice="declined"]:hover{border-color:#C8C2BA;color:#fff}' +
-    '.stin-consent button:focus-visible{outline:2px solid #fff;outline-offset:2px}' +
+    '.stin-consent button:focus-visible,.stin-consent a:focus-visible{outline:2px solid #fff;outline-offset:2px}' +
     '[data-cookie-settings]{text-decoration:underline;text-underline-offset:3px;cursor:pointer}' +
     '@media (max-width:600px){.stin-consent{flex-direction:column;align-items:flex-start;gap:12px;bottom:16px}}';
 
@@ -81,7 +85,11 @@
 
   function renderText() {
     var t = TEXT[currentLang()];
-    messageEl.textContent = t.message;
+    var more = document.createElement('a');
+    more.href = POLICY_URL;
+    more.textContent = t.more;
+    messageEl.textContent = t.message + ' ';
+    messageEl.appendChild(more);
     acceptBtn.textContent = t.accept;
     declineBtn.textContent = t.decline;
   }
