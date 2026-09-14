@@ -171,6 +171,21 @@
   }
 
 
+  /* ── Map: load Google Maps only after the visitor asks for it ─── */
+  const mapButton = document.querySelector('.map-consent');
+
+  if (mapButton) {
+    mapButton.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = mapButton.dataset.mapSrc;
+      iframe.title = 'STIN Tattoo Studio — Google Maps';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      mapButton.replaceWith(iframe);
+    });
+  }
+
+
   /* ── Init ────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', () => {
     let saved; try { saved = localStorage.getItem('stin-lang'); } catch(e) {}

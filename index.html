@@ -51,7 +51,7 @@
   <link rel="preload" as="font" href="fonts/inter-latin.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260914">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -511,9 +511,8 @@
               <input type="checkbox" name="gdpr" id="f-gdpr" required>
               <span class="consent-check" aria-hidden="true"></span>
               <span class="consent-text">
-                I agree to the processing of my personal data (name, email, phone) for the purpose of handling my booking inquiry.
-                This processing is necessary to respond to your request.
-                <a href="/ochrana-osobnich-udaju" target="_blank" rel="noopener noreferrer" class="consent-link">Privacy policy</a>
+                <span class="cs">Beru na vědomí, že mé osobní údaje (jméno, e-mail, telefon) budou zpracovány za účelem vyřízení poptávky podle <a href="/ochrana-osobnich-udaju" target="_blank" rel="noopener noreferrer" class="consent-link">Zásad ochrany osobních údajů</a>.</span>
+                <span class="en">I understand that my personal data (name, email, phone) will be processed to handle my booking enquiry, as described in the <a href="/ochrana-osobnich-udaju" target="_blank" rel="noopener noreferrer" class="consent-link">Privacy policy</a>.</span>
               </span>
             </label>
 
@@ -590,9 +589,12 @@
         </div>
 
         <div class="map-wrap rv d2">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.930535546028!2d14.405171176037705!3d50.087587413425084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x263f600d49e1e867%3A0x3040026bb07f2335!2sSt%C3%ADn%20tattoo%20studio!5e0!3m2!1sen!2scz!4v1779032004084!5m2!1sen!2scz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </iframe>
+          <button type="button" class="map-consent" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.930535546028!2d14.405171176037705!3d50.087587413425084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x263f600d49e1e867%3A0x3040026bb07f2335!2sSt%C3%ADn%20tattoo%20studio!5e0!3m2!1sen!2scz!4v1779032004084!5m2!1sen!2scz">
+            <span class="map-consent__title"><span class="cs">Zobrazit mapu</span><span class="en">Show map</span></span>
+            <span class="map-consent__note"><span class="cs">Mapa se načte z Google Maps, které mohou ukládat cookies.</span><span class="en">The map loads from Google Maps, which may set cookies.</span></span>
+          </button>
           <span class="map-label">Míšeňská 73/5 · Malá Strana</span>
+          <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=St%C3%ADn%20tattoo%20studio%2C%20M%C3%AD%C5%A1e%C5%88sk%C3%A1%2073%2F5%2C%20Praha" target="_blank" rel="noopener noreferrer"><span class="cs">Otevřít v Google Maps ↗</span><span class="en">Open in Google Maps ↗</span></a>
         </div>
 
       </div>
@@ -625,7 +627,7 @@
     <span class="footer-copy">© 2025 STIN Tattoo Studio, Prague · <a href="#cookies" data-cookie-settings>Cookies</a> · <a href="/ochrana-osobnich-udaju">GDPR</a></span>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=20260914"></script>
   <script src="consent.js"></script>
 </body>
 </html>

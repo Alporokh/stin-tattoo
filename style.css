@@ -990,6 +990,48 @@ body {
   text-transform: uppercase;
   color: var(--color-ink-soft);
 }
+.map-consent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  padding: var(--s4);
+  border: 1px solid var(--color-rule);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  text-align: center;
+  cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.map-consent:hover { background: var(--color-ink); color: var(--color-bg); }
+.map-consent:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.map-consent__title {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.map-consent__note {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+.map-open {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  background: var(--color-bg);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 footer {
