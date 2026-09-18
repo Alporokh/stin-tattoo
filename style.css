@@ -1131,6 +1131,20 @@ footer {
   .port-item:nth-child(4) .port-img { height: 260px; }
 
   .ig-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Mobile: every text block starts on the same left edge */
+  .hero-foot { flex-direction: column; align-items: flex-start; }
+  .hero-tagline { padding-left: 0; max-width: none; }
+  .hero-actions { align-items: flex-start; }
+  .hero-walkin,
+  .meta-line--right,
+  .form-note { text-align: left; }
+  #instagram { text-align: left; }
+  .ig-header { align-items: flex-start; }
+  footer { flex-direction: column; align-items: flex-start; }
+
+  /* Close button sits below the fixed 56px header, clear of the burger icon */
+  .mob-close { top: calc(56px + var(--s3)); padding: var(--s2); margin-right: calc(-1 * var(--s2)); }
 }
 
 @media (max-width: 600px) {
@@ -1254,4 +1268,35 @@ footer {
     gap: var(--s2);
   }
   .mob-lang .lang-btn { font-size: 0.85rem; padding: 4px 8px; }
+}
+
+/* Mobile menu: technique sub-links */
+.mob-link--sub { padding-left: 1.5em; font-size: 0.85em; opacity: 0.7; }
+
+/* Booking form success message (shown by main.js) */
+.form-success { display: none; color: #4F7A4F; margin-top: 0.75rem; }
+
+/* Footer: techniques list */
+.footer-tech { margin-top: 20px; }
+.footer-tech-title {
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.footer-tech ul { list-style: none; padding: 0; margin: 0; }
+.footer-tech li { margin-bottom: 8px; }
+.footer-tech a { font-size: .88rem; color: var(--color-ink-soft); }
+
+/* 404 page */
+.not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--s3);
+  padding: var(--gutter);
 }

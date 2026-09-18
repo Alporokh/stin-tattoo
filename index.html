@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
   <script>
@@ -31,9 +33,7 @@
       else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
     });
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tattoo studio in the heart of Prague (Malá Strana, Prague 1). Fine-line, minimal, ornamental and custom tattoos. By appointment and walk-ins welcome.">
+  <meta name="description" content="Tetovací studio v srdci Prahy (Malá Strana, Praha 1). Jemná, minimalistická, ornamentální i autorská tetování na míru. Rezervace předem i walk-in.">
   <link rel="preload" as="image" href="images/stin-hero.jpg" fetchpriority="high">
   <link rel="canonical" href="https://stintattoostudio.com/">
   <link rel="alternate" hreflang="cs" href="https://stintattoostudio.com/">
@@ -48,10 +48,12 @@
   <title>Tetovací studio Praha 1 — jemné a autorské tetování | STIN</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="images/favicon.p.png" sizes="32x32" type="image/png">
+  <link rel="preload" as="font" href="fonts/jetbrains-mono-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="fonts/jetbrains-mono-latin-ext.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="fonts/inter-latin.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="style.css?v=20260914">
+  <!-- fonts.css inlined to avoid a render-blocking request; keep in sync with fonts.css -->
+  <style>@font-face{font-family:'Inter';font-style:normal;font-weight:300 700;font-display:swap;src:url('fonts/inter-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Inter';font-style:normal;font-weight:300 700;font-display:swap;src:url('fonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:300 700;font-display:swap;src:url('fonts/jetbrains-mono-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:300 700;font-display:swap;src:url('fonts/jetbrains-mono-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+  <link rel="stylesheet" href="style.css?v=20260918">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,21 +91,21 @@
 
   <!-- ══ NAVIGATION ══════════════════════════════════════════════ -->
   <nav id="nav">
-    <a href="#" class="nav-logo"><img src="logo-stin.svg" alt="STIN Tattoo"></a>
+    <a href="/" class="nav-logo"><img src="logo-stin.svg" alt="STIN Tattoo" width="162" height="26"></a>
     <ul class="nav-links" role="list">
       <li><a href="#about"><span class="en">Studio</span><span class="cs">Studio</span></a></li>
       <li><a href="#artist"><span class="en">Artist</span><span class="cs">Umělkyně</span></a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li class="nav-item--has-sub">
-        <a href="#"><span class="en">Techniques</span><span class="cs">Techniky</span></a>
+        <a href="#portfolio"><span class="en">Techniques</span><span class="cs">Techniky</span></a>
         <ul class="nav-sub" role="menu">
-          <li><a href="fine-line.html">Fine Line</a></li>
-          <li><a href="ornamental.html">Ornamental</a></li>
-          <li><a href="floral.html">Floral</a></li>
-          <li><a href="engraving.html">Engraving</a></li>
-          <li><a href="graphic.html">Graphic</a></li>
-          <li><a href="traditional.html">Traditional</a></li>
-          <li><a href="color-micro-realism.html">Color Micro-realism</a></li>
+          <li><a href="/fine-line">Fine Line</a></li>
+          <li><a href="/ornamental">Ornamental</a></li>
+          <li><a href="/floral">Floral</a></li>
+          <li><a href="/engraving">Engraving</a></li>
+          <li><a href="/graphic">Graphic</a></li>
+          <li><a href="/traditional">Traditional</a></li>
+          <li><a href="/color-micro-realism">Color Micro-realism</a></li>
         </ul>
       </li>
       <li><a href="#aftercare"><span class="en">Aftercare</span><span class="cs">Péče</span></a></li>
@@ -129,13 +131,13 @@
       <a href="#about"     class="mob-link"><span class="en">Studio</span><span class="cs">Studio</span></a>
       <a href="#artist"    class="mob-link"><span class="en">Artist</span><span class="cs">Umělkyně</span></a>
       <a href="#portfolio" class="mob-link">Portfolio</a>
-      <a href="fine-line.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Fine Line</a>
-      <a href="ornamental.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Ornamental</a>
-      <a href="floral.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Floral</a>
-      <a href="engraving.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Engraving</a>
-      <a href="graphic.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Graphic</a>
-      <a href="traditional.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Traditional</a>
-      <a href="color-micro-realism.html" class="mob-link" style="padding-left:1.5em;font-size:0.85em;opacity:0.7">↳ Color Micro-realism</a>
+      <a href="/fine-line" class="mob-link mob-link--sub">↳ Fine Line</a>
+      <a href="/ornamental" class="mob-link mob-link--sub">↳ Ornamental</a>
+      <a href="/floral" class="mob-link mob-link--sub">↳ Floral</a>
+      <a href="/engraving" class="mob-link mob-link--sub">↳ Engraving</a>
+      <a href="/graphic" class="mob-link mob-link--sub">↳ Graphic</a>
+      <a href="/traditional" class="mob-link mob-link--sub">↳ Traditional</a>
+      <a href="/color-micro-realism" class="mob-link mob-link--sub">↳ Color Micro-realism</a>
       <a href="#aftercare" class="mob-link"><span class="en">Aftercare</span><span class="cs">Péče</span></a>
       <a href="#contact"   class="mob-link"><span class="en">Contact</span><span class="cs">Kontakt</span></a>
       <a href="#book"      class="mob-link mob-link--cta"><span class="en">Book a session →</span><span class="cs">Rezervovat →</span></a>
@@ -231,7 +233,7 @@
         <div class="artist-copy">
           <p class="sec-num rv">02 —</p>
           <h2 id="artist-heading" class="artist-name rv d1">
-            OUR ARTIST-ANNA
+            <span class="en">Our artist — Anna</span><span class="cs">Naše umělkyně — Anna</span>
           </h2>
           <p class="body-text rv d2">
             <span class="en">Anna is a tattoo artist whose work is built around individuality, aesthetics and attention to detail. Her heart is in ornamental, floral and graphic tattoos — clean composition, a delicate line and strong character. She also works confidently across many other styles: fine-line and minimal tattoos, micro realism, traditional and neo-traditional, blackwork and lettering. Whether in colour or black and grey, every tattoo is created with care to match the person wearing it.</span>
@@ -263,7 +265,10 @@
 
         <div class="artist-photo-wrap rv d2">
           <img class="artist-photo"
-               src="images/ref1.jpg"
+               src="images/ref1-640.jpg"
+               srcset="images/ref1-640.jpg 640w, images/ref1.jpg 974w"
+               sizes="(max-width: 960px) 100vw, 45vw"
+               width="640" height="841" loading="lazy" decoding="async"
                alt="Anna — tetérka, tetovací studio Praha">
         </div>
 
@@ -292,31 +297,31 @@
 
       <div class="portfolio-grid" role="list">
         <figure class="port-item rv" role="listitem">
-          <img class="port-img" src="images/portfolio1.jpg"  alt="Illustrative tattoo — ceramic vase with face and daisy flower">
+          <img class="port-img" src="images/portfolio1.jpg"  alt="Illustrative tattoo — ceramic vase with face and daisy flower" loading="lazy">
           <figcaption class="port-caption">Illustrative</figcaption>
         </figure>
         <figure class="port-item rv d1" role="listitem">
-          <img class="port-img" src="images/portfolio2.jpg"  alt="Jemné fine line tetování na ruce, Praha">
+          <img class="port-img" src="images/portfolio2.jpg"  alt="Jemné fine line tetování na ruce, Praha" loading="lazy">
           <figcaption class="port-caption">Fine line</figcaption>
         </figure>
         <figure class="port-item rv d2" role="listitem">
-          <img class="port-img" src="images/portfolio3.jpg" alt="Ornamentální tetování na zádech — STIN Praha">
+          <img class="port-img" src="images/portfolio3.jpg" alt="Ornamentální tetování na zádech — STIN Praha" loading="lazy">
           <figcaption class="port-caption">Illustrative</figcaption>
         </figure>
         <figure class="port-item rv d1" role="listitem">
-          <img class="port-img" src="images/portfolio10.jpg" alt="Traditional spider with human face tattoo on arm">
+          <img class="port-img" src="images/portfolio10.jpg" alt="Traditional spider with human face tattoo on arm" loading="lazy">
           <figcaption class="port-caption">Traditional</figcaption>
         </figure>
         <figure class="port-item rv d2" role="listitem">
-          <img class="port-img" src="images/portfolio11.jpg"  alt="Minimalistické tetování na klíční kosti, Praha">
+          <img class="port-img" src="images/portfolio11.jpg"  alt="Minimalistické tetování na klíční kosti, Praha" loading="lazy">
           <figcaption class="port-caption">Minimal</figcaption>
         </figure>
         <figure class="port-item rv d1" role="listitem">
-          <img class="port-img" src="images/portfolio6.jpg"   alt="Illustrative skull reliquary tattoo on thigh">
+          <img class="port-img" src="images/portfolio6.jpg"   alt="Illustrative skull reliquary tattoo on thigh" loading="lazy">
           <figcaption class="port-caption">Illustrative</figcaption>
         </figure>
         <figure class="port-item rv d2" role="listitem">
-          <img class="port-img" src="images/portfolio4.jpg"   alt="Jemné květinové (florální) tetování, Praha">
+          <img class="port-img" src="images/portfolio4.jpg"   alt="Jemné květinové (florální) tetování, Praha" loading="lazy">
           <figcaption class="port-caption">Ornamental</figcaption>
         </figure>
         <figure class="port-item rv" role="listitem">
@@ -429,7 +434,7 @@
       </div>
 
       <div class="ig-grid" role="list" aria-label="Instagram preview grid">
-        <div class="ig-cell rv"    role="listitem"><img src="images/ref1.jpg"    alt="Anna tattooing a client at STIN Tattoo Studio Prague" loading="lazy"></div>
+        <div class="ig-cell rv"    role="listitem"><img src="images/ref1-640.jpg"    alt="Anna tattooing a client at STIN Tattoo Studio Prague" loading="lazy"></div>
         <div class="ig-cell rv d1" role="listitem"><img src="images/ref2.jpg"  alt="Illustrative fine-line vase with face tattoo — STIN Praha" loading="lazy"></div>
         <div class="ig-cell rv d2" role="listitem"><img src="images/ref3.jpg" alt="Fine-line botanical tattoo — STIN Tattoo Studio Prague" loading="lazy"></div>
         <div class="ig-cell rv d1" role="listitem"><img src="images/ref5.jpg" alt="Traditional spider tattoo on arm — STIN Praha" loading="lazy"></div>
@@ -536,7 +541,7 @@
           <button type="submit" class="btn btn--primary btn--full submit-btn rv d3">
             Send inquiry →
           </button>
-          <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">
+          <p id="form-success" class="form-success">
             Thank you! We'll be in touch within 24 hours.
           </p>
           <p class="form-note rv">We reply within 24 hours. Your data is never shared.</p>
@@ -604,7 +609,7 @@
 
   <!-- ══ FOOTER ════════════════════════════════════════════════ -->
   <footer>
-    <span class="footer-logo"><img src="logo-stin.svg" alt="STIN Tattoo"></span>
+    <span class="footer-logo"><img src="logo-stin.svg" alt="STIN Tattoo" width="162" height="26"></span>
     <ul class="footer-links" role="list">
       <li><a href="#about">About STIN</a></li>
       <li><a href="#portfolio">Tattoo portfolio</a></li>
@@ -612,16 +617,16 @@
       <li><a href="#book">Book a session</a></li>
       <li><a href="#contact">Visit the studio</a></li>
     </ul>
-    <nav aria-label="Techniky / Techniques" style="margin-top:20px">
-      <p style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:#9B9490;margin-bottom:12px;font-weight:500">Techniky / Techniques</p>
-      <ul role="list" style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:8px"><a href="fine-line.html" style="font-size:.88rem;color:#6B6560">Fine Line</a></li>
-        <li style="margin-bottom:8px"><a href="ornamental.html" style="font-size:.88rem;color:#6B6560">Ornamental</a></li>
-        <li style="margin-bottom:8px"><a href="floral.html" style="font-size:.88rem;color:#6B6560">Floral</a></li>
-        <li style="margin-bottom:8px"><a href="engraving.html" style="font-size:.88rem;color:#6B6560">Engraving</a></li>
-        <li style="margin-bottom:8px"><a href="graphic.html" style="font-size:.88rem;color:#6B6560">Graphic</a></li>
-        <li style="margin-bottom:8px"><a href="traditional.html" style="font-size:.88rem;color:#6B6560">Traditional</a></li>
-        <li style="margin-bottom:8px"><a href="color-micro-realism.html" style="font-size:.88rem;color:#6B6560">Color Micro-realism</a></li>
+    <nav class="footer-tech" aria-label="Techniky / Techniques">
+      <p class="footer-tech-title">Techniky / Techniques</p>
+      <ul role="list">
+        <li><a href="/fine-line">Fine Line</a></li>
+        <li><a href="/ornamental">Ornamental</a></li>
+        <li><a href="/floral">Floral</a></li>
+        <li><a href="/engraving">Engraving</a></li>
+        <li><a href="/graphic">Graphic</a></li>
+        <li><a href="/traditional">Traditional</a></li>
+        <li><a href="/color-micro-realism">Color Micro-realism</a></li>
       </ul>
     </nav>
     <span class="footer-copy">© 2025 STIN Tattoo Studio, Prague · <a href="#cookies" data-cookie-settings>Cookies</a> · <a href="/ochrana-osobnich-udaju">GDPR</a></span>
