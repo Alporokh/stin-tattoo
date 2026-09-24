@@ -134,15 +134,11 @@ p{color:var(--ink-soft);font-weight:300}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 
-/* ── Divider ── */
-.divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto;color:var(--ink-mute)}
-.divider svg{width:clamp(180px,40vw,340px);height:26px;opacity:.7}
-
 /* ── Sections ── */
 section{padding-block:clamp(70px,11vw,150px)}
 .sec-head{max-width:640px;margin-bottom:56px}
 .sec-head .eyebrow{margin-bottom:18px;display:block}
-.sec-head p{margin-top:20px}
+.sec-head p{margin-top:20px;color:var(--ink-mute)}
 
 .crumb{padding-top:120px;padding-bottom:0}
 .crumb ol{list-style:none;display:flex;gap:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
@@ -153,7 +149,7 @@ section{padding-block:clamp(70px,11vw,150px)}
 #hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
 .hero-title{font-size:clamp(3rem,10vw,7.5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
-.hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
+.hero-sub{font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
 .hero-desc{max-width:34ch;font-size:1.02rem}
 .hero-desc+.hero-desc{margin-top:14px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
@@ -180,10 +176,14 @@ section{padding-block:clamp(70px,11vw,150px)}
 .gallery-note{margin-top:26px;font-size:.82rem;color:var(--ink-mute);text-align:center;letter-spacing:.04em}
 
 /* ── Steps ── */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
-.step{border-top:1px solid var(--line);padding-top:26px}
-.step .no{font-family:var(--serif);font-size:2.6rem;color:var(--ink-mute);line-height:1;display:block;margin-bottom:16px}
-.step p{font-size:.92rem;margin-top:10px}
+.steps{display:block}
+.step{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px}
+.step + .step{border-top:1px solid var(--line-soft)}
+.step .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.step-body{font-size:1rem;line-height:1.65}
+.step-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.step-body h3::after{content:" "}
+.step-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Booking ── */
 #book{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
@@ -226,7 +226,6 @@ footer a:hover{color:var(--ink)}
   .grid-4{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
   .img-wrap:nth-child(1){grid-row:auto}
-  .steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
@@ -245,7 +244,7 @@ footer a:hover{color:var(--ink)}
     <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
     <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
     <div class="tech-dropdown">
-      <a href="#" class="tech-toggle active"><span class="cs">Techniky</span><span class="lang">Techniques</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <a href="#" class="tech-toggle active"><span class="cs">Styly</span><span class="lang">Styles</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
       <div class="tech-sub">
         <a href="/fine-line">Fine Line</a>
         <a href="/ornamental" class="active">Ornamental</a>
@@ -289,7 +288,7 @@ footer a:hover{color:var(--ink)}
   <ol>
     <li><a href="/">Domů</a></li>
     <li>/</li>
-    <li><a href="#">Techniky</a></li>
+    <li><a href="#">Styly</a></li>
     <li>/</li>
     <li aria-current="page">Ornamental</li>
   </ol>
@@ -313,15 +312,6 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
 </header>
-
-<!-- ═══════════════ DIVIDER ═══════════════ -->
-<div class="divider rv" aria-hidden="true">
-  <svg viewBox="0 0 340 26" fill="none" stroke="currentColor" stroke-width="1">
-    <path d="M0 13 H120"/><path d="M220 13 H340"/>
-    <path d="M150 13l10-8 10 8-10 8z"/><circle cx="170" cy="13" r="11"/>
-    <path d="M132 13h8M200 13h8"/>
-  </svg>
-</div>
 
 <!-- ═══════════════ INTRO ═══════════════ -->
 <section id="intro" class="wrap">
@@ -402,18 +392,27 @@ footer a:hover{color:var(--ink)}
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
-      <p>Probereme váš nápad, umístění a velikost. Ornamentální tetování vyžaduje pečlivé naplánování kompozice vzhledem k tvaru těla.</p>
+      <div class="step-body">
+        <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
+        <p class="cs">Probereme váš nápad, umístění a velikost. Ornamentální tetování vyžaduje pečlivé naplánování kompozice vzhledem k tvaru těla.</p>
+        <p class="lang">We talk through your idea, placement and size. Ornamental work needs its composition planned carefully around the shape of your body.</p>
+      </div>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
-      <p>Anna vytvoří symetrickou kompozici přímo pro vaše tělo — každý vzor je navržen tak, aby seděl přirozeně na zvoleném místě.</p>
+      <div class="step-body">
+        <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
+        <p class="cs">Anna vytvoří symetrickou kompozici přímo pro vaše tělo — každý vzor je navržen tak, aby seděl přirozeně na zvoleném místě.</p>
+        <p class="lang">Anna builds a symmetrical composition for your body — every pattern is designed to sit naturally on the spot you choose.</p>
+      </div>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
-      <p>Klidné prostředí, čaj nebo káva. Ornamentální sezení může trvat déle — preciznost a detaily si vyžadují čas a trpělivost.</p>
+      <div class="step-body">
+        <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
+        <p class="cs">Klidné prostředí, čaj nebo káva. Ornamentální sezení může trvat déle — preciznost a detaily si vyžadují čas a trpělivost.</p>
+        <p class="lang">A calm room, tea or coffee. Ornamental sessions can run longer — precision and detail take time and patience.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -491,7 +490,7 @@ footer a:hover{color:var(--ink)}
       <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
     </div>
     <div class="foot-col rv">
-      <h4>Techniky / Techniques</h4>
+      <h4>Styly / Styles</h4>
       <a href="/fine-line">Fine Line</a>
       <a href="/ornamental" style="color:#f2efe9">Ornamental</a>
       <a href="/floral">Floral</a>

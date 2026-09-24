@@ -142,15 +142,11 @@ p{color:var(--ink-soft);font-weight:300}
 .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
 
-/* ── Divider ─────────────────────────────────────────────────── */
-.divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto;color:var(--ink-mute)}
-.divider svg{width:clamp(180px,40vw,340px);height:26px;opacity:.7}
-
 /* ── Section rhythm ──────────────────────────────────────────── */
 section{padding-block:clamp(70px,11vw,150px)}
 .sec-head{max-width:640px;margin-bottom:56px}
 .sec-head .eyebrow{margin-bottom:18px;display:block}
-.sec-head p{margin-top:20px}
+.sec-head p{margin-top:20px;color:var(--ink-mute)}
 
 /* ── Breadcrumb ──────────────────────────────────────────────── */
 .crumb{padding-top:120px;padding-bottom:0}
@@ -163,7 +159,7 @@ section{padding-block:clamp(70px,11vw,150px)}
 #hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,72px);align-items:center}
 .hero-title{font-size:clamp(3.4rem,11vw,8rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
-.hero-sub{font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
+.hero-sub{font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
 .hero-desc{max-width:34ch;font-size:1.02rem}
 .hero-desc + .hero-desc{margin-top:14px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
@@ -202,10 +198,14 @@ section{padding-block:clamp(70px,11vw,150px)}
 .gallery-note{margin-top:26px;font-size:.82rem;color:var(--ink-mute);text-align:center;letter-spacing:.04em}
 
 /* ── Process ─────────────────────────────────────────────────── */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px);counter-reset:step}
-.step{border-top:1px solid var(--line);padding-top:26px}
-.step .no{font-family:var(--serif);font-size:2.6rem;color:var(--ink-mute);line-height:1;display:block;margin-bottom:16px}
-.step p{font-size:.92rem;margin-top:10px}
+.steps{display:block}
+.step{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px}
+.step + .step{border-top:1px solid var(--line-soft)}
+.step .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.step-body{font-size:1rem;line-height:1.65}
+.step-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.step-body h3::after{content:" "}
+.step-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Booking ─────────────────────────────────────────────────── */
 #book{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
@@ -302,7 +302,6 @@ footer a:hover{color:var(--ink)}
   .grid-4{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .ph:nth-child(1){grid-row:auto;aspect-ratio:1}
-  .steps{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
@@ -321,7 +320,7 @@ footer a:hover{color:var(--ink)}
     <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
     <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
     <div class="tech-dropdown">
-      <a href="#" class="tech-toggle"><span class="cs">Techniky</span><span class="lang">Techniques</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <a href="#" class="tech-toggle"><span class="cs">Styly</span><span class="lang">Styles</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
       <div class="tech-sub">
         <a href="/fine-line" class="active">Fine Line</a>
         <a href="/ornamental">Ornamental</a>
@@ -365,7 +364,7 @@ footer a:hover{color:var(--ink)}
   <ol>
     <li><a href="/">Domů</a></li>
     <li>/</li>
-    <li><a href="/#about">Technika</a></li>
+    <li><a href="/#about">Styl</a></li>
     <li>/</li>
     <li aria-current="page">Fine Line</li>
   </ol>
@@ -390,16 +389,6 @@ footer a:hover{color:var(--ink)}
   </div>
 </header>
 
-<!-- ═══════════════ DIVIDER ═══════════════ -->
-<div class="divider rv" aria-hidden="true">
-  <svg viewBox="0 0 340 26" fill="none" stroke="currentColor" stroke-width="1">
-    <path d="M0 13 H140"/><path d="M200 13 H340"/>
-    <circle cx="170" cy="13" r="8"/>
-    <circle cx="170" cy="13" r="2" fill="currentColor" stroke="none"/>
-    <path d="M148 13h12M180 13h12"/>
-  </svg>
-</div>
-
 <!-- ═══════════════ INTRO ═══════════════ -->
 <section id="intro" class="wrap">
   <div class="two-col">
@@ -411,7 +400,7 @@ footer a:hover{color:var(--ink)}
     <div class="rv">
       <p class="cs">Fine line tetování využívá jednu jehlu nebo velmi úzkou skupinu jehel k vytvoření jemných, přesných linií. Výsledkem je tetování, které působí subtilně, rafinovaně a téměř nakresleně.</p>
       <p class="cs" style="margin-top:16px">Anna se specializuje na fine line práce s čistými, plynulými kompozicemi — botanické motivy, minimální figury, abstraktní formy a jemný lettering. Nejčastější umístění: jemné tetování na zápěstí, kotník, rameno, nohu nebo ruku.</p>
-      <p class="lang" style="margin-top:16px">— Fine line tattooing uses a single needle to create delicate, precise linework — subtle, refined, and almost drawn. Anna specialises in botanical motifs, minimal figures, and delicate lettering. Popular placements: wrist, ankle, shoulder, leg or hand.</p>
+      <p class="lang" style="margin-top:16px">— Fine line tattooing uses a single needle to create delicate, precise linework — subtle, refined, and almost drawn. Anna specialises in botanical motifs, minimal figures, and delicate lettering.</p>
     </div>
   </div>
 </section>
@@ -482,18 +471,27 @@ footer a:hover{color:var(--ink)}
   <div class="steps">
     <div class="step rv">
       <span class="no">01</span>
-      <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
-      <p>Probereme váš nápad, umístění a velikost. Fine line funguje nejlépe na místech s méně pohybem kůže.</p>
+      <div class="step-body">
+        <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
+        <p class="cs">Probereme váš nápad, umístění a velikost. Fine line funguje nejlépe na místech s méně pohybem kůže.</p>
+        <p class="lang">We talk through your idea, placement and size. Fine line works best on areas where the skin moves less.</p>
+      </div>
     </div>
     <div class="step rv">
       <span class="no">02</span>
-      <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
-      <p>Anna navrhne kompozici přímo pro vás — každá linie je promyšlená tak, aby seděla na vašem těle.</p>
+      <div class="step-body">
+        <h3><span class="cs">Návrh</span><span class="lang">Custom design</span></h3>
+        <p class="cs">Anna navrhne kompozici přímo pro vás — každá linie je promyšlená tak, aby seděla na vašem těle.</p>
+        <p class="lang">Anna designs the composition just for you — every line is considered so that it sits well on your body.</p>
+      </div>
     </div>
     <div class="step rv">
       <span class="no">03</span>
-      <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
-      <p>Klidné prostředí, čaj nebo káva. Fine line sezení je díky tenké jehle obvykle méně bolestivé.</p>
+      <div class="step-body">
+        <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
+        <p class="cs">Klidné prostředí, čaj nebo káva. Fine line sezení je díky tenké jehle obvykle méně bolestivé.</p>
+        <p class="lang">A calm room, tea or coffee. Thanks to the thin needle, a fine line session is usually less painful.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -571,7 +569,7 @@ footer a:hover{color:var(--ink)}
       <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
     </div>
     <div class="foot-col rv">
-      <h4>Technika</h4>
+      <h4>Styl</h4>
       <a href="/fine-line" style="color:#f2efe9">Fine Line</a>
       <a href="/ornamental">Ornamental</a>
       <a href="/floral">Floral</a>
