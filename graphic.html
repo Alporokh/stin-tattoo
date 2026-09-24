@@ -137,7 +137,7 @@ section{padding-block:clamp(70px,11vw,150px)}
 .hero-desc{max-width:34ch;font-size:1.02rem}
 .hero-desc+.hero-desc{margin-top:14px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
-.hero-media{aspect-ratio:4/5;overflow:hidden;background:var(--bg-2);border:1px solid var(--line-soft);display:flex;align-items:center;justify-content:center}
+.hero-media{aspect-ratio:4/5}
 
 /* ── Hero graphic illustration ── */
 .hero-graphic{width:72%;opacity:.16;color:var(--ink)}
@@ -236,7 +236,9 @@ footer a:hover{color:var(--ink)}
         <a href="/floral">Floral</a>
         <a href="/engraving">Engraving</a>
         <a href="/graphic" class="active">Graphic</a>
-        <a href="/traditional">Traditional</a>      </div>
+        <a href="/traditional">Traditional</a>
+        <a href="/color-micro-realism">Micro-realism</a>
+      </div>
     </div>
     <div class="lang-toggle">
       <button class="lang-btn" onclick="setLang('cs')">CZ</button>
@@ -261,7 +263,9 @@ footer a:hover{color:var(--ink)}
   <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
   <a href="/engraving" style="font-size:1.4rem">↳ Engraving</a>
   <a href="/graphic" style="font-size:1.4rem;color:#f2efe9">↳ Graphic</a>
-  <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>  <a href="#book">Rezervace</a>
+  <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>
+  <a href="/color-micro-realism" style="font-size:1.4rem">↳ Micro-realism</a>
+  <a href="#book">Rezervace</a>
 </div>
 
 <!-- ═══════════════ BREADCRUMB ═══════════════ -->
@@ -289,7 +293,6 @@ footer a:hover{color:var(--ink)}
       </div>
     </div>
     <div class="hero-media rv">
-      <img src="images/tetovací studio praha 1.jpg" alt="Graphic tetování - dva vlaštovky, horní paže" style="width:100%;height:100%;object-fit:cover">
     </div>
   </div>
 </header>
@@ -361,6 +364,9 @@ footer a:hover{color:var(--ink)}
     <p class="lang">Selected graphic work</p>
   </div>
   <div class="grph-gallery rv">
+    <figure class="grph-fig">
+      <img src="images/graphic-tattoo-studio.jpg" alt="Graphic tetování na předloktí - ornamentální lettering s paprsky / Graphic lettering tattoo with rays on the forearm" loading="lazy">
+    </figure>
     <figure class="grph-fig grph-fig--large">
       <img src="images/tetovací studio praha 1.jpg" alt="Graphic tetování - dva vlaštovky na paži, jemná kresba" loading="lazy">
     </figure>
@@ -486,7 +492,9 @@ footer a:hover{color:var(--ink)}
       <a href="/floral">Floral</a>
       <a href="/engraving">Engraving</a>
       <a href="/graphic" style="color:#f2efe9">Graphic</a>
-      <a href="/traditional">Traditional</a>    </div>
+      <a href="/traditional">Traditional</a>
+      <a href="/color-micro-realism">Micro-realism</a>
+    </div>
     <div class="foot-col rv">
       <h4>Studio</h4>
       <a href="/#about">O nás / About</a>
