@@ -95,6 +95,7 @@
     <ul class="nav-links" role="list">
       <li><a href="#about"><span class="en">Studio</span> <span class="cs">Studio</span></a></li>
       <li><a href="#artist"><span class="en">Artist</span> <span class="cs">Umělkyně</span></a></li>
+      <li><a href="/guest-artists"><span class="en">Guest artists</span> <span class="cs">Hosté</span></a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li class="nav-item--has-sub">
         <a href="#portfolio"><span class="en">Styles</span> <span class="cs">Styly</span></a>
@@ -130,6 +131,7 @@
     <nav class="mob-nav">
       <a href="#about"     class="mob-link"><span class="en">Studio</span> <span class="cs">Studio</span></a>
       <a href="#artist"    class="mob-link"><span class="en">Artist</span> <span class="cs">Umělkyně</span></a>
+      <a href="/guest-artists" class="mob-link"><span class="en">Guest artists</span> <span class="cs">Hosté</span></a>
       <a href="#portfolio" class="mob-link">Portfolio</a>
       <a href="/fine-line" class="mob-link mob-link--sub">↳ Fine Line</a>
       <a href="/ornamental" class="mob-link mob-link--sub">↳ Ornamental</a>
@@ -486,6 +488,14 @@
                      placeholder="anna@example.com" autocomplete="email" required>
             </div>
           </div>
+          <div class="form-field rv">
+            <label for="f-artist"><span class="en">Artist</span> <span class="cs">Umělec</span></label>
+            <select id="f-artist" name="artist">
+              <option value="" disabled selected>Vyberte / Choose</option>
+              <option>Anna</option>
+              <option>Guest artist</option>
+            </select>
+          </div>
           <div class="form-field rv d1">
             <label for="f-style">Tattoo style</label>
             <select id="f-style" name="style">
@@ -614,6 +624,7 @@
     <ul class="footer-links" role="list">
       <li><a href="#about">About STIN</a></li>
       <li><a href="#portfolio">Tattoo portfolio</a></li>
+      <li><a href="/guest-artists">Guest artists</a></li>
       <li><a href="#aftercare">Tattoo aftercare</a></li>
       <li><a href="#book">Book a session</a></li>
       <li><a href="#contact">Visit the studio</a></li>

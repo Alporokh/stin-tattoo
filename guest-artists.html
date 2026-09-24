@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graphic - STIN Tattoo Studio</title>
-<link rel="canonical" href="https://stintattoostudio.com/graphic">
-<meta name="description" content="Graphic tetování Praha - blackwork, geometrie, tučné linie a kontrast. STIN Tattoo Studio Praha 1.">
+<title>Guest artists - hostující tetéři | STIN Tattoo Studio Praha</title>
+<link rel="canonical" href="https://stintattoostudio.com/guest-artists">
+<meta name="description" content="Hostující tetéři ve studiu STIN Praha 1. Umělci z celé Evropy na několik dní - rezervujte si termín u hosta.">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
 <script>
@@ -132,15 +132,13 @@ section{padding-block:clamp(70px,11vw,150px)}
 /* ── Hero ── */
 #hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,72px);align-items:center}
-.hero-title{font-size:clamp(3rem,10vw,7.5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
+.hero-title{font-size:clamp(2.2rem,6vw,5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
 .hero-sub{font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
 .hero-desc{max-width:34ch;font-size:1.02rem}
 .hero-desc+.hero-desc{margin-top:14px}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
 .hero-media{aspect-ratio:4/5}
-
-/* ── Hero graphic illustration ── */
-.hero-graphic{width:72%;opacity:.16;color:var(--ink)}
+.hero-media img{width:100%;height:100%;object-fit:cover}
 
 /* ── Two-col ── */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
@@ -157,12 +155,12 @@ section{padding-block:clamp(70px,11vw,150px)}
 .feat-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Gallery ── */
-.grph-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
-.grph-fig{margin:0;overflow:hidden;background:var(--bg-2)}
-.grph-fig--large{grid-row:span 2}
-.grph-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.grph-fig:hover img{transform:scale(1.03)}
-.grph-fig:not(.grph-fig--large){aspect-ratio:4/5}
+.trad-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
+.trad-fig{margin:0;overflow:hidden;background:var(--bg-2)}
+.trad-fig--large{grid-row:span 2}
+.trad-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.trad-fig:hover img{transform:scale(1.03)}
+.trad-fig:not(.trad-fig--large){aspect-ratio:4/5}
 
 /* ── Steps ── */
 .steps{display:block}
@@ -217,6 +215,26 @@ footer a:hover{color:var(--ink)}
 }
 /* Section sub-label keeps the muted eyebrow colour in both languages */
 .sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
+
+/* ── Guest artist ── */
+.guest{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:start}
+.guest-photo{aspect-ratio:3/4;overflow:hidden}
+.guest-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.guest-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
+.guest-role{font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:14px;display:block}
+.guest-dates{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;border-top:1px solid var(--line-soft);margin-top:26px}
+.guest-dates + .guest-dates{margin-top:0}
+.guest-dates .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.guest-dates-body{font-size:1rem;line-height:1.65}
+.guest-dates-body strong{font-weight:500;color:var(--ink)}
+.guest .btn{margin-top:30px}
+/* ── Guest gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.img-wrap{overflow:hidden;background:var(--bg-2)}
+.img-wrap img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:filter .4s}
+.img-wrap img:hover{filter:brightness(1.05)}
+@media(max-width:900px){.guest{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="show-cs">
@@ -236,7 +254,7 @@ footer a:hover{color:var(--ink)}
         <a href="/ornamental">Ornamental</a>
         <a href="/floral">Floral</a>
         <a href="/engraving">Engraving</a>
-        <a href="/graphic" class="active">Graphic</a>
+        <a href="/graphic">Graphic</a>
         <a href="/traditional">Traditional</a>
         <a href="/color-micro-realism">Micro-realism</a>
       </div>
@@ -264,20 +282,19 @@ footer a:hover{color:var(--ink)}
   <a href="/ornamental" style="font-size:1.4rem">↳ Ornamental</a>
   <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
   <a href="/engraving" style="font-size:1.4rem">↳ Engraving</a>
-  <a href="/graphic" style="font-size:1.4rem;color:#f2efe9">↳ Graphic</a>
+  <a href="/graphic" style="font-size:1.4rem">↳ Graphic</a>
   <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>
   <a href="/color-micro-realism" style="font-size:1.4rem">↳ Micro-realism</a>
   <a href="#book">Rezervace</a>
 </div>
+
 
 <!-- ═══════════════ BREADCRUMB ═══════════════ -->
 <div class="wrap crumb">
   <ol>
     <li><a href="/">Domů</a></li>
     <li>/</li>
-    <li><a href="#">Styly</a></li>
-    <li>/</li>
-    <li aria-current="page">Graphic</li>
+    <li aria-current="page"><span class="cs">Hosté</span><span class="lang">Guest artists</span></li>
   </ol>
 </div>
 
@@ -285,13 +302,13 @@ footer a:hover{color:var(--ink)}
 <header id="hero" class="wrap">
   <div class="hero-grid">
     <div>
-      <h1 class="hero-title rv">Graphic</h1>
-      <p class="hero-sub rv"><span class="cs">Umělecká grafika</span><span class="lang">Artistic graphics</span></p>
-      <p class="hero-desc cs rv">Čisté linie, kontrast a umělecká grafika. Vhodné pro neobvyklé kompozice, symboly a autorské návrhy.</p>
-      <p class="hero-desc lang rv">Clean lines, contrast and artistic graphics. Suitable for unusual compositions, symbols and original sketches.</p>
+      <h1 class="hero-title rv">Guest<br>artists</h1>
+      <p class="hero-sub rv"><span class="cs">Hosté ve studiu</span><span class="lang">Visiting artists at STIN</span></p>
+      <p class="hero-desc cs rv">Do studia pravidelně zveme tetéry z Česka i ze zahraničí. Každý host je u nás jen několik dní - a s sebou přináší styl, který u nás běžně nepořídíte.</p>
+      <p class="hero-desc lang rv">We regularly invite tattooers from the Czech Republic and abroad. Each guest stays only a few days - and brings a style you will not usually find here.</p>
       <div class="hero-actions rv">
-        <a href="#book" class="btn btn--primary">Rezervovat termín</a>
-        <a href="#gallery" class="btn btn--outline">Galerie stylu</a>
+        <a href="#book" class="btn btn--primary"><span class="cs">Rezervovat termín</span><span class="lang">Book a session</span></a>
+        <a href="#guest" class="btn btn--outline"><span class="cs">Aktuální host</span><span class="lang">Current guest</span></a>
       </div>
     </div>
     <div class="hero-media rv">
@@ -303,57 +320,51 @@ footer a:hover{color:var(--ink)}
 <section id="intro" class="wrap">
   <div class="two-col">
     <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
-      <p class="lead cs">Tetování jako plakát - každý tah záměrný, každý kontrast promyšlený.</p>
-      <p class="lead lang">Graphic is the language of contrast - bold compositions that speak through shape and negative space.</p>
+      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O hostech</span><span class="lang">About guest spots</span></span>
+      <p class="lead cs">Host ve studiu je příležitost na pár dní - jiný rukopis, jiná škola, stejná péče o detail.</p>
+      <p class="lead lang">A guest spot is a chance that lasts a few days - a different hand, a different school, the same care for detail.</p>
     </div>
     <div class="rv">
-      <p class="cs">Graphic styl staví na síle čisté linie a kontrastu. Nevypráví příběh přirozeností ani texturou - místo toho mluví jazykem designu: kompozicí, hmotou a prázdným prostorem jako rovnocenným prvkem.</p>
-      <p class="cs" style="margin-top:16px">Vhodný pro abstrakt, geometrii, symboly nebo neobvyklé kombinace motivů. Výsledek je vždy vizuálně silný, autorský a okamžitě čitelný - tetování, které zaujme na první pohled.</p>
-      <p class="lang" style="margin-top:16px">- Graphic style is built on the power of clean line and contrast. It speaks the language of design: composition, mass and negative space as an equal element. Ideal for abstract shapes, geometry, symbols or unusual combinations of motifs.</p>
+      <p class="cs">Hostující tetér pracuje v našem studiu po omezenou dobu, obvykle několik dní až dva týdny. Termíny se plní rychle, proto doporučujeme ozvat se hned, jakmile hosta oznámíme.</p>
+      <p class="cs" style="margin-top:16px">Rezervace probíhá stejně jako u Anny - napište nám přes formulář, vyberte možnost <strong>Guest artist</strong> a připojte referenci nebo popis motivu. Ozveme se s termínem a cenou.</p>
+      <p class="lang" style="margin-top:16px">- A guest artist works at the studio for a limited time, usually a few days up to two weeks. Slots fill quickly, so get in touch as soon as we announce a guest. Booking works exactly as it does with Anna: use the form, choose <strong>Guest artist</strong> and add a reference or a description of your idea.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
-<section id="features" class="wrap">
+<!-- ═══════════════ CURRENT GUEST ═══════════════ -->
+<section id="guest" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
-    <h2><span class="cs">Znaky graphic stylu</span><span class="lang">Characteristics</span></h2>
-    <p class="lang">Signatures of the graphic style</p>
+    <span class="eyebrow"><span class="cs">Aktuální host</span><span class="lang">Current guest</span></span>
+    <h2><span class="cs">Stani</span><span class="lang">Stani</span></h2>
+    <p class="lang">Black &amp; grey realism</p>
   </div>
-  <div class="grid-4">
-    <div class="feat rv">
-      <span class="no">01</span>
-      <div class="feat-body">
-        <h3><span class="cs">Čisté linie</span><span class="lang">Clean lines</span></h3>
-        <p class="cs">Přesné, ostré kontury bez přechodů a rozmazání - každá linie nese váhu a má své místo.</p>
-        <p class="lang">Precise, sharp outlines with no gradients or blur - every line carries weight and has its place.</p>
-      </div>
+  <div class="guest">
+    <div class="guest-photo rv">
+      <img src="images/guest-artists-stintattoostudio-prague.jpg"
+           alt="Stani - hostující tetér ve studiu STIN Praha / Stani, guest artist at STIN Tattoo Studio Prague"
+           width="853" height="1280" loading="eager" fetchpriority="high">
     </div>
-    <div class="feat rv">
-      <span class="no">02</span>
-      <div class="feat-body">
-        <h3><span class="cs">Kontrast</span><span class="lang">Contrast</span></h3>
-        <p class="cs">Silný kontrast plné černě a prázdného prostoru vytváří vizuální napětí a čitelnost i z dálky.</p>
-        <p class="lang">Strong contrast between solid black and empty space creates visual tension and reads clearly from a distance.</p>
+    <div class="rv">
+      <span class="guest-role"><span class="cs">Stani - host, black &amp; grey realismus</span><span class="lang">Stani - guest artist, black &amp; grey realism</span></span>
+      <p class="cs" style="margin-top:22px">Stani tetuje realistické motivy v černé a šedé - portréty, zvířata, hodiny, lodě a rozsáhlé rukávy. Pracuje s měkkým stínováním a hloubkou, díky které motiv působí jako fotografie na kůži.</p>
+      <p class="lang" style="margin-top:22px">Stani works in black and grey realism - portraits, animals, clocks, ships and full sleeves. Soft shading and depth give each motif the feel of a photograph on skin.</p>
+      <div class="guest-dates">
+        <span class="no">01</span>
+        <div class="guest-dates-body">
+          <strong><span class="cs">Termín ve studiu</span><span class="lang">Dates at the studio</span></strong>
+          <span class="cs">DOPLNIT TERMÍN</span><span class="lang">DATES TO BE CONFIRMED</span>
+        </div>
       </div>
-    </div>
-    <div class="feat rv">
-      <span class="no">03</span>
-      <div class="feat-body">
-        <h3><span class="cs">Kompozice</span><span class="lang">Composition</span></h3>
-        <p class="cs">Neobvyklá rozvržení, netradiční úhly a autorský přístup k prostoru - tetování jako grafický objekt.</p>
-        <p class="lang">Unusual layouts, unexpected angles and a distinctive approach to space - a tattoo as a graphic object.</p>
+      <div class="guest-dates">
+        <span class="no">02</span>
+        <div class="guest-dates-body">
+          <strong><span class="cs">Rezervace</span><span class="lang">Booking</span></strong>
+          <span class="cs">Napište nám přes formulář níže a vyberte možnost Guest artist.</span>
+          <span class="lang">Use the form below and choose the Guest artist option.</span>
+        </div>
       </div>
-    </div>
-    <div class="feat rv">
-      <span class="no">04</span>
-      <div class="feat-body">
-        <h3><span class="cs">Symbolika</span><span class="lang">Symbolism</span></h3>
-        <p class="cs">Ikony, znaky a abstraktní tvary s osobním nebo kulturním významem - forma, která nese obsah.</p>
-        <p class="lang">Icons, signs and abstract shapes with personal or cultural meaning - form that carries content.</p>
-      </div>
+      <a href="#book" class="btn btn--primary"><span class="cs">Rezervovat u hosta</span><span class="lang">Book with the guest</span></a>
     </div>
   </div>
 </section>
@@ -362,55 +373,24 @@ footer a:hover{color:var(--ink)}
 <section id="gallery" class="wrap">
   <div class="sec-head rv">
     <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
-    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
-    <p class="lang">Selected graphic work</p>
+    <h2><span class="cs">Práce hosta</span><span class="lang">Guest's work</span></h2>
+    <p class="lang">Selected work by Stani</p>
   </div>
-  <div class="grph-gallery rv">
-    <figure class="grph-fig">
-      <img src="images/graphic-tattoo-studio.jpg" alt="Graphic tetování na předloktí - ornamentální lettering s paprsky / Graphic lettering tattoo with rays on the forearm" loading="lazy">
-    </figure>
-    <figure class="grph-fig grph-fig--large">
-      <img src="images/tetovací studio praha 1.jpg" alt="Graphic tetování - dva vlaštovky na paži, jemná kresba" loading="lazy">
-    </figure>
-    <figure class="grph-fig">
-      <img src="images/tattoo shop praha.jpg" alt="Graphic tetování - zkřížené meče, koruna a křídla s grafickými prvky, rameno" loading="lazy">
-    </figure>
-    <figure class="grph-fig">
-      <img src="images/portfolio3.jpg" alt="Graphic tetování - kazetová páska Elephant Love Medley, ilustrativní styl" loading="lazy">
-    </figure>
-  </div>
-</section>
-
-<!-- ═══════════════ PROCESS ═══════════════ -->
-<section id="process" class="wrap">
-  <div class="sec-head rv">
-    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
-    <h2><span class="cs">Od nápadu ke grafice</span><span class="lang">From idea to graphic</span></h2>
-  </div>
-  <div class="steps">
-    <div class="step rv">
-      <span class="no">01</span>
-      <div class="step-body">
-        <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
-        <p class="cs">Probereme váš nápad, reference a umístění. Graphic styl má velký prostor pro interpretaci - čím více sdílíte, tím přesnější návrh dostanete.</p>
-        <p class="lang">We talk through your idea, references and placement. The graphic style leaves plenty of room for interpretation - the more you share, the closer the design will be.</p>
-      </div>
+  <div class="gallery">
+    <div class="img-wrap rv">
+      <img src="images/2026-guest-artist-stintattoo-prague.jpg" alt="Realistické tetování lva a bojovníka na noze / Black and grey realism lion and warrior leg tattoo" loading="lazy">
     </div>
-    <div class="step rv">
-      <span class="no">02</span>
-      <div class="step-body">
-        <h3><span class="cs">Grafický návrh</span><span class="lang">Graphic sketch</span></h3>
-        <p class="cs">Anna sestaví kompozici přímo pro vaše tělo - tvar, proporce a kontrast jsou navrženy tak, aby fungovaly jako celek.</p>
-        <p class="lang">Anna builds the composition for your body - shape, proportion and contrast are designed to work as one piece.</p>
-      </div>
+    <div class="img-wrap rv">
+      <img src="images/stani-guest-artist-stintattoo-prague.jpg" alt="Realistický rukáv s hodinami a krajinou / Black and grey realism clock and landscape sleeve" loading="lazy">
     </div>
-    <div class="step rv">
-      <span class="no">03</span>
-      <div class="step-body">
-        <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
-        <p class="cs">Graphic styl klade důraz na přesnost - čisté linie a silné plochy vyžadují soustředěnou práci. Výsledek je čitelný a nadčasový.</p>
-        <p class="lang">The graphic style is all about precision - clean lines and bold areas need focused work. The result is clear and timeless.</p>
-      </div>
+    <div class="img-wrap rv">
+      <img src="images/stani-guest-artist-stintattoo-prague-center.jpg" alt="Realistické tetování holubice na krku / Black and grey realism dove tattoo on the neck" loading="lazy">
+    </div>
+    <div class="img-wrap rv">
+      <img src="images/stani-guest-artist-stintattoo-prague-czech.jpg" alt="Realistický rukáv s plachetnicí / Black and grey realism ship sleeve" loading="lazy">
+    </div>
+    <div class="img-wrap rv">
+      <img src="images/stani-guest-artist-stintattoostudio-prague.jpg" alt="Realistické tetování kompasu a schodiště na předloktí / Black and grey realism compass and stairway forearm tattoo" loading="lazy">
     </div>
   </div>
 </section>
@@ -420,9 +400,9 @@ footer a:hover{color:var(--ink)}
   <div class="wrap book-grid">
     <div class="rv">
       <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
-      <h2><span class="cs">Máte motiv v mysli?</span><span class="lang">Got a motif in mind?</span></h2>
-      <p class="cs" style="margin-top:20px">Napište nám o svém nápadu - symbol, tvar, kompozice nebo jen pocit, který chcete vyjádřit. Zbytek nechte na nás.</p>
-      <p class="lang" style="margin-top:12px">Tell us your idea - a symbol, shape, composition, or just a feeling you want to express. Leave the rest to us.</p>
+      <h2><span class="cs">Chcete termín u hosta?</span><span class="lang">Want a slot with the guest?</span></h2>
+      <p class="cs" style="margin-top:20px">Napište nám, o jaký motiv máte zájem. U hostů se termíny plní rychle - čím dřív se ozvete, tím větší výběr.</p>
+      <p class="lang" style="margin-top:12px">Tell us what you have in mind. Guest slots fill quickly - the sooner you write, the more choice you have.</p>
     </div>
     <form id="bookForm" class="rv" novalidate>
   <div class="field">
@@ -501,7 +481,7 @@ footer a:hover{color:var(--ink)}
       <a href="/ornamental">Ornamental</a>
       <a href="/floral">Floral</a>
       <a href="/engraving">Engraving</a>
-      <a href="/graphic" style="color:#f2efe9">Graphic</a>
+      <a href="/graphic">Graphic</a>
       <a href="/traditional">Traditional</a>
       <a href="/color-micro-realism">Micro-realism</a>
     </div>

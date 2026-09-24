@@ -92,7 +92,8 @@
       name:               (form.querySelector('input[type="text"]')  || {}).value || '',
       email:              (form.querySelector('input[type="email"]') || {}).value || '',
       phone:              (form.querySelector('input[type="tel"]')   || {}).value || '',
-      style:              (form.querySelector('select')              || {}).value || '',
+      artist:             (form.querySelector('#f-artist') || {}).value || '',
+      style:              (form.querySelector('#f-style')  || {}).value || '',
       message:            (form.querySelector('textarea')            || {}).value || '',
       consent_photos:     (form.querySelector('#f-photos')    || {}).checked ? 'yes' : 'no',
       consent_marketing:  (form.querySelector('#f-marketing') || {}).checked ? 'yes' : 'no',
@@ -113,6 +114,7 @@
       `👤 ${data.name}\n` +
       `📧 ${data.email}\n` +
       `📱 ${data.phone}\n` +
+      `🖊 ${data.artist}\n` +
       `🎨 ${data.style}\n` +
       `💬 ${data.message}\n\n` +
       `📸 Photos consent: ${data.consent_photos}\n` +

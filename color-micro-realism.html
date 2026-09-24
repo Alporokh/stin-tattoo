@@ -243,6 +243,7 @@ footer a:hover{color:var(--ink)}
     <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
     <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
     <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+    <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
     <div class="tech-dropdown">
       <a href="#" class="tech-toggle active"><span class="cs">Styly</span><span class="lang">Styles</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
       <div class="tech-sub">
@@ -273,6 +274,7 @@ footer a:hover{color:var(--ink)}
   <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
   <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
   <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+  <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
   <a href="/fine-line" style="font-size:1.4rem">↳ Fine Line</a>
   <a href="/ornamental" style="font-size:1.4rem">↳ Ornamental</a>
   <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
@@ -441,6 +443,14 @@ footer a:hover{color:var(--ink)}
         <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
       </div>
       <div class="field">
+        <label for="bf-artist">Umělec / Artist</label>
+        <select id="bf-artist" name="artist">
+          <option value="" disabled selected>Vyberte / Choose</option>
+          <option>Anna</option>
+          <option>Guest artist</option>
+        </select>
+      </div>
+      <div class="field">
         <label for="bf-style">Styl tetování / Tattoo style</label>
         <select id="bf-style" name="style">
           <option value="" disabled selected>Vyberte styl / Choose a style</option>
@@ -509,6 +519,7 @@ footer a:hover{color:var(--ink)}
       <h4>Studio</h4>
       <a href="/#about">O nás / About</a>
       <a href="/#artist">Umělkyně / Artist</a>
+      <a href="/guest-artists">Hosté / Guest artists</a>
       <a href="/#portfolio">Portfolio</a>
       <a href="/#contact">Kontakt / Contact</a>
     </div>
@@ -566,12 +577,13 @@ footer a:hover{color:var(--ink)}
       name:(bookForm.querySelector('#bf-name')||{}).value||'',
       email:(bookForm.querySelector('#bf-email')||{}).value||'',
       phone:(bookForm.querySelector('#bf-phone')||{}).value||'',
+      artist:(bookForm.querySelector('#bf-artist')||{}).value||'',
       style:(bookForm.querySelector('#bf-style')||{}).value||'',
       message:(bookForm.querySelector('#bf-idea')||{}).value||'',
       consent_photos:(bookForm.querySelector('#bf-photos')||{}).checked?'yes':'no',
       consent_marketing:(bookForm.querySelector('#bf-marketing')||{}).checked?'yes':'no'
     };
-    var text='🐾 Nová rezervace / New booking!\n\n👤 '+data.name+'\n📧 '+data.email+'\n📱 '+data.phone+'\n🎨 '+data.style+'\n💬 '+data.message+'\n\n📸 Photos: '+data.consent_photos+'\n📣 Marketing: '+data.consent_marketing;
+    var text='🐾 Nová rezervace / New booking!\n\n👤 '+data.name+'\n📧 '+data.email+'\n📱 '+data.phone+'\n🖊 '+data.artist+'\n🎨 '+data.style+'\n💬 '+data.message+'\n\n📸 Photos: '+data.consent_photos+'\n📣 Marketing: '+data.consent_marketing;
     var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
     var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
     if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
