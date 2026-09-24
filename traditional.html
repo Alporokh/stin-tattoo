@@ -104,6 +104,7 @@ p{color:var(--ink-soft);font-weight:300}
 .tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
 .tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
 .tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
+.nav-links .tech-sub a.active::after{content:none}
 
 /* ── Mobile overlay ── */
 #mobOverlay{position:fixed;inset:0;z-index:60;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
@@ -143,11 +144,14 @@ section{padding-block:clamp(70px,11vw,150px)}
 .lead{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;color:var(--ink);text-transform:uppercase}
 
 /* ── Grid-4 ── */
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-.feat{background:var(--bg);padding:40px 30px;min-height:230px;display:flex;flex-direction:column;gap:14px}
-.feat .no{font-family:var(--serif);font-size:1.1rem;color:var(--ink-mute)}
-.feat h3{margin-top:auto}
-.feat p{font-size:.92rem}
+.grid-4{display:block}
+.feat{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;background:var(--bg)}
+.feat + .feat{border-top:1px solid var(--line-soft)}
+.feat .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.feat-body{font-size:1rem;line-height:1.65}
+.feat-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.feat-body h3::after{content:" "}
+.feat-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Gallery ── */
 .trad-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
@@ -204,11 +208,9 @@ footer a:hover{color:var(--ink)}
   #hamburger{display:flex}
   .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
   .hero-media{max-width:420px;margin-inline:auto}
-  .grid-4{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .grid-4{grid-template-columns:1fr}
 }
 /* Section sub-label keeps the muted eyebrow colour in both languages */
 .sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
@@ -319,27 +321,35 @@ footer a:hover{color:var(--ink)}
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3><span class="cs">Plné kontury</span><span class="lang">Bold outlines</span></h3>
-      <p class="cs">Silné, definované linie, které drží kompozici pohromadě a zajišťují čitelnost motivu i po letech.</p>
-      <p class="lang">Strong, defined lines that hold the composition together and keep the motif readable years later.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Plné kontury</span><span class="lang">Bold outlines</span></h3>
+        <p class="cs">Silné, definované linie, které drží kompozici pohromadě a zajišťují čitelnost motivu i po letech.</p>
+        <p class="lang">Strong, defined lines that hold the composition together and keep the motif readable years later.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3><span class="cs">Výrazné barvy</span><span class="lang">Bold colours</span></h3>
-      <p class="cs">Sytá, kontrastní paleta — červená, zelená, žlutá, modrá — nebo klasická černobílá. Žádné kompromisní polotóny.</p>
-      <p class="lang">A saturated, contrasting palette — red, green, yellow, blue — or classic black and grey. No half-hearted mid-tones.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Výrazné barvy</span><span class="lang">Bold colours</span></h3>
+        <p class="cs">Sytá, kontrastní paleta — červená, zelená, žlutá, modrá — nebo klasická černobílá. Žádné kompromisní polotóny.</p>
+        <p class="lang">A saturated, contrasting palette — red, green, yellow, blue — or classic black and grey. No half-hearted mid-tones.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3><span class="cs">Ikonické motivy</span><span class="lang">Iconic motifs</span></h3>
-      <p class="cs">Orlové, hadi, portréty, květy, kotvičky — motivy s historií a jasným vizuálním jazykem, který je okamžitě čitelný.</p>
-      <p class="lang">Eagles, snakes, portraits, flowers, anchors — motifs with history and a clear visual language that reads instantly.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Ikonické motivy</span><span class="lang">Iconic motifs</span></h3>
+        <p class="cs">Orlové, hadi, portréty, květy, kotvičky — motivy s historií a jasným vizuálním jazykem, který je okamžitě čitelný.</p>
+        <p class="lang">Eagles, snakes, portraits, flowers, anchors — motifs with history and a clear visual language that reads instantly.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3><span class="cs">Trvanlivost</span><span class="lang">Durability</span></h3>
-      <p class="cs">Styl navržený tak, aby vydržel dekády. Silné linie a sytá výplň odolávají rozpadání a zastarávání lépe než jakýkoli jiný styl.</p>
-      <p class="lang">A style built to last decades. Bold lines and solid fill resist blurring and ageing better than any other style.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Trvanlivost</span><span class="lang">Durability</span></h3>
+        <p class="cs">Styl navržený tak, aby vydržel dekády. Silné linie a sytá výplň odolávají rozpadání a zastarávání lépe než jakýkoli jiný styl.</p>
+        <p class="lang">A style built to last decades. Bold lines and solid fill resist blurring and ageing better than any other style.</p>
+      </div>
     </div>
   </div>
 </section>

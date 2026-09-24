@@ -118,6 +118,7 @@ p{color:var(--ink-soft);font-weight:300}
 .tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
 .tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
 .tech-sub a:hover,.tech-sub a.active{color:var(--ink);}
+.nav-links .tech-sub a.active::after{content:none}
 
 /* ── Mobile overlay ── */
 #mobOverlay{
@@ -161,11 +162,14 @@ section{padding-block:clamp(70px,11vw,150px)}
 .lead{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;color:var(--ink);text-transform:uppercase}
 
 /* ── Grid-4 ── */
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-.feat{background:var(--bg);padding:40px 30px;min-height:230px;display:flex;flex-direction:column;gap:14px}
-.feat .no{font-family:var(--serif);font-size:1.1rem;color:var(--ink-mute)}
-.feat h3{margin-top:auto}
-.feat p{font-size:.92rem}
+.grid-4{display:block}
+.feat{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;background:var(--bg)}
+.feat + .feat{border-top:1px solid var(--line-soft)}
+.feat .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.feat-body{font-size:1rem;line-height:1.65}
+.feat-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.feat-body h3::after{content:" "}
+.feat-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Gallery ── */
 .gallery{display:flex;flex-direction:column;gap:14px}
@@ -222,11 +226,9 @@ footer a:hover{color:var(--ink)}
   #hamburger{display:flex}
   .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
   .hero-media{max-width:420px;margin-inline:auto}
-  .grid-4{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .grid-4{grid-template-columns:1fr}
 }
 /* Section sub-label keeps the muted eyebrow colour in both languages */
 .sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
@@ -338,27 +340,35 @@ footer a:hover{color:var(--ink)}
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3><span class="cs">Fotorealistický detail</span><span class="lang">Photorealistic detail</span></h3>
-      <p class="cs">Každý motiv je vykreslen s přesností fotografie — jemné přechody, struktury a světelné body vytvářejí iluzi hloubky.</p>
-      <p class="lang">Every motif is rendered with photographic precision — subtle gradients, textures and highlights create the illusion of depth.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Fotorealistický detail</span><span class="lang">Photorealistic detail</span></h3>
+        <p class="cs">Každý motiv je vykreslen s přesností fotografie — jemné přechody, struktury a světelné body vytvářejí iluzi hloubky.</p>
+        <p class="lang">Every motif is rendered with photographic precision — subtle gradients, textures and highlights create the illusion of depth.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3><span class="cs">Živé barvy</span><span class="lang">Vivid colours</span></h3>
-      <p class="cs">Saturované, kontrastní palety i jemné pastely — barevná hloubka dává motivu obraz na plátně, ne tetování na kůži.</p>
-      <p class="lang">Saturated contrasting palettes or soft pastels — colour depth gives the motif the feel of paint on canvas, not ink on skin.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Živé barvy</span><span class="lang">Vivid colours</span></h3>
+        <p class="cs">Saturované, kontrastní palety i jemné pastely — barevná hloubka dává motivu obraz na plátně, ne tetování na kůži.</p>
+        <p class="lang">Saturated contrasting palettes or soft pastels — colour depth gives the motif the feel of paint on canvas, not ink on skin.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3><span class="cs">Hloubka a textura</span><span class="lang">Depth and texture</span></h3>
-      <p class="cs">Vícevrstvé stínování a světelné přechody vytvářejí trojrozměrný efekt — reliéf, který oko vnímá jako skutečný povrch.</p>
-      <p class="lang">Multi-layered shading and light transitions create a three-dimensional effect — a relief the eye perceives as a real surface.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Hloubka a textura</span><span class="lang">Depth and texture</span></h3>
+        <p class="cs">Vícevrstvé stínování a světelné přechody vytvářejí trojrozměrný efekt — reliéf, který oko vnímá jako skutečný povrch.</p>
+        <p class="lang">Multi-layered shading and light transitions create a three-dimensional effect — a relief the eye perceives as a real surface.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3><span class="cs">Kompaktní formát</span><span class="lang">Compact format</span></h3>
-      <p class="cs">Velký vizuální dopad v malém měřítku. Ideální pro zápěstí, kotník, rameno nebo hrudník — bez nutnosti velkých ploch.</p>
-      <p class="lang">A big visual impact on a small scale. Ideal for wrist, ankle, shoulder or chest — without needing large areas of skin.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Kompaktní formát</span><span class="lang">Compact format</span></h3>
+        <p class="cs">Velký vizuální dopad v malém měřítku. Ideální pro zápěstí, kotník, rameno nebo hrudník — bez nutnosti velkých ploch.</p>
+        <p class="lang">A big visual impact on a small scale. Ideal for wrist, ankle, shoulder or chest — without needing large areas of skin.</p>
+      </div>
     </div>
   </div>
 </section>

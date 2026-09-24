@@ -117,6 +117,7 @@ p{color:var(--ink-soft);font-weight:300}
 .tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
 .tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
 .tech-sub a:hover,.tech-sub a.active{color:var(--ink);}
+.nav-links .tech-sub a.active::after{content:none}
 
 /* ── Mobile overlay ── */
 #mobOverlay{
@@ -160,11 +161,14 @@ section{padding-block:clamp(70px,11vw,150px)}
 .lead{font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.35;color:var(--ink);text-transform:uppercase}
 
 /* ── Grid-4 ── */
-.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-.feat{background:var(--bg);padding:40px 30px;min-height:230px;display:flex;flex-direction:column;gap:14px}
-.feat .no{font-family:var(--serif);font-size:1.1rem;color:var(--ink-mute)}
-.feat h3{margin-top:auto}
-.feat p{font-size:.92rem}
+.grid-4{display:block}
+.feat{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;background:var(--bg)}
+.feat + .feat{border-top:1px solid var(--line-soft)}
+.feat .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.feat-body{font-size:1rem;line-height:1.65}
+.feat-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.feat-body h3::after{content:" "}
+.feat-body p{display:inline;font-size:1rem;line-height:1.65}
 
 /* ── Gallery ── */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -222,13 +226,11 @@ footer a:hover{color:var(--ink)}
   #hamburger{display:flex}
   .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
   .hero-media{max-width:420px;margin-inline:auto}
-  .grid-4{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
   .img-wrap:nth-child(1){grid-row:auto}
   .foot-grid{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .grid-4{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr}
 }
 /* Section sub-label keeps the muted eyebrow colour in both languages */
@@ -340,27 +342,35 @@ footer a:hover{color:var(--ink)}
   <div class="grid-4">
     <div class="feat rv">
       <span class="no">01</span>
-      <h3><span class="cs">Geometrie</span><span class="lang">Geometry</span></h3>
-      <p class="cs">Přesné linie, opakující se tvary a matematická harmonie — základ každého ornamentálního motivu.</p>
-      <p class="lang">Precise lines, repeating shapes and mathematical harmony — the basis of every ornamental motif.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Geometrie</span><span class="lang">Geometry</span></h3>
+        <p class="cs">Přesné linie, opakující se tvary a matematická harmonie — základ každého ornamentálního motivu.</p>
+        <p class="lang">Precise lines, repeating shapes and mathematical harmony — the basis of every ornamental motif.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">02</span>
-      <h3><span class="cs">Etnické motivy</span><span class="lang">Ethnic motifs</span></h3>
-      <p class="cs">Inspirace z mandál, arabesek, polynéských vzorů a dalších kulturních tradic celého světa.</p>
-      <p class="lang">Drawing on mandalas, arabesques, Polynesian patterns and other cultural traditions from around the world.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Etnické motivy</span><span class="lang">Ethnic motifs</span></h3>
+        <p class="cs">Inspirace z mandál, arabesek, polynéských vzorů a dalších kulturních tradic celého světa.</p>
+        <p class="lang">Drawing on mandalas, arabesques, Polynesian patterns and other cultural traditions from around the world.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">03</span>
-      <h3><span class="cs">Symetrie</span><span class="lang">Symmetry</span></h3>
-      <p class="cs">Zrcadlová přesnost a vyvážená kompozice, která přirozeně kopíruje tvar a symetrii lidského těla.</p>
-      <p class="lang">Mirror-precise, balanced composition that naturally follows the shape and symmetry of the body.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Symetrie</span><span class="lang">Symmetry</span></h3>
+        <p class="cs">Zrcadlová přesnost a vyvážená kompozice, která přirozeně kopíruje tvar a symetrii lidského těla.</p>
+        <p class="lang">Mirror-precise, balanced composition that naturally follows the shape and symmetry of the body.</p>
+      </div>
     </div>
     <div class="feat rv">
       <span class="no">04</span>
-      <h3><span class="cs">Efekt šperku</span><span class="lang">Jewel effect</span></h3>
-      <p class="cs">Výsledek působí jako luxusní ozdoba — tetování, které zdobí a zároveň vypráví příběh.</p>
-      <p class="lang">The result reads like a piece of jewellery — a tattoo that decorates and tells a story at once.</p>
+      <div class="feat-body">
+        <h3><span class="cs">Efekt šperku</span><span class="lang">Jewel effect</span></h3>
+        <p class="cs">Výsledek působí jako luxusní ozdoba — tetování, které zdobí a zároveň vypráví příběh.</p>
+        <p class="lang">The result reads like a piece of jewellery — a tattoo that decorates and tells a story at once.</p>
+      </div>
     </div>
   </div>
 </section>
