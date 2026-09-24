@@ -1300,3 +1300,8 @@ footer {
   gap: var(--s3);
   padding: var(--gutter);
 }
+
+/* Designer credit in the footer */
+.footer-credit { white-space: nowrap; }
+.footer-credit a { text-decoration: none; border-bottom: 1px solid var(--color-rule); }
+.footer-credit a:hover { color: var(--color-ink); border-bottom-color: var(--color-ink); }
