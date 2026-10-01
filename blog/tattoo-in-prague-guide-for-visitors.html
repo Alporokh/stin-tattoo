@@ -268,6 +268,18 @@ footer a:hover{color:var(--ink)}
 .post-card h2{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.3;text-transform:none;letter-spacing:.01em;margin:10px 0 10px}
 .post-card p{font-size:.95rem;line-height:1.7;color:var(--ink-soft);margin:0}
 .post-card:hover h2{color:var(--ink-mute)}
+
+.post figure{margin:30px 0}
+.post figure img{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center;display:block}
+.post figcaption{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;color:var(--ink-mute);margin-top:8px;line-height:1.6}
+.post-lead-img{margin:0 0 34px}
+.post-figs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.post-figs figure{margin:0}
+.post-figs figure img{max-height:420px}
+@media(max-width:600px){.post-figs{grid-template-columns:1fr}}
+.post-card{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+.post-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+@media(max-width:600px){.post-card{grid-template-columns:1fr}.post-card img{aspect-ratio:16/10}}
 </style>
 <script type="application/ld+json">
 {
@@ -389,6 +401,10 @@ footer a:hover{color:var(--ink)}
   <article class="post rv">
     <p class="post-meta"><time datetime="2026-10-01">1 October 2026</time> · STIN Tattoo Studio</p>
     <h1>Getting a Tattoo in Prague: A Guide for International Visitors</h1>
+    <figure class="post-lead-img">
+      <img src="/images/stin-hero.jpg" alt="STIN Tattoo Studio in Malá Strana, Prague 1 - studio sign on the street" width="960" height="1280" loading="eager" fetchpriority="high">
+      <figcaption>STIN Tattoo Studio, Míšeňská 73/5 - Malá Strana, a few minutes from Charles Bridge.</figcaption>
+    </figure>
     <p class="lead-para">Prague is a city people like to take a piece of home with them. Sometimes that means a photograph of Charles Bridge, a print from a small gallery or something found in an antique shop. And sometimes it means a tattoo.</p>
     
     <p>If you're visiting the Czech capital and thinking about getting a tattoo in Prague, you probably have a few practical questions first. Do you need to book weeks in advance? Can you talk to the tattoo artist in English? Can you just walk in? And how do you look after a fresh tattoo when you still have several days of sightseeing ahead?</p>
@@ -429,6 +445,10 @@ footer a:hover{color:var(--ink)}
       <li>Are recent Google reviews from other visitors, not just locals?</li>
       <li>Is the studio clean, and are needles opened in front of you?</li>
     </ul>
+        <figure>
+      <img src="/images/portfolio13.jpg" alt="Fine line floral tattoo by Anna at STIN Tattoo Studio Prague" width="960" height="1280" loading="lazy">
+      <figcaption>Look for consistent, clean work in the style you actually want.</figcaption>
+    </figure>
     <p>Your tattoo is going home with you. Choosing a tattoo artist in Prague whose work genuinely feels right is worth more than walking into the first studio you happen to pass.</p>
     
     <h2>What tattoo should I get in Prague?</h2>
@@ -440,6 +460,16 @@ footer a:hover{color:var(--ink)}
     <h2>Are fine line and small tattoos a good choice for travellers?</h2>
     <p>Yes, and they're the most popular choice for visitors. Small and fine line tattoos usually fit into one shorter session, which makes them much easier to plan around a city break.</p>
     <p>Fine line work suits delicate botanical motifs, symbols, minimal figures, small compositions and lettering.</p>
+    <div class="post-figs">
+      <figure>
+      <img src="/images/fine-line-center-prague-studio.jpg" alt="Fine line star tattoo behind the ear, done at STIN Tattoo Studio Prague" width="959" height="1280" loading="lazy">
+      <figcaption>Small fine line pieces fit into one shorter session.</figcaption>
+    </figure>
+      <figure>
+      <img src="/images/tetování-praha.jpg" alt="Delicate fine line tattoo on the arm - STIN Tattoo Studio Prague" width="959" height="1280" loading="lazy">
+      <figcaption>Fine line lettering and botanical motifs travel well.</figcaption>
+    </figure>
+    </div>
     <p>But small doesn't mean effortless. A tiny tattoo still needs the right proportions, the right placement and enough space for the lines to stay readable as skin changes over the years. An experienced artist may suggest making a design slightly larger, simplifying a detail or moving it.</p>
     <p>That's not about changing your idea. It's about making sure your idea works as a tattoo.</p>
     <!-- TODO (from the draft): add one real moment from the studio here - a visitor's fine line piece Anna resized or simplified and why, or a travel tattoo that started as one idea and became something better. Left out on purpose: it must be a true story from the studio. -->
@@ -492,6 +522,10 @@ footer a:hover{color:var(--ink)}
     <h2>Where is STIN Tattoo Studio in Prague?</h2>
     <p>STIN is at Míšeňská 73/5, Malá Strana, Prague 1, in the historic centre, a few minutes on foot from Charles Bridge. We're open every day, Monday to Sunday, from 12:00 to 20:00.</p>
     <p>We work by appointment and also welcome walk-ins when there's a free slot.</p>
+    <figure>
+      <img src="/images/salon.jpg" alt="Inside STIN Tattoo Studio - vaulted ceiling and calm interior, Prague 1" width="719" height="1004" loading="lazy">
+      <figcaption>Inside the studio: a calm room, tea or coffee, and time to decide.</figcaption>
+    </figure>
     <p>Inside, we've deliberately kept things calm and personal. Come in, have a tea or coffee, talk through your idea and give yourself time to make the decision properly.</p>
     <p>Because whether your tattoo is a memory of Prague or something you've wanted for a long time, it shouldn't feel like another item to tick off a sightseeing list.</p>
     
