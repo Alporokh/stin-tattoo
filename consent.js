@@ -16,13 +16,13 @@
 
   var TEXT = {
     cs: {
-      message: 'Používáme analytické cookies (Google Analytics a Microsoft Clarity), abychom viděli, jak web používáte a které stránky vedou k rezervaci. Spustíme je jen s vaším souhlasem.',
+      message: 'Používáme analytické a reklamní cookies (Google Analytics, Microsoft Clarity a Google Ads), abychom viděli, jak web používáte, které stránky vedou k rezervaci a která reklama vás k nám přivedla. Spustíme je jen s vaším souhlasem.',
       more: 'Více informací',
       accept: 'Přijmout',
       decline: 'Odmítnout'
     },
     en: {
-      message: 'We use analytics cookies (Google Analytics and Microsoft Clarity) to see how the site is used and which pages lead to bookings. They only run if you agree.',
+      message: 'We use analytics and advertising cookies (Google Analytics, Microsoft Clarity and Google Ads) to see how the site is used, which pages lead to bookings and which ad brought you here. They only run if you agree.',
       more: 'Learn more',
       accept: 'Accept',
       decline: 'Decline'
@@ -71,7 +71,7 @@
     var host = location.hostname.replace(/^www\./, '');
     document.cookie.split(';')
       .map(function (c) { return c.split('=')[0].trim(); })
-      .filter(function (name) { return /^(_ga|_gid|_gat|_clck|_clsk)/.test(name); })
+      .filter(function (name) { return /^(_ga|_gid|_gat|_clck|_clsk|_gcl_)/.test(name); })
       .forEach(function (name) {
         ['', host, '.' + host].forEach(function (domain) {
           document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
@@ -139,7 +139,13 @@
   function applyChoice(choice) {
     try { localStorage.setItem(STORAGE_KEY, choice); } catch (e) {}
     if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: choice === 'accepted' ? 'granted' : 'denied' });
+      var state = choice === 'accepted' ? 'granted' : 'denied';
+      window.gtag('consent', 'update', {
+        analytics_storage: state,
+        ad_storage: state,
+        ad_user_data: state,
+        ad_personalization: state
+      });
     }
     hideBanner();
 

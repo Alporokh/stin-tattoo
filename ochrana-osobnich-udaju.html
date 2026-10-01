@@ -7,15 +7,20 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+  // Consent Mode v2: nothing is stored until the visitor accepts in the cookie banner (consent.js).
+  // One global default - the banner is shown to every visitor, so no region scoping.
+  var stinConsent = (function () {
+    try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+  })();
   gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: (function () {
-      try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
-    })()
+    ad_storage: stinConsent,
+    ad_user_data: stinConsent,
+    ad_personalization: stinConsent,
+    analytics_storage: stinConsent
   });
+  // Keep ads measurement working without cookies while consent is denied
+  gtag('set', 'ads_data_redaction', stinConsent !== 'granted');
+  gtag('set', 'url_passthrough', true);
   gtag('js', new Date());
   gtag('config', 'G-3Q554XP679');
   gtag('config', 'AW-18404683250');
@@ -304,6 +309,15 @@ footer a:hover{color:var(--ink)}
   </dl>
   <p>Dokud souhlas neudělíte, Google Analytics neukládá cookies ani identifikátory a posíláme mu jen omezené signály bez vazby na vaše zařízení (Google Consent Mode). Microsoft Clarity se bez souhlasu nespustí.</p>
 
+  <h3>Reklama a měření konverzí</h3>
+  <dl>
+    <dt>Údaje</dt><dd>Online identifikátory uložené v cookies, informace o kliknutí na reklamu (např. parametr gclid), navštívené stránky a odeslané poptávky.</dd>
+    <dt>Účel</dt><dd>Měřit, která reklama v Google Ads vede k rezervaci, a zobrazovat naši reklamu lidem, kteří už web navštívili (remarketing).</dd>
+    <dt>Právní základ</dt><dd>Váš souhlas v cookie liště (čl. 6 odst. 1 písm. a) GDPR a § 89 odst. 3 zákona č. 127/2005 Sb., o elektronických komunikacích).</dd>
+    <dt>Doba uložení</dt><dd>Cookie <code>_gcl_au</code> 90 dní; údaje o konverzích v účtu Google Ads podle nastavení Google.</dd>
+  </dl>
+  <p>Bez souhlasu neukládáme reklamní cookies ani identifikátory. Google Ads v takovém případě dostává jen omezené signály bez vazby na vaše zařízení a počet konverzí pouze odhaduje (Google Consent Mode).</p>
+
   <h3>Provoz a zabezpečení webu</h3>
   <dl>
     <dt>Údaje</dt><dd>IP adresa, údaje o prohlížeči a o požadavku na server.</dd>
@@ -319,7 +333,7 @@ footer a:hover{color:var(--ink)}
   <p>Údaje neprodáváme. Pomáhají nám s nimi tito zpracovatelé a poskytovatelé služeb:</p>
   <ul>
     <li><strong>Cloudflare, Inc.</strong> (USA) – hosting webu, zabezpečení a přeposlání zprávy z formuláře.</li>
-    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Tabulky Google (evidence poptávek), Gmail a Google Maps.</li>
+    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Google Ads, Tabulky Google (evidence poptávek), Gmail a Google Maps.</li>
     <li><strong>Microsoft Corporation</strong> (USA) – Microsoft Clarity.</li>
     <li><strong>Telegram FZ-LLC</strong> (Spojené arabské emiráty) – upozornění na novou poptávku v komunikátoru studia.</li>
     <li><strong>Meta Platforms Ireland Limited</strong> – pokud nám napíšete přes Instagram.</li>
@@ -341,10 +355,11 @@ footer a:hover{color:var(--ink)}
         <tr><td><code>__cf_bm</code></td><td>Cloudflare</td><td>Ochrana proti automatizovanému provozu</td><td>Nezbytné</td><td>30 minut</td></tr>
         <tr><td><code>_ga</code>, <code>_ga_3Q554XP679</code></td><td>Google Analytics</td><td>Rozlišení návštěvníků a relací</td><td>Analytické (souhlas)</td><td>2 roky</td></tr>
         <tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Rozlišení návštěvníků a propojení záznamu relace</td><td>Analytické (souhlas)</td><td>1 rok / 1 den</td></tr>
+        <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Měření konverzí z reklamy</td><td>Reklamní (souhlas)</td><td>90 dní</td></tr>
       </tbody>
     </table>
   </div>
-  <p>Položky <code>stin_consent_v2</code> a <code>stin-lang</code> jsou uloženy v místním úložišti prohlížeče (localStorage), ne v cookies. Když souhlas odmítnete, cookies Google Analytics a Clarity z vašeho prohlížeče smažeme.</p>
+  <p>Položky <code>stin_consent_v2</code> a <code>stin-lang</code> jsou uloženy v místním úložišti prohlížeče (localStorage), ne v cookies. Když souhlas odmítnete, cookies Google Analytics, Google Ads a Clarity z vašeho prohlížeče smažeme.</p>
 
   <h2 id="prava">6. Vaše práva</h2>
   <p>Máte právo:</p>
@@ -417,6 +432,15 @@ footer a:hover{color:var(--ink)}
   </dl>
   <p>Until you give consent, Google Analytics stores no cookies or identifiers and receives only limited signals that are not linked to your device (Google Consent Mode). Microsoft Clarity does not run without consent.</p>
 
+  <h3>Advertising and conversion measurement</h3>
+  <dl>
+    <dt>Data</dt><dd>Online identifiers stored in cookies, information about the ad click (such as the gclid parameter), pages visited and enquiries sent.</dd>
+    <dt>Purpose</dt><dd>Measuring which Google Ads advertisement leads to a booking, and showing our ads to people who have already visited the site (remarketing).</dd>
+    <dt>Legal basis</dt><dd>Your consent in the cookie banner (Art. 6(1)(a) GDPR and Section 89(3) of Czech Act No. 127/2005 Coll., on Electronic Communications).</dd>
+    <dt>Retention</dt><dd>The <code>_gcl_au</code> cookie for 90 days; conversion data in the Google Ads account according to Google's settings.</dd>
+  </dl>
+  <p>Without your consent we store no advertising cookies or identifiers. Google Ads then receives only limited signals that are not linked to your device and estimates conversions rather than measuring them (Google Consent Mode).</p>
+
   <h3>Running and securing the website</h3>
   <dl>
     <dt>Data</dt><dd>IP address, browser details and details of the request to the server.</dd>
@@ -432,7 +456,7 @@ footer a:hover{color:var(--ink)}
   <p>We don't sell your data. These processors and service providers help us handle it:</p>
   <ul>
     <li><strong>Cloudflare, Inc.</strong> (USA) – website hosting, security and forwarding of form messages.</li>
-    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Google Sheets (enquiry records), Gmail and Google Maps.</li>
+    <li><strong>Google Ireland Limited / Google LLC</strong> – Google Analytics, Google Ads, Google Sheets (enquiry records), Gmail and Google Maps.</li>
     <li><strong>Microsoft Corporation</strong> (USA) – Microsoft Clarity.</li>
     <li><strong>Telegram FZ-LLC</strong> (United Arab Emirates) – notifications of new enquiries in the studio's messaging app.</li>
     <li><strong>Meta Platforms Ireland Limited</strong> – if you message us on Instagram.</li>
@@ -454,10 +478,11 @@ footer a:hover{color:var(--ink)}
         <tr><td><code>__cf_bm</code></td><td>Cloudflare</td><td>Protection against automated traffic</td><td>Necessary</td><td>30 minutes</td></tr>
         <tr><td><code>_ga</code>, <code>_ga_3Q554XP679</code></td><td>Google Analytics</td><td>Distinguishing visitors and sessions</td><td>Analytics (consent)</td><td>2 years</td></tr>
         <tr><td><code>_clck</code>, <code>_clsk</code></td><td>Microsoft Clarity</td><td>Distinguishing visitors and linking session recordings</td><td>Analytics (consent)</td><td>1 year / 1 day</td></tr>
+        <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Measuring conversions from ads</td><td>Advertising (consent)</td><td>90 days</td></tr>
       </tbody>
     </table>
   </div>
-  <p><code>stin_consent_v2</code> and <code>stin-lang</code> are kept in your browser's local storage (localStorage), not in cookies. If you decline, we delete the Google Analytics and Clarity cookies from your browser.</p>
+  <p><code>stin_consent_v2</code> and <code>stin-lang</code> are kept in your browser's local storage (localStorage), not in cookies. If you decline, we delete the Google Analytics, Google Ads and Clarity cookies from your browser.</p>
 
   <h2 id="rights-en">6. Your rights</h2>
   <p>You have the right to:</p>

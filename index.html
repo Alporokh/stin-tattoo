@@ -8,15 +8,20 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    // Consent Mode v2: analytics stays off until the visitor accepts in the cookie banner (consent.js)
+    // Consent Mode v2: nothing is stored until the visitor accepts in the cookie banner (consent.js).
+    // One global default - the banner is shown to every visitor, so no region scoping.
+    var stinConsent = (function () {
+      try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+    })();
     gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: (function () {
-        try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
-      })()
+      ad_storage: stinConsent,
+      ad_user_data: stinConsent,
+      ad_personalization: stinConsent,
+      analytics_storage: stinConsent
     });
+    // Keep ads measurement working without cookies while consent is denied
+    gtag('set', 'ads_data_redaction', stinConsent !== 'granted');
+    gtag('set', 'url_passthrough', true);
     gtag('js', new Date());
 
     gtag('config', 'G-3Q554XP679');
