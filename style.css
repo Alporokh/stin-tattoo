@@ -221,10 +221,13 @@ body {
 }
 .nav-links {
   display: flex;
-  gap: var(--s6);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Seven items share the row: the gaps give way before the words do, and the
+     row sits in normal flow so it can never overlap the logo or the buttons */
+  gap: clamp(0.9rem, 2.2vw, 3rem);
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+  white-space: nowrap;
 }
 .nav-links a {
   font-family: var(--font-body);
@@ -235,6 +238,7 @@ body {
   text-decoration: none;
   color: var(--color-ink-soft);
   transition: color var(--dur-fast);
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--color-ink); }
 
@@ -1106,6 +1110,14 @@ footer {
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+/* Seven nav items plus logo, language toggle and the booking button stop
+   fitting a single row below this width, so the menu moves into the burger */
+@media (max-width: 1100px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-right .nav-lang { display: none; }   /* beats .lang-toggle{display:flex} later in the file */
+  .hamburger { display: flex; }
+}
+
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
   .nav-right { gap: var(--s2); }
