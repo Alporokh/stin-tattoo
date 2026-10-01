@@ -155,6 +155,12 @@
         currency: 'CZK',
         value: 3000
       });
+      // Google Ads conversion for the same delivered enquiry
+      gtag('event', 'conversion', {
+        send_to: 'AW-18404683250/3JAVCPCt94wdEPLbhMhE',
+        value: 1.0,
+        currency: 'CZK'
+      });
     }
 
     if (btn) {

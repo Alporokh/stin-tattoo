@@ -573,7 +573,7 @@ footer a:hover{color:var(--ink)}
     var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
     var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
     if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
-    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(r.ok&&j.ok!==false){gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',tattoo_style:data.style||'not_selected',currency:'CZK',value:3000});}});}).catch(function(){});
+    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(r.ok&&j.ok!==false){gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',tattoo_style:data.style||'not_selected',currency:'CZK',value:3000});gtag('event','conversion',{send_to:'AW-18404683250/3JAVCPCt94wdEPLbhMhE',value:1.0,currency:'CZK'});}});}).catch(function(){});
     fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
     setTimeout(function(){
       if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
