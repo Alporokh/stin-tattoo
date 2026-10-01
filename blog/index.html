@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Traditional - STIN Tattoo Studio</title>
-<link rel="canonical" href="https://stintattoostudio.com/traditional">
-<meta name="description" content="Traditional tetování Praha - klasické motivy, tučné linie, sytě zbarvené výplně. STIN Tattoo Studio Praha 1.">
+<title>Blog | STIN Tattoo Studio Praha</title>
+<link rel="canonical" href="https://stintattoostudio.com/blog">
+<meta name="description" content="Články o tetování ze studia STIN Praha 1 - rady před návštěvou, péče o tetování a styly. / Tattoo guides from STIN Tattoo Studio in Prague.">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
 <script>
@@ -42,11 +42,11 @@
   });
 </script>
 
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="images/favicon.p.png" sizes="32x32" type="image/png">
-<link rel="preload" as="font" href="fonts/inter-latin.woff2" type="font/woff2" crossorigin>
-<link rel="preload" as="font" href="fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="fonts.css">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon.p.png" sizes="32x32" type="image/png">
+<link rel="preload" as="font" href="/fonts/inter-latin.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
 
 <style>
 :root{
@@ -221,13 +221,61 @@ footer a:hover{color:var(--ink)}
 }
 /* Section sub-label keeps the muted eyebrow colour in both languages */
 .sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
+
+/* ── Guest artist ── */
+.guest{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:start}
+.guest-photo{aspect-ratio:3/4;overflow:hidden}
+.guest-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.guest-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
+.guest-role{font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:14px;display:block}
+.guest-dates{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;border-top:1px solid var(--line-soft);margin-top:26px}
+.guest-dates + .guest-dates{margin-top:0}
+.guest-dates .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.guest-dates-body{font-size:1rem;line-height:1.65}
+.guest-dates-body strong{font-weight:500;color:var(--ink)}
+.guest .btn{margin-top:30px}
+/* ── Guest gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.img-wrap{overflow:hidden;background:var(--bg-2)}
+.img-wrap img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:filter .4s}
+.img-wrap img:hover{filter:brightness(1.05)}
+@media(max-width:900px){.guest{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
+
+/* ── Blog ── */
+.post{max-width:68ch;margin:0 auto}
+.post-meta{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+.post h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.1;letter-spacing:.01em;margin:18px 0 26px;text-transform:none}
+.post h2{font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.25;text-transform:none;letter-spacing:.01em;margin:48px 0 14px}
+.post h3{font-size:1.02rem;line-height:1.4;text-transform:none;letter-spacing:.01em;margin:30px 0 8px;font-weight:500}
+.post p{font-size:1rem;line-height:1.75;margin-bottom:16px}
+.post .lead-para{font-size:1.1rem;line-height:1.7;color:var(--ink)}
+.post ul{margin:0 0 16px 0;padding-left:1.1em;list-style:disc}
+.post li{font-size:1rem;line-height:1.75;color:var(--ink-soft);margin-bottom:6px}
+.post a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.post a:hover{color:var(--ink-mute)}
+.table-wrap{overflow-x:auto;margin:0 0 20px}
+.post table{border-collapse:collapse;width:100%;font-size:.9rem}
+.post th,.post td{border:1px solid var(--line-soft);padding:12px 14px;text-align:left;vertical-align:top;color:var(--ink-soft);line-height:1.6}
+.post th{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.article-cta{margin-top:56px;padding-top:32px;border-top:1px solid var(--line-soft)}
+.article-address{font-size:.92rem;line-height:1.8}
+.post .btn{margin-top:12px}
+/* index */
+.post-list{max-width:68ch;margin:0 auto;display:grid;gap:0}
+.post-card{display:block;padding:28px 0;border-bottom:1px solid var(--line-soft);text-decoration:none}
+.post-card:first-child{border-top:1px solid var(--line-soft)}
+.post-card h2{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.3;text-transform:none;letter-spacing:.01em;margin:10px 0 10px}
+.post-card p{font-size:.95rem;line-height:1.7;color:var(--ink-soft);margin:0}
+.post-card:hover h2{color:var(--ink-mute)}
 </style>
+
 </head>
 <body class="show-cs">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
-  <a href="/" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
+  <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
   <div class="nav-links">
     <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
     <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
@@ -241,7 +289,7 @@ footer a:hover{color:var(--ink)}
         <a href="/floral">Floral</a>
         <a href="/engraving">Engraving</a>
         <a href="/graphic">Graphic</a>
-        <a href="/traditional" class="active">Traditional</a>
+        <a href="/traditional">Traditional</a>
         <a href="/color-micro-realism">Micro-realism</a>
       </div>
     </div>
@@ -269,221 +317,34 @@ footer a:hover{color:var(--ink)}
   <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
   <a href="/engraving" style="font-size:1.4rem">↳ Engraving</a>
   <a href="/graphic" style="font-size:1.4rem">↳ Graphic</a>
-  <a href="/traditional" style="font-size:1.4rem;color:#f2efe9">↳ Traditional</a>
+  <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>
   <a href="/color-micro-realism" style="font-size:1.4rem">↳ Micro-realism</a>
   <a href="#book">Rezervace</a>
 </div>
+
+
 
 <!-- ═══════════════ BREADCRUMB ═══════════════ -->
 <div class="wrap crumb">
   <ol>
     <li><a href="/">Domů</a></li>
     <li>/</li>
-    <li><a href="#">Styly</a></li>
-    <li>/</li>
-    <li aria-current="page">Traditional</li>
+    <li aria-current="page">Blog</li>
   </ol>
 </div>
 
-<!-- ═══════════════ HERO ═══════════════ -->
-<header id="hero" class="wrap">
-  <div class="hero-grid">
-    <div>
-      <h1 class="hero-title rv">Traditional</h1>
-      <p class="hero-sub rv"><span class="cs">Klasický styl</span><span class="lang">Classic style</span></p>
-      <p class="hero-desc cs rv">Klasický tetovací styl s výraznými barvami, plnými konturami a nezaměnitelnými motivy. Nadčasová estetika a vysoká trvanlivost.</p>
-      <p class="hero-desc lang rv">Classic tattoo style with bold colours, dense outlines and iconic motifs. Timeless aesthetics and outstanding durability.</p>
-      <div class="hero-actions rv">
-        <a href="#book" class="btn btn--primary">Rezervovat termín</a>
-        <a href="#gallery" class="btn btn--outline">Galerie stylu</a>
-      </div>
-    </div>
-    <div class="hero-media rv">
-    </div>
-  </div>
+<header id="hero" class="wrap" style="padding-bottom:clamp(30px,4vw,50px)">
+  <h1 class="hero-title rv" style="font-size:clamp(2.6rem,7vw,5rem)">Blog</h1>
+  <p class="hero-sub rv"><span class="cs">Rady, péče a vše okolo tetování</span><span class="lang">Guides, aftercare and everything around tattooing</span></p>
 </header>
 
-<!-- ═══════════════ INTRO ═══════════════ -->
-<section id="intro" class="wrap">
-  <div class="two-col">
-    <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">O stylu</span><span class="lang">About the style</span></span>
-      <p class="lead cs">Styl, který obstál zkouškou času - a proto se nikdy nepřestane nosit.</p>
-      <p class="lead lang">Traditional is the language of legacy - bold lines, rich colours and motifs that have stood the test of time.</p>
-    </div>
-    <div class="rv">
-      <p class="cs">Tradiční tetování vznikalo v přístavních a námořnických kulturách přelomu 19. a 20. století. Jeho znaky jsou jasné: silné kontury, sytá barevná výplň a motivy s jasným významem - kotvy, orli, hadi, portréty.</p>
-      <p class="cs" style="margin-top:16px">Síla tohoto stylu spočívá právě v jeho jednoduchosti. Žádné kompromisy, žádné polotóny - jen čistý záměr vyjádřený tuší. Tradiční tetování stárne nejlépe ze všech stylů a po desetiletích si zachovává svůj charakter.</p>
-      <p class="lang" style="margin-top:16px">- Traditional tattooing grew from the port and sailor cultures of the late 19th and early 20th century. Bold outlines, saturated fills and motifs with clear meaning. Of all styles, traditional ages the best - holding its character for decades.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ CHARACTERISTICS ═══════════════ -->
-<section id="features" class="wrap">
-  <div class="sec-head rv">
-    <span class="eyebrow"><span class="cs">Charakteristika</span><span class="lang">Characteristics</span></span>
-    <h2><span class="cs">Znaky tradičního stylu</span><span class="lang">Characteristics</span></h2>
-    <p class="lang">Signatures of the traditional style</p>
-  </div>
-  <div class="grid-4">
-    <div class="feat rv">
-      <span class="no">01</span>
-      <div class="feat-body">
-        <h3><span class="cs">Plné kontury</span><span class="lang">Bold outlines</span></h3>
-        <p class="cs">Silné, definované linie, které drží kompozici pohromadě a zajišťují čitelnost motivu i po letech.</p>
-        <p class="lang">Strong, defined lines that hold the composition together and keep the motif readable years later.</p>
-      </div>
-    </div>
-    <div class="feat rv">
-      <span class="no">02</span>
-      <div class="feat-body">
-        <h3><span class="cs">Výrazné barvy</span><span class="lang">Bold colours</span></h3>
-        <p class="cs">Sytá, kontrastní paleta - červená, zelená, žlutá, modrá - nebo klasická černobílá. Žádné kompromisní polotóny.</p>
-        <p class="lang">A saturated, contrasting palette - red, green, yellow, blue - or classic black and grey. No half-hearted mid-tones.</p>
-      </div>
-    </div>
-    <div class="feat rv">
-      <span class="no">03</span>
-      <div class="feat-body">
-        <h3><span class="cs">Ikonické motivy</span><span class="lang">Iconic motifs</span></h3>
-        <p class="cs">Orlové, hadi, portréty, květy, kotvičky - motivy s historií a jasným vizuálním jazykem, který je okamžitě čitelný.</p>
-        <p class="lang">Eagles, snakes, portraits, flowers, anchors - motifs with history and a clear visual language that reads instantly.</p>
-      </div>
-    </div>
-    <div class="feat rv">
-      <span class="no">04</span>
-      <div class="feat-body">
-        <h3><span class="cs">Trvanlivost</span><span class="lang">Durability</span></h3>
-        <p class="cs">Styl navržený tak, aby vydržel dekády. Silné linie a sytá výplň odolávají rozpadání a zastarávání lépe než jakýkoli jiný styl.</p>
-        <p class="lang">A style built to last decades. Bold lines and solid fill resist blurring and ageing better than any other style.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ GALLERY ═══════════════ -->
-<section id="gallery" class="wrap">
-  <div class="sec-head rv">
-    <span class="eyebrow"><span class="cs">Galerie</span><span class="lang">Gallery</span></span>
-    <h2><span class="cs">Vybrané práce</span><span class="lang">Selected work</span></h2>
-    <p class="lang">Selected traditional work</p>
-  </div>
-  <div class="trad-gallery rv">
-    <figure class="trad-fig trad-fig--large">
-      <img src="images/jemné tetování na nohu.jpg" alt="Traditional tetování - pavouk s ženskou tváří, předloktí" loading="lazy">
-    </figure>
-    <figure class="trad-fig">
-      <img src="images/levné tetování praha.jpg" alt="Traditional tetování - tygr a 8-ball, stehno" loading="lazy">
-    </figure>
-    <figure class="trad-fig">
-      <img src="images/jemné tetování na ruku.jpg" alt="Traditional tetování - dva ženské portréty v dekorativních rámech, předloktí" loading="lazy">
-    </figure>
-  </div>
-</section>
-
-<!-- ═══════════════ PROCESS ═══════════════ -->
-<section id="process" class="wrap">
-  <div class="sec-head rv">
-    <span class="eyebrow"><span class="cs">Jak to probíhá</span><span class="lang">The process</span></span>
-    <h2><span class="cs">Od motivu k tradici</span><span class="lang">From motif to tradition</span></h2>
-  </div>
-  <div class="steps">
-    <div class="step rv">
-      <span class="no">01</span>
-      <div class="step-body">
-        <h3><span class="cs">Konzultace</span><span class="lang">Consultation</span></h3>
-        <p class="cs">Probereme motiv - vlastní nápad, flash design nebo klasický vzor. Tradiční styl nabízí bohatý jazyk symbolů, ze kterého lze vybírat.</p>
-        <p class="lang">We talk through the motif - your own idea, a flash design or a classic pattern. The traditional style offers a rich language of symbols to pick from.</p>
-      </div>
-    </div>
-    <div class="step rv">
-      <span class="no">02</span>
-      <div class="step-body">
-        <h3><span class="cs">Návrh</span><span class="lang">Design</span></h3>
-        <p class="cs">Anna připraví návrh v tradičním stylu - propracované kontury a barevná schémata přizpůsobená vaší kůži a umístění.</p>
-        <p class="lang">Anna prepares the design in traditional style - solid outlines and colour schemes suited to your skin and the placement.</p>
-      </div>
-    </div>
-    <div class="step rv">
-      <span class="no">03</span>
-      <div class="step-body">
-        <h3><span class="cs">Tetování</span><span class="lang">The session</span></h3>
-        <p class="cs">Tradiční tetování je přímočaré a efektivní. Výsledek je okamžitě silný - a zůstane silným i za dvacet let.</p>
-        <p class="lang">Traditional tattooing is direct and efficient. The result is striking straight away - and still striking twenty years from now.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ BOOKING ═══════════════ -->
-<section id="book">
-  <div class="wrap book-grid">
-    <div class="rv">
-      <span class="eyebrow" style="display:block;margin-bottom:18px"><span class="cs">Rezervace</span><span class="lang">Book</span></span>
-      <h2><span class="cs">Jaký motiv vás láká?</span><span class="lang">What motif speaks to you?</span></h2>
-      <p class="cs" style="margin-top:20px">Napište nám - klasický flash, vlastní motiv nebo jen styl, který chcete. Tradiční tetování má odpověď na každou otázku.</p>
-      <p class="lang" style="margin-top:12px">Write to us - classic flash, your own motif or just the style you want. Traditional tattooing has an answer for every question.</p>
-    </div>
-    <form id="bookForm" class="rv" novalidate>
-  <div class="field">
-    <label for="bf-name">Jméno / Name</label>
-    <input id="bf-name" name="name" type="text" required placeholder="Jana Nováková">
-  </div>
-  <div class="field">
-    <label for="bf-email">E-mail</label>
-    <input id="bf-email" name="email" type="email" required placeholder="vy@email.cz">
-  </div>
-  <div class="field">
-    <label for="bf-artist">Umělec / Artist</label>
-    <select id="bf-artist" name="artist">
-      <option value="" disabled selected>Vyberte / Choose</option>
-      <option>Anna</option>
-      <option>Guest artist</option>
-    </select>
-  </div>
-  <div class="field">
-    <label for="bf-style">Styl tetování / Tattoo style</label>
-    <select id="bf-style" name="style">
-      <option value="" disabled selected>Vyberte styl / Choose a style</option>
-      <option>Fine line</option>
-      <option>Illustrative</option>
-      <option>Traditional / Neo-traditional</option>
-      <option>Botanical</option>
-      <option>Minimal / Script</option>
-      <option>Blackwork</option>
-      <option>Not sure yet</option>
-    </select>
-  </div>
-  <div class="field">
-    <label for="bf-idea">Váš nápad / Your idea</label>
-    <textarea id="bf-idea" name="message" placeholder="Umístění, velikost, reference, inspirace…"></textarea>
-  </div>
-  <div class="field">
-    <label for="bf-phone">Telefon / Instagram <span style="opacity:.55;font-size:.85em">(nepovinné / optional)</span></label>
-    <input id="bf-phone" name="phone" type="tel" placeholder="+420 xxx xxx xxx">
-  </div>
-  <fieldset class="consent-group">
-    <legend class="consent-legend">Soukromí / Privacy</legend>
-    <label class="consent-item">
-      <input type="checkbox" name="gdpr" id="bf-gdpr" required>
-      <span class="consent-check"></span>
-      <span class="consent-text">Beru na vědomí, že mé osobní údaje (jméno, e-mail, telefon) budou zpracovány za účelem vyřízení poptávky podle <a href="/ochrana-osobnich-udaju" target="_blank" rel="noopener noreferrer" class="consent-link">Zásad ochrany osobních údajů</a>. / I understand that my personal data will be processed to handle my booking enquiry, as described in the <a href="/ochrana-osobnich-udaju" target="_blank" rel="noopener noreferrer" class="consent-link">Privacy policy</a>.</span>
-    </label>
-    <label class="consent-item">
-      <input type="checkbox" name="consent_photos" id="bf-photos">
-      <span class="consent-check"></span>
-      <span class="consent-text">Souhlasím s použitím fotografií mého tetování pro propagační účely. <span style="opacity:.55">(nepovinné / optional)</span></span>
-    </label>
-    <label class="consent-item">
-      <input type="checkbox" name="consent_marketing" id="bf-marketing">
-      <span class="consent-check"></span>
-      <span class="consent-text">Souhlasím s příjmáním novinek od STIN Tattoo e-mailem nebo SMS. <span style="opacity:.55">(nepovinné / optional)</span></span>
-    </label>
-  </fieldset>
-  <button type="submit" class="btn btn--primary">Odeslat poptávku</button>
-  <p id="form-success" style="display:none;color:#6a9a6a;margin-top:.75rem;">Děkujeme! Ozveme se do 24 hodin. / Thank you! We'll be in touch within 24 hours.</p>
-</form>
+<section class="wrap" style="padding-top:0">
+  <div class="post-list">
+    <a class="post-card rv" href="/blog/tattoo-in-prague-guide-for-visitors">
+      <span class="post-meta"><time datetime="2026-10-01">1 October 2026</time> · English</span>
+      <h2>Getting a Tattoo in Prague: A Guide for International Visitors</h2>
+      <p>Booking versus walking in, finding an English-speaking artist, when in your trip to get tattooed, and how to handle flying, swimming and sun afterwards.</p>
+    </a>
   </div>
 </section>
 
@@ -491,7 +352,7 @@ footer a:hover{color:var(--ink)}
 <footer class="wrap">
   <div class="foot-grid">
     <div class="rv">
-      <a href="/" class="brand"><img src="images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
+      <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
       <p>Tattoo Studio</p>
       <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
       <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
@@ -503,7 +364,7 @@ footer a:hover{color:var(--ink)}
       <a href="/floral">Floral</a>
       <a href="/engraving">Engraving</a>
       <a href="/graphic">Graphic</a>
-      <a href="/traditional" style="color:#f2efe9">Traditional</a>
+      <a href="/traditional">Traditional</a>
       <a href="/color-micro-realism">Micro-realism</a>
     </div>
     <div class="foot-col rv">
@@ -588,6 +449,6 @@ footer a:hover{color:var(--ink)}
 
 })();
 </script>
-<script src="consent.js"></script>
+<script src="/consent.js"></script>
 </body>
 </html>
