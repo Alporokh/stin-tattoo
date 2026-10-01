@@ -1317,3 +1317,7 @@ footer {
 .footer-credit { white-space: nowrap; }
 .footer-credit a { text-decoration: none; border-bottom: 1px solid var(--color-rule); }
 .footer-credit a:hover { color: var(--color-ink); border-bottom-color: var(--color-ink); }
+
+/* Inline links in body copy need to look like links */
+.care-intro a { text-decoration: underline; text-underline-offset: 3px; color: var(--color-ink); }
+.care-intro a:hover { color: var(--color-ink-soft); }
