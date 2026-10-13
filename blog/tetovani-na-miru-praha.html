@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetování na míru v centru Prahy | STIN Tattoo Studio</title>
+<link rel="canonical" href="https://stintattoostudio.com/blog/tetovani-na-miru-praha">
+<link rel="alternate" hreflang="cs" href="https://stintattoostudio.com/blog/tetovani-na-miru-praha">
+<link rel="alternate" hreflang="en" href="https://stintattoostudio.com/blog/custom-tattoo-design-prague">
+<link rel="alternate" hreflang="x-default" href="https://stintattoostudio.com/blog/custom-tattoo-design-prague">
+<meta name="description" content="Tetování na míru v centru Prahy. Jak u nás vzniká návrh - konzultace, kresba pro vaše tělo, sezení. Co si vzít s sebou a jak dlouho to trvá.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: nothing is stored until the visitor accepts in the cookie banner (consent.js).
+  // One global default - the banner is shown to every visitor, so no region scoping.
+  var stinConsent = (function () {
+    try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+  })();
+  gtag('consent', 'default', {
+    ad_storage: stinConsent,
+    ad_user_data: stinConsent,
+    ad_personalization: stinConsent,
+    analytics_storage: stinConsent
+  });
+  // Keep ads measurement working without cookies while consent is denied
+  gtag('set', 'ads_data_redaction', stinConsent !== 'granted');
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'G-3Q554XP679');
+  gtag('config', 'AW-18404683250');
+
+  // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var section = link.closest('[id]');
+    var params = { link_placement: section ? section.id : 'page' };
+    if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', params);
+    else if (href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') !== -1) gtag('event', 'email_click', params);
+    else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
+  });
+</script>
+
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon.p.png" sizes="32x32" type="image/png">
+<link rel="preload" as="font" href="/fonts/inter-latin.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
+
+<style>
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#FFFFFF;
+  --panel:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-soft:#6B6560;
+  --ink-mute:#9B9490;
+  --line:#C8C2BA;
+  --line-soft:#E8E4DF;
+  --accent:#0A0A0A;
+  --maxw:1200px;
+  --gutter:clamp(20px,5vw,64px);
+  --serif:'Inter',system-ui,-apple-system,sans-serif;
+  --sans:'JetBrains Mono','Courier New',monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
+.lang{color:var(--ink-mute);font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+h3{font-size:clamp(1.3rem,2.5vw,1.7rem)}
+p{color:var(--ink-soft);font-weight:300}
+
+.btn{display:inline-block;padding:15px 34px;font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid var(--ink);cursor:pointer;transition:.35s ease;background:none;color:var(--ink)}
+.btn--primary{background:var(--ink);color:var(--bg)}
+.btn--primary:hover{background:transparent;color:var(--ink)}
+.btn--outline:hover{background:var(--ink);color:var(--bg)}
+
+/* ── Nav ── */
+#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;background:#FFFFFF}
+#nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
+#hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+#hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
+
+/* ── Dropdown ── */
+.tech-dropdown{position:relative;display:flex;align-items:center}
+.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
+.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
+.nav-links .tech-sub a.active::after{content:none}
+.nav-links .tech-toggle.active::after{content:none}
+
+/* ── Mobile overlay ── */
+#mobOverlay{position:fixed;inset:0;z-index:60;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+#mobOverlay.open{transform:translateY(0)}
+#mobOverlay a{font-family:var(--sans);font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+#mobOverlay a:hover{color:var(--ink)}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+
+/* ── Reveal ── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── Sections ── */
+section{padding-block:clamp(70px,11vw,150px)}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head .eyebrow{margin-bottom:18px;display:block}
+.sec-head p{margin-top:20px;color:var(--ink-mute)}
+
+.crumb{padding-top:120px;padding-bottom:0}
+.crumb ol{list-style:none;display:flex;gap:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.crumb a:hover{color:var(--ink)}
+.crumb li[aria-current]{color:var(--ink)}
+
+/* ── Hero ── */
+#hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,72px);align-items:center}
+.hero-title{font-size:clamp(2.2rem,6vw,5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
+.hero-sub{font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
+.hero-desc{max-width:34ch;font-size:1.02rem}
+.hero-desc+.hero-desc{margin-top:14px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hero-media{aspect-ratio:4/5}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+
+/* ── Two-col ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.lead{font-family:var(--sans);font-weight:400;font-size:clamp(1.15rem,2.1vw,1.6rem);line-height:1.5;letter-spacing:.01em;color:var(--ink);text-transform:uppercase}
+
+/* ── Grid-4 ── */
+.grid-4{display:block}
+.feat{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;background:var(--bg)}
+.feat + .feat{border-top:1px solid var(--line-soft)}
+.feat .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.feat-body{font-size:1rem;line-height:1.65}
+.feat-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.feat-body h3::after{content:" "}
+.feat-body p{display:inline;font-size:1rem;line-height:1.65}
+
+/* ── Gallery ── */
+.trad-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
+.trad-fig{margin:0;overflow:hidden;background:var(--bg-2)}
+.trad-fig--large{grid-row:span 2}
+.trad-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.trad-fig:hover img{transform:scale(1.03)}
+.trad-fig:not(.trad-fig--large){aspect-ratio:4/5}
+
+/* ── Steps ── */
+.steps{display:block}
+.step{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px}
+.step + .step{border-top:1px solid var(--line-soft)}
+.step .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.step-body{font-size:1rem;line-height:1.65}
+.step-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.step-body h3::after{content:" "}
+.step-body p{display:inline;font-size:1rem;line-height:1.65}
+
+/* ── Booking ── */
+#book{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px);align-items:start}
+#bookForm{display:grid;gap:18px}
+.field label{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:9px}
+.field input,.field textarea{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+.field textarea{resize:vertical;min-height:120px}
+#bookForm .btn{justify-self:start;margin-top:6px}
+.field select{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237d7a73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.field select:focus{outline:none;border-color:var(--ink)}
+.field select option{background:var(--bg);color:var(--ink)}
+.consent-group{border:none;padding:0;margin:0}
+.consent-legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;display:block}
+.consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin-bottom:12px}
+.consent-item input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
+.consent-check{flex-shrink:0;width:16px;height:16px;border:1px solid var(--line);margin-top:3px;display:block;transition:background .2s,border-color .2s}
+.consent-item input:checked~.consent-check{background:var(--ink);border-color:var(--ink)}
+.consent-text{font-size:.78rem;color:var(--ink-mute);line-height:1.5}
+.consent-link{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer{padding-block:70px;background:#FFFFFF}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+footer .brand{display:block;margin-bottom:16px}
+footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
+footer a:hover{color:var(--ink)}
+.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
+.foot-col a{display:block;margin-bottom:8px}
+.copyright{margin-top:54px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  #hamburger{display:flex}
+  .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
+  .hero-media{max-width:420px;margin-inline:auto}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+}
+/* Section sub-label keeps the muted eyebrow colour in both languages */
+.sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
+
+/* ── Guest artist ── */
+.guest{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:start}
+.guest-photo{aspect-ratio:3/4;overflow:hidden}
+.guest-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.guest-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
+.guest-role{font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:14px;display:block}
+.guest-dates{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;border-top:1px solid var(--line-soft);margin-top:26px}
+.guest-dates + .guest-dates{margin-top:0}
+.guest-dates .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.guest-dates-body{font-size:1rem;line-height:1.65}
+.guest-dates-body strong{font-weight:500;color:var(--ink)}
+.guest .btn{margin-top:30px}
+/* ── Guest gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.img-wrap{overflow:hidden;background:var(--bg-2)}
+.img-wrap img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:filter .4s}
+.img-wrap img:hover{filter:brightness(1.05)}
+@media(max-width:900px){.guest{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
+
+/* ── Blog ── */
+.post{max-width:68ch;margin:0 auto}
+.post-meta{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+.post h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.1;letter-spacing:.01em;margin:18px 0 26px;text-transform:none}
+.post h2{font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.25;text-transform:none;letter-spacing:.01em;margin:48px 0 14px}
+.post h3{font-size:1.02rem;line-height:1.4;text-transform:none;letter-spacing:.01em;margin:30px 0 8px;font-weight:500}
+.post p{font-size:1rem;line-height:1.75;margin-bottom:16px}
+.post .lead-para{font-size:1.1rem;line-height:1.7;color:var(--ink)}
+.post ul{margin:0 0 16px 0;padding-left:1.1em;list-style:disc}
+.post li{font-size:1rem;line-height:1.75;color:var(--ink-soft);margin-bottom:6px}
+.post a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.post a:hover{color:var(--ink-mute)}
+.table-wrap{overflow-x:auto;margin:0 0 20px}
+.post table{border-collapse:collapse;width:100%;font-size:.9rem}
+.post th,.post td{border:1px solid var(--line-soft);padding:12px 14px;text-align:left;vertical-align:top;color:var(--ink-soft);line-height:1.6}
+.post th{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.article-cta{margin-top:56px;padding-top:32px;border-top:1px solid var(--line-soft)}
+.article-address{font-size:.92rem;line-height:1.8}
+.post .btn{margin-top:12px}
+/* index */
+.post-list{max-width:68ch;margin:0 auto;display:grid;gap:0}
+.post-card{display:block;padding:28px 0;border-bottom:1px solid var(--line-soft);text-decoration:none}
+.post-card:first-child{border-top:1px solid var(--line-soft)}
+.post-card h2{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.3;text-transform:none;letter-spacing:.01em;margin:10px 0 10px}
+.post-card p{font-size:.95rem;line-height:1.7;color:var(--ink-soft);margin:0}
+.post-card:hover h2{color:var(--ink-mute)}
+
+.post figure{margin:30px 0}
+.post figure img{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center;display:block}
+.post figcaption{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;color:var(--ink-mute);margin-top:8px;line-height:1.6}
+.post-lead-img{margin:0 0 34px}
+.post-figs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.post-figs figure{margin:0}
+.post-figs figure img{max-height:420px}
+@media(max-width:600px){.post-figs{grid-template-columns:1fr}}
+.post-card{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+.post-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+@media(max-width:600px){.post-card{grid-template-columns:1fr}.post-card img{aspect-ratio:16/10}}
+
+.post-steps{margin:0 0 20px;padding-left:0}
+.post-steps p{margin-bottom:14px}
+.post-altlang{font-family:var(--sans);font-size:.78rem;letter-spacing:.06em;margin:0 0 26px}
+.post-altlang a{color:var(--ink-mute);text-decoration:underline;text-underline-offset:3px}
+.post-altlang a:hover{color:var(--ink)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Getting a Tattoo in Prague: A Guide for International Visitors",
+      "description": "Planning a tattoo in Prague? Booking vs walk-in, choosing an English-speaking artist, timing it around your trip, flying and aftercare.",
+      "inLanguage": "en",
+      "datePublished": "2026-10-01",
+      "mainEntityOfPage": "https://stintattoostudio.com/blog/tattoo-in-prague-guide-for-visitors",
+      "author": { "@type": "Organization", "name": "STIN Tattoo Studio", "url": "https://stintattoostudio.com" },
+      "publisher": { "@id": "https://stintattoostudio.com/#studio" },
+      "about": { "@id": "https://stintattoostudio.com/#studio" }
+    },
+    {
+      "@type": "TattooParlor",
+      "@id": "https://stintattoostudio.com/#studio",
+      "name": "STIN Tattoo Studio",
+      "url": "https://stintattoostudio.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Míšeňská 73/5",
+        "postalCode": "118 00",
+        "addressLocality": "Praha 1 - Malá Strana",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:00",
+        "closes": "20:00"
+      },
+      "knowsLanguage": ["en", "cs"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much does a tattoo cost in Prague?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on size, detail and placement, so there's no single price. Send your idea, approximate size and placement, and STIN will give you an estimate before you book." } },
+        { "@type": "Question", "name": "How long does a small tattoo take?", "acceptedAnswer": { "@type": "Answer", "text": "Most small and fine line tattoos are done in a single session. The time also includes talking through the design and placing the stencil." } },
+        { "@type": "Question", "name": "Can I bring my own design?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Bring references, sketches or photos. The artist will adapt the design so it works as a tattoo and fits your body." } },
+        { "@type": "Question", "name": "Can I get tattooed the same day I message you?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes. Walk-ins are welcome when there's a free slot, and small pieces are the easiest to fit in. Message in the morning to check availability that day." } },
+        { "@type": "Question", "name": "How long does a new tattoo take to heal?", "acceptedAnswer": { "@type": "Answer", "text": "Daily washing and moisturising is typically needed for two to four weeks. Avoid swimming and direct sun for about two weeks, and follow your artist's aftercare instructions." } },
+        { "@type": "Question", "name": "What tattoo styles does STIN do?", "acceptedAnswer": { "@type": "Answer", "text": "Fine line, floral, ornamental, graphic, engraving, traditional, micro realism, blackwork and lettering. Every design is custom." } },
+        { "@type": "Question", "name": "What should I do if something doesn't feel right while it's healing?", "acceptedAnswer": { "@type": "Answer", "text": "Message the studio first for advice, even after you've gone home. If you notice signs of infection such as increasing pain, swelling or heat, see a doctor." } },
+        { "@type": "Question", "name": "Is it OK to get a tattoo on the last day before my flight?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, that's often the best timing. Avoid placements that will rub against a seatbelt, waistband or bag strap, and keep your aftercare products in your hand luggage." } }
+      ]
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Tetování na míru v centru Prahy: od nápadu k hotovému návrhu",
+      "description": "Jak u STIN v Praze vzniká tetování na míru: konzultace, návrh kreslený pro vaše tělo a samotné sezení.",
+      "inLanguage": "cs",
+      "datePublished": "2026-10-13",
+      "mainEntityOfPage": "https://stintattoostudio.com/blog/tetovani-na-miru-praha",
+      "author": { "@type": "Organization", "name": "STIN Tattoo Studio", "url": "https://stintattoostudio.com" },
+      "publisher": { "@id": "https://stintattoostudio.com/#studio" },
+      "about": { "@id": "https://stintattoostudio.com/#studio" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Můžete vyjít z mojí vlastní kresby?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Přineste ji a Anna ji upraví tak, aby fungovala na kůži - proporce, sílu linky a umístění - a přitom zůstala vaše." } },
+        { "@type": "Question", "name": "Okopírujete tetování z internetu?", "acceptedAnswer": { "@type": "Answer", "text": "Obrázky používáme jako reference, ne jako předlohu. Cizí tetování vzniklo pro cizí tělo; to vaše by mělo vzniknout pro vaše." } },
+        { "@type": "Question", "name": "Uvidím návrh ještě před sezením?", "acceptedAnswer": { "@type": "Answer", "text": "Napište si o to ve zprávě. Dejte nám vědět, že chcete návrh vidět dopředu, a domluvíme se, jakmile bude hotový." } },
+        { "@type": "Question", "name": "Na kolik sezení tetování bude?", "acceptedAnswer": { "@type": "Answer", "text": "Malé a fine line práce obvykle zvládneme napoprvé. Větší nebo detailnější motivy mohou potřebovat víc sezení; co čekat, řekneme předem." } },
+        { "@type": "Question", "name": "Můžu přijít jen si popovídat?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Zastavte se v otevírací době od 12:00 do 20:00, nebo nám napište předem, ať máme jistotu, že na vás bude čas." } },
+        { "@type": "Question", "name": "Domluvím se anglicky?", "acceptedAnswer": { "@type": "Answer", "text": "Ano. Konzultace i sezení vedeme česky a anglicky." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="show-cs">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav">
+  <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
+  <div class="nav-links">
+    <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
+    <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+    <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+    <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
+    <div class="tech-dropdown">
+      <a href="#" class="tech-toggle active"><span class="cs">Styly</span><span class="lang">Styles</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <div class="tech-sub">
+        <a href="/fine-line">Fine Line</a>
+        <a href="/ornamental">Ornamental</a>
+        <a href="/floral">Floral</a>
+        <a href="/engraving">Engraving</a>
+        <a href="/graphic">Graphic</a>
+        <a href="/traditional">Traditional</a>
+        <a href="/color-micro-realism">Micro-realism</a>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
+  </div>
+  <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobOverlay">
+  <button id="mobClose" aria-label="Zavřít menu">×</button>
+  <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
+  <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+  <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+  <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
+  <a href="/fine-line" style="font-size:1.4rem">↳ Fine Line</a>
+  <a href="/ornamental" style="font-size:1.4rem">↳ Ornamental</a>
+  <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
+  <a href="/engraving" style="font-size:1.4rem">↳ Engraving</a>
+  <a href="/graphic" style="font-size:1.4rem">↳ Graphic</a>
+  <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>
+  <a href="/color-micro-realism" style="font-size:1.4rem">↳ Micro-realism</a>
+  <a href="#book">Rezervace</a>
+</div>
+
+
+
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<div class="wrap crumb">
+  <ol>
+    <li><a href="/">Domů</a></li>
+    <li>/</li>
+    <li><a href="/blog/">Blog</a></li>
+    <li>/</li>
+    <li aria-current="page">Tetování na míru</li>
+  </ol>
+</div>
+
+<section class="wrap" style="padding-top:clamp(40px,6vw,70px)">
+  <article class="post">
+    <p class="post-meta"><time datetime="2026-10-13">13. října 2026</time> · STIN Tattoo Studio</p>
+    <h1>Tetování na míru v centru Prahy: od nápadu k hotovému návrhu</h1>
+    <p class="post-altlang"><a href="/blog/custom-tattoo-design-prague">Read in English →</a></p>
+    <figure class="post-lead-img">
+      <img src="/images/ref1-640.jpg" alt="Anna drawing and tattooing a custom design at STIN Tattoo Studio, Prague" width="640" height="841" loading="eager" fetchpriority="high">
+      <figcaption>Každý návrh kreslíme pro člověka, který ho bude nosit.</figcaption>
+    </figure>
+    <p class="lead-para">Většina lidí nepřijde s hotovou kresbou. Přijdou s fotkou, která se jim líbí, se vzpomínkou, s tvarem, ke kterému se pořád vracejí, nebo jen s pocitem, jaké tetování chtějí. To úplně stačí.</p>
+    
+    <p>Pracujeme v centru Prahy, na Malé Straně, a každé tetování kreslíme pro konkrétního člověka, který ho bude nosit. Takhle to u nás probíhá - od první zprávy až po chvíli, kdy se rozjede strojek.</p>
+    
+    <h2>Co znamená tetování na míru?</h2>
+    <p>Tetování na míru vzniká pro jednoho člověka: pro váš nápad, vaše tělo, zvolené místo a velikost. Nevybíráte si ho z nabídky hotových motivů a nekopírujeme obrázek z internetu čáru po čáře.</p>
+    <p>Reference jsou přesto vítané. Fotka, která se vám líbí, dobře ukáže, co vás přitahuje - nálada, míra detailu, způsob kresby. Bereme ji jako výchozí bod a stavíme z ní vaši vlastní kompozici.</p>
+    <p>Důvod je praktický stejně jako výtvarný. Kresba vytvořená pro plochou obrazovku málokdy dobře sedne na rameno, předloktí nebo žebra. Kůže se zakřivuje, hýbe a stárne a návrh s tím musí počítat.</p>
+    
+    <h2>Musím mít předem hotový nápad?</h2>
+    <p>Nemusíte. Lidé obvykle přicházejí v jedné ze tří situací a všechny jsou v pořádku:</p>
+    <ul>
+      <li><strong>Jasná představa.</strong> Víte motiv, velikost i umístění.</li>
+      <li><strong>Směr.</strong> Chcete něco botanického, ornamentálního nebo geometrického, ale motiv je zatím otevřený.</li>
+      <li><strong>Reference.</strong> Máte uložených pár obrázků a něco se vám na nich líbí, i když to neumíte pojmenovat.</li>
+    </ul>
+    <p>Nejvíc nám pomůže, ať jste v kterékoli z nich: krátký popis nápadu, jedna dvě reference, přibližná velikost, místo na těle a - pokud jste v Praze jen na návštěvě - termín, kdy tu jste.</p>
+    
+    <h2>Jak probíhá návrh?</h2>
+    <p>Ve třech krocích, stejných jako u všech prací <a href="/#portfolio">v našem portfoliu</a>:</p>
+    <div class="post-steps">
+      <p><strong>01 · Konzultace.</strong> Probereme nápad, umístění a velikost. Tady přijdou na řadu praktické věci: kolik místa detail potřebuje, jak se v daném místě hýbe kůže, jak bude motiv čitelný za pět let.</p>
+      <p><strong>02 · Návrh na míru.</strong> Anna nakreslí kompozici pro vaše tělo, ne pro list papíru. Proporce, síla linky i prázdný prostor kolem motivu jsou součástí práce.</p>
+      <p><strong>03 · Tetování.</strong> Přiložíme šablonu, podíváte se na ni v zrcadle a teprve pak začínáme. Klidné prostředí, čaj nebo káva, žádný spěch.</p>
+    </div>
+    
+    <h2>Co když budu chtít něco změnit?</h2>
+    <p>Řekněte to. Nejlepší okamžik je ve chvíli, kdy je šablona na kůži: dá se posunout, otočit, zvětšit i zmenšit, dokud není nic trvalého. Klidně si ji prohlédněte z jiného úhlu nebo si řekněte o posun o dva centimetry - patří to k sezení, nikoho tím nezdržíte.</p>
+    <p>Někdy přijde s úpravou i tetérka: o něco větší, jeden detail jednodušší, motiv o kus vedle. Nejde o to přepsat váš nápad, ale o to, aby fungoval jako tetování i za řadu let.</p>
+    
+    <h2>Co si vzít s sebou?</h2>
+    <ul>
+      <li>Reference, klidně v telefonu.</li>
+      <li>Poznámku o umístění a přibližné velikosti.</li>
+      <li>Oblečení, které snadno zpřístupní dané místo - do úzkých džínů se tetování na stehno dělá špatně.</li>
+      <li>Otázky. Velikost, síla linky, hojení i cena - ptejte se, než začneme.</li>
+    </ul>
+    <p>Pokud jste v Praze jen pár dní, přidejte i termíny cesty. <a href="/blog/tattoo-in-prague-guide-for-visitors">Průvodce pro návštěvníky</a> (anglicky) radí, jak sezení načasovat a co po něm s létáním a plaváním.</p>
+    
+    <h2>Které styly se pro návrh na míru hodí?</h2>
+    <p>Všechny, jen každý klade na kresbu jiné nároky. Anna pracuje ve stylech <a href="/fine-line">fine line</a>, <a href="/floral">florální</a>, <a href="/ornamental">ornamentální</a>, <a href="/graphic">graphic</a>, <a href="/engraving">engraving</a>, <a href="/traditional">traditional</a> a <a href="/color-micro-realism">micro-realism</a>.</p>
+    <p>Fine line a florální motivy sedí jemným, osobním námětům. Ornamentika sleduje symetrii těla. Graphic a engraving stojí na kompozici a kontrastu. Micro-realism vtěsná fotografickou míru detailu do malé plochy. Pokud nevíte, co se k vašemu nápadu hodí, popište nám ho a styl navrhneme my.</p>
+    <p>Několikrát do roka u nás hostují <a href="/guest-artists">hostující tetéři</a>. Host pracuje ve svém vlastním stylu, takže pokud vás zaujala právě jeho práce, rezervujte si termín, dokud je ve studiu.</p>
+    
+    <h2>Jak dlouho to trvá?</h2>
+    <p>Záleží na velikosti a na tom, kolik kreslení si nápad vyžádá. Malý fine line motiv zvládneme v jednom kratším sezení. Větší ornamentální nebo realistická práce potřebuje víc přípravy a někdy i víc sezení.</p>
+    <p>Napište nám svůj nápad, a pokud máte pevné termíny, uveďte je rovnou ve zprávě. Ozveme se s návrhem termínu a řekneme, co je v daném čase reálné.</p>
+    
+    <h2>Kolik návrh na míru stojí?</h2>
+    <p>Záleží na velikosti, detailu a umístění, jednotná cena proto neexistuje. Pošlete nám nápad, přibližnou velikost a místo na těle a my vám před rezervací pošleme odhad. Práce na návrhu je součástí tetování, neplatíte ji zvlášť.</p>
+    
+    <h2>Kde nás najdete</h2>
+    <p><a href="/#contact">STIN Tattoo Studio</a> sídlí na adrese Míšeňská 73/5, Malá Strana, Praha 1 - pár minut pěšky od Karlova mostu. Otevřeno máme každý den od 12:00 do 20:00, mluvíme česky i anglicky a kdykoli je volno, vezmeme vás i bez objednání.</p>
+    <p>Klidně se zastavte, dejte si kávu a nápad si s námi nejdřív jen proberte.</p>
+    
+    <h2>Časté dotazy</h2>
+    <h3>Můžete vyjít z mojí vlastní kresby?</h3>
+    <p>Ano. Přineste ji a Anna ji upraví tak, aby fungovala na kůži - proporce, sílu linky a umístění - a přitom zůstala vaše.</p>
+    <h3>Okopírujete tetování, které jsem našel na internetu?</h3>
+    <p>Obrázky používáme jako reference, ne jako předlohu. Cizí tetování vzniklo pro cizí tělo; to vaše by mělo vzniknout pro vaše.</p>
+    <h3>Uvidím návrh ještě před sezením?</h3>
+    <p>Napište si o to ve zprávě. Dejte nám vědět, že chcete návrh vidět dopředu, a domluvíme se, jakmile bude hotový.</p>
+    <h3>Na kolik sezení tetování bude?</h3>
+    <p>Malé a fine line práce obvykle zvládneme napoprvé. Větší nebo detailnější motivy mohou potřebovat víc sezení; co čekat, řekneme předem.</p>
+    <h3>Můžu přijít jen si popovídat?</h3>
+    <p>Ano. Zastavte se v otevírací době, nebo nám napište předem, ať máme jistotu, že na vás bude čas.</p>
+    <h3>Domluvím se anglicky?</h3>
+    <p>Ano. Konzultace i sezení vedeme česky a anglicky.</p>
+    
+    <div class="article-cta">
+      <h2>Přijďte s nápadem</h2>
+      <p>Napište nám pár slov o tom, co máte v hlavě, kam to chcete umístit, jak velké to má zhruba být a - pokud jste tu na návštěvě - kdy jste v Praze. Reference vítáme.</p>
+      <p>Zbytek vymyslíme společně a návrh bude jen váš.</p>
+      <a href="/#book" class="btn btn--primary">Rezervovat termín →</a>
+    </div>
+  </article>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="wrap">
+  <div class="foot-grid">
+    <div class="rv">
+      <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
+      <p>Tattoo Studio</p>
+      <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
+      <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
+    </div>
+    <div class="foot-col rv">
+      <h4>Styly / Styles</h4>
+      <a href="/fine-line">Fine Line</a>
+      <a href="/ornamental">Ornamental</a>
+      <a href="/floral">Floral</a>
+      <a href="/engraving">Engraving</a>
+      <a href="/graphic">Graphic</a>
+      <a href="/traditional">Traditional</a>
+      <a href="/color-micro-realism">Micro-realism</a>
+    </div>
+    <div class="foot-col rv">
+      <h4>Studio</h4>
+      <a href="/#about">O nás / About</a>
+      <a href="/#artist">Umělkyně / Artist</a>
+      <a href="/guest-artists">Hosté / Guest artists</a>
+      <a href="/#portfolio">Portfolio</a>
+      <a href="/#contact">Kontakt / Contact</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2025 STIN Tattoo Studio, Praha · <a href="#cookies" data-cookie-settings>Cookies</a> · <a href="/ochrana-osobnich-udaju">GDPR</a> &middot; <span class="footer-credit">Design <a href="https://imarket2web.com" rel="noopener">imarket2web</a></span></span>
+    <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
+
+  var hamburger=document.getElementById('hamburger'),
+      mobOverlay=document.getElementById('mobOverlay'),
+      mobClose=document.getElementById('mobClose');
+  function openMenu(){mobOverlay.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){mobOverlay.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openMenu);
+  mobClose.addEventListener('click',closeMenu);
+  mobOverlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobOverlay.classList.contains('open'))closeMenu();});
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:0.1,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('#hero .rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},60+i*70);});
+
+  var bookForm=document.getElementById('bookForm');
+  if(bookForm){bookForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var gdpr=bookForm.querySelector('#bf-gdpr');
+    if(gdpr&&!gdpr.checked){gdpr.focus();return;}
+    var btn=this.querySelector('.btn--primary');
+    var successMsg=document.getElementById('form-success');
+    var data={
+      name:(bookForm.querySelector('#bf-name')||{}).value||'',
+      email:(bookForm.querySelector('#bf-email')||{}).value||'',
+      phone:(bookForm.querySelector('#bf-phone')||{}).value||'',
+      artist:(bookForm.querySelector('#bf-artist')||{}).value||'',
+      style:(bookForm.querySelector('#bf-style')||{}).value||'',
+      message:(bookForm.querySelector('#bf-idea')||{}).value||'',
+      consent_photos:(bookForm.querySelector('#bf-photos')||{}).checked?'yes':'no',
+      consent_marketing:(bookForm.querySelector('#bf-marketing')||{}).checked?'yes':'no'
+    };
+    var text='🐾 Nová rezervace / New booking!\n\n👤 '+data.name+'\n📧 '+data.email+'\n📱 '+data.phone+'\n🖊 '+data.artist+'\n🎨 '+data.style+'\n💬 '+data.message+'\n\n📸 Photos: '+data.consent_photos+'\n📣 Marketing: '+data.consent_marketing;
+    var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
+    var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
+    if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
+    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(r.ok&&j.ok!==false){gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',tattoo_style:data.style||'not_selected',currency:'CZK',value:3000});gtag('event','conversion',{send_to:'AW-18404683250/3JAVCPCt94wdEPLbhMhE',value:1.0,currency:'CZK'});}});}).catch(function(){});
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
+    setTimeout(function(){
+      if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
+      if(successMsg){successMsg.style.display='block';setTimeout(function(){successMsg.style.display='none';},5000);}
+      bookForm.reset();
+    },1000);
+  });}
+
+})();
+</script>
+<script src="/consent.js"></script>
+</body>
+</html>
