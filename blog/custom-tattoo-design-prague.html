@@ -31,6 +31,10 @@
   gtag('js', new Date());
   gtag('config', 'G-3Q554XP679');
   gtag('config', 'AW-18404683250');
+  // Google Ads call tracking: swaps the studio number for a forwarding number
+  gtag('config', 'AW-11096426210/5CTGCI3evKEdEOKNmKsp', {
+    'phone_conversion_number': '+420 724 266 125'
+  });
 
   // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
   document.addEventListener('click', function (e) {
