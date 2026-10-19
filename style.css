@@ -1321,3 +1321,6 @@ footer {
 /* Inline links in body copy need to look like links */
 .care-intro a { text-decoration: underline; text-underline-offset: 3px; color: var(--color-ink); }
 .care-intro a:hover { color: var(--color-ink-soft); }
+
+/* Designer credit on the 404 page, which has no footer */
+.not-found-credit { margin-top: var(--s5); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; color: var(--color-ink-soft); }
