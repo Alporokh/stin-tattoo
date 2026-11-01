@@ -1,0 +1,25 @@
+# Cloudflare Pages response headers.
+# https://developers.cloudflare.com/pages/configuration/headers/
+#
+# Content-Security-Policy is in Report-Only mode: nothing is blocked, the
+# browser only logs violations to the DevTools console. Once a week of normal
+# use shows no violations (GA4, Google Ads call tracking, Clarity after
+# consent, the booking form), rename the header to Content-Security-Policy to
+# enforce it.
+#
+# script-src allows the inline scripts by sha256 hash: the GA4/Ads block in
+# every <head> and each page's language-toggle script (they differ slightly
+# between pages, hence several hashes). 'unsafe-hashes' plus the last two
+# hashes allow the onclick="setLang('cs')" / onclick="setLang('en')" buttons.
+# Editing any inline script changes its hash - DevTools prints the expected
+# value in the violation message; add it here or the script will be blocked
+# once the policy is enforced.
+#
+# Google Ads call tracking needs googleadservices, doubleclick and the Google
+# country domain the visitor lands on (www.google.cz for Czech visitors).
+# The Apps Script form endpoint redirects to script.googleusercontent.com.
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-zsIvyscou8LyeOmpbxpoq9rRHu10jxfHwsegco+33sE=' 'sha256-qQa2BfC0ZMRf/f+I+ovSzI4CkKE47hKxX22BhqjV6Mc=' 'sha256-PNS6mwgQ1tF7f4MkEBn1uWAeTAwAk8UefmlBa1MfkL8=' 'sha256-rV+tepNkZ/o4aiwfcwvoZ7yzVg9g0dRKCkMeoP54LUs=' 'sha256-SnkRgTC1REquP89pTzkrqkmpElmP6Tr+QhswQyO7HGc=' 'sha256-H3IkVZDUSGrZlHexIveIzaST4VvVtO2di0KmWkd/Wjo=' 'sha256-t6Bzny27WYQPvJPfm0QeaWzdj739S/k4eh/mQOgLir4=' 'sha256-cxW5NeeAOtVDSp4UCsgPLkdjyWDR/40aH0wIw7foBuY=' 'sha256-M62yYFX7crzUv1Jo2DkcXAaknqmIgmdFbMdPQjPI74M=' 'sha256-tQ7AJlDDZqMCHb1qhGAkrv57jT+SrZKow7CLztcgh9g=' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; font-src 'self' https://cdn.jsdelivr.net; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://www.google.cz https://*.clarity.ms https://c.bing.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com https://www.google.cz https://*.clarity.ms https://stin-tattoo.alporokh.workers.dev https://script.google.com https://script.googleusercontent.com; frame-src https://td.doubleclick.net https://www.googletagmanager.com; media-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'
