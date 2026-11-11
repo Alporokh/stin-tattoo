@@ -1324,3 +1324,14 @@ footer {
 
 /* Designer credit on the 404 page, which has no footer */
 .not-found-credit { margin-top: var(--s5); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; color: var(--color-ink-soft); }
+
+/* WhatsApp button, bottom right on every page */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:900;display:inline-flex;align-items:center;gap:8px;
+padding:11px 18px;background:var(--color-ink);color:#fff;text-decoration:none;border:1px solid var(--color-ink);
+font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+transition:background .3s,color .3s,bottom .3s}
+.wa-float:hover{background:#fff;color:var(--color-ink)}
+.wa-float svg{flex-shrink:0}
+/* lift it over the cookie banner, which fills the bottom on small screens */
+@media (max-width:720px){.wa-float{right:16px;bottom:16px;padding:10px 14px}
+body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}

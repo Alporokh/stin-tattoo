@@ -127,13 +127,25 @@
     new MutationObserver(renderText).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   }
 
+  // Anything fixed to the bottom of the screen (the WhatsApp button) needs to
+  // know how tall the banner is, because that changes with text and language.
+  function measureBanner() {
+    if (!banner || banner.hidden) return;
+    document.documentElement.style.setProperty('--consent-h', banner.offsetHeight + 'px');
+  }
+
   function showBanner() {
     if (!banner) buildBanner();
     banner.hidden = false;
+    document.body.classList.add('consent-open');
+    measureBanner();
+    window.addEventListener('resize', measureBanner);
   }
 
   function hideBanner() {
     banner.hidden = true;
+    document.body.classList.remove('consent-open');
+    window.removeEventListener('resize', measureBanner);
   }
 
   function applyChoice(choice) {

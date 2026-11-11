@@ -254,6 +254,16 @@ footer a:hover{color:var(--ink)}
 .consult-points h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.5;margin-bottom:8px}
 .consult-points p{font-size:.95rem;line-height:1.65}
 @media(max-width:700px){.consult-points{grid-template-columns:1fr}}
+/* WhatsApp button, bottom right on every page */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:900;display:inline-flex;align-items:center;gap:8px;
+padding:11px 18px;background:#0A0A0A;color:#fff;text-decoration:none;border:1px solid #0A0A0A;
+font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+transition:background .3s,color .3s,bottom .3s}
+.wa-float:hover{background:#fff;color:#0A0A0A}
+.wa-float svg{flex-shrink:0}
+/* lift it over the cookie banner, which fills the bottom on small screens */
+@media (max-width:720px){.wa-float{right:16px;bottom:16px;padding:10px 14px}
+body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
 </style>
 <script type="application/ld+json">
 {
@@ -727,5 +737,11 @@ footer a:hover{color:var(--ink)}
 })();
 </script>
 <script src="consent.js"></script>
+<!-- WhatsApp -->
+<a class="wa-float" href="https://wa.me/420607511174" target="_blank" rel="noopener noreferrer"
+   aria-label="WhatsApp +420 607 511 174" data-wa>
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.23-8.24z"/></svg>
+  <span>WhatsApp</span>
+</a>
 </body>
 </html>
