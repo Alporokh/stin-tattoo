@@ -34,3 +34,13 @@ Bookings are made via the contact form on the website or by direct message on In
 ## Pages
 
 - [Home](https://stintattoostudio.com/): Full site — studio info, artist bio, portfolio, aftercare, and booking form
+- [Free consultation](https://stintattoostudio.com/free-consultation): Free, no-obligation consultation for a custom tattoo
+- [Guest artists](https://stintattoostudio.com/guest-artists): Visiting artists and the dates they work at the studio
+- [Blog](https://stintattoostudio.com/blog/): Guides on tattoo aftercare, fine line tattoos and getting tattooed in Prague
+
+## Guides
+
+- [Tattoo aftercare: a complete healing guide](https://stintattoostudio.com/blog/tattoo-aftercare-healing-guide): Second skin for the first four days, washing and moisturising 2-3 times a day for three weeks, what healing looks like week by week, what to avoid and for how long, and the signs that need a doctor. Czech version: https://stintattoostudio.com/blog/pece-o-tetovani-hojeni
+- [Do fine line tattoos fade?](https://stintattoostudio.com/blog/do-fine-line-tattoos-fade): Fine line tattoos show fading sooner than bold work rather than fading faster. Causes, how placement changes it, the difference between natural softening and blowout, and touch-up intervals. Czech version: https://stintattoostudio.com/blog/fine-line-tetovani-blednuti
+- [Custom tattoo design in Prague](https://stintattoostudio.com/blog/custom-tattoo-design-prague): How a custom design is made, from consultation to session. Czech version: https://stintattoostudio.com/blog/tetovani-na-miru-praha
+- [Getting a tattoo in Prague: a guide for visitors](https://stintattoostudio.com/blog/tattoo-in-prague-guide-for-visitors): Booking versus walk-in, English-speaking artists, timing around a trip, flying and aftercare.

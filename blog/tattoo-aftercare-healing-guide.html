@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tattoo Aftercare: A Complete Healing Guide | STIN Prague</title>
+<link rel="canonical" href="https://stintattoostudio.com/blog/tattoo-aftercare-healing-guide">
+<link rel="alternate" hreflang="cs" href="https://stintattoostudio.com/blog/pece-o-tetovani-hojeni">
+<link rel="alternate" hreflang="en" href="https://stintattoostudio.com/blog/tattoo-aftercare-healing-guide">
+<link rel="alternate" hreflang="x-default" href="https://stintattoostudio.com/blog/tattoo-aftercare-healing-guide">
+<meta name="description" content="How to look after a new tattoo week by week: second skin, washing and cream, what is normal while healing, what to avoid, and when to see a doctor.">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Consent Mode v2: nothing is stored until the visitor accepts in the cookie banner (consent.js).
+  // One global default - the banner is shown to every visitor, so no region scoping.
+  var stinConsent = (function () {
+    try { return localStorage.getItem('stin_consent_v2') === 'accepted' ? 'granted' : 'denied'; } catch (e) { return 'denied'; }
+  })();
+  gtag('consent', 'default', {
+    ad_storage: stinConsent,
+    ad_user_data: stinConsent,
+    ad_personalization: stinConsent,
+    analytics_storage: stinConsent
+  });
+  // Keep ads measurement working without cookies while consent is denied
+  gtag('set', 'ads_data_redaction', stinConsent !== 'granted');
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'G-3Q554XP679');
+  gtag('config', 'AW-18404683250');
+  // Google Ads call tracking: swaps the studio number for a forwarding number
+  gtag('config', 'AW-11096426210/5CTGCI3evKEdEOKNmKsp', {
+    'phone_conversion_number': '+420 607 511 174'
+  });
+
+  // Lead tracking: phone, email and Instagram clicks (the booking form sends generate_lead)
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var section = link.closest('[id]');
+    var params = { link_placement: section ? section.id : 'page' };
+    if (href.indexOf('tel:') === 0) gtag('event', 'phone_click', params);
+    else if (href.indexOf('mailto:') === 0 || href.indexOf('/cdn-cgi/l/email-protection') !== -1) gtag('event', 'email_click', params);
+    else if (/(^|\.)instagram\.com$/.test(link.hostname)) gtag('event', 'instagram_click', params);
+  });
+</script>
+
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon.p.png" sizes="32x32" type="image/png">
+<link rel="preload" as="font" href="/fonts/inter-latin.woff2" type="font/woff2" crossorigin>
+<link rel="preload" as="font" href="/fonts/inter-latin-ext.woff2" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts.css">
+
+<style>
+:root{
+  --bg:#FFFFFF;
+  --bg-2:#FFFFFF;
+  --panel:#FFFFFF;
+  --ink:#0A0A0A;
+  --ink-soft:#6B6560;
+  --ink-mute:#9B9490;
+  --line:#C8C2BA;
+  --line-soft:#E8E4DF;
+  --accent:#0A0A0A;
+  --maxw:1200px;
+  --gutter:clamp(20px,5vw,64px);
+  --serif:'Inter',system-ui,-apple-system,sans-serif;
+  --sans:'JetBrains Mono','Courier New',monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-mute);font-weight:500}
+.lang{color:var(--ink-mute);font-family:var(--serif);font-size:.92em}
+/* ── Language toggle ─────────────────────────────────────────── */
+.show-cs .lang{display:none}
+.show-en .cs{display:none}
+.show-en .lang{color:inherit;font-style:normal;font-family:inherit;font-size:inherit}
+.lang-toggle{display:flex;align-items:center;gap:8px}
+.lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
+.lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
+.lang-sep{color:var(--line)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+h3{font-size:clamp(1.3rem,2.5vw,1.7rem)}
+p{color:var(--ink-soft);font-weight:300}
+
+.btn{display:inline-block;padding:15px 34px;font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border:1px solid var(--ink);cursor:pointer;transition:.35s ease;background:none;color:var(--ink)}
+.btn--primary{background:var(--ink);color:var(--bg)}
+.btn--primary:hover{background:transparent;color:var(--ink)}
+.btn--outline:hover{background:var(--ink);color:var(--bg)}
+
+/* ── Nav ── */
+#nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--gutter);transition:background .4s,padding .4s,border-color .4s;background:#FFFFFF}
+#nav.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--serif);font-size:1.5rem;letter-spacing:.42em;padding-left:.42em;font-weight:600}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
+#hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+#hamburger span{width:26px;height:1.5px;background:var(--ink);display:block}
+
+/* ── Dropdown ── */
+.tech-dropdown{position:relative;display:flex;align-items:center}
+.tech-sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#FFFFFF;border:1px solid var(--line);min-width:160px;padding:22px 0 8px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.tech-dropdown:hover .tech-sub,.tech-dropdown:focus-within .tech-sub{opacity:1;pointer-events:all}
+.tech-sub a{display:block;padding:10px 20px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);transition:color .3s}
+.tech-sub a:hover,.tech-sub a.active{color:var(--ink)}
+.nav-links .tech-sub a.active::after{content:none}
+.nav-links .tech-toggle.active::after{content:none}
+
+/* ── Mobile overlay ── */
+#mobOverlay{position:fixed;inset:0;z-index:60;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.7,0,.2,1)}
+#mobOverlay.open{transform:translateY(0)}
+#mobOverlay a{font-family:var(--sans);font-size:1.1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+#mobOverlay a:hover{color:var(--ink)}
+#mobClose{position:absolute;top:22px;right:var(--gutter);background:none;border:0;color:var(--ink);font-size:2rem;cursor:pointer;line-height:1;font-family:var(--sans);font-weight:300}
+
+/* ── Reveal ── */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ── Sections ── */
+section{padding-block:clamp(70px,11vw,150px)}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head .eyebrow{margin-bottom:18px;display:block}
+.sec-head p{margin-top:20px;color:var(--ink-mute)}
+
+.crumb{padding-top:120px;padding-bottom:0}
+.crumb ol{list-style:none;display:flex;gap:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.crumb a:hover{color:var(--ink)}
+.crumb li[aria-current]{color:var(--ink)}
+
+/* ── Hero ── */
+#hero{padding-top:40px;padding-bottom:clamp(60px,9vw,120px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,5vw,72px);align-items:center}
+.hero-title{font-size:clamp(2.2rem,6vw,5rem);line-height:.92;margin:18px 0 10px;letter-spacing:.02em}
+.hero-sub{font-family:var(--sans);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink-soft);margin-bottom:26px}
+.hero-desc{max-width:34ch;font-size:1.02rem}
+.hero-desc+.hero-desc{margin-top:14px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
+.hero-media{aspect-ratio:4/5}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+
+/* ── Two-col ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.lead{font-family:var(--sans);font-weight:400;font-size:clamp(1.15rem,2.1vw,1.6rem);line-height:1.5;letter-spacing:.01em;color:var(--ink);text-transform:uppercase}
+
+/* ── Grid-4 ── */
+.grid-4{display:block}
+.feat{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;background:var(--bg)}
+.feat + .feat{border-top:1px solid var(--line-soft)}
+.feat .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.feat-body{font-size:1rem;line-height:1.65}
+.feat-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.feat-body h3::after{content:" "}
+.feat-body p{display:inline;font-size:1rem;line-height:1.65}
+
+/* ── Gallery ── */
+.trad-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line-soft)}
+.trad-fig{margin:0;overflow:hidden;background:var(--bg-2)}
+.trad-fig--large{grid-row:span 2}
+.trad-fig img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.trad-fig:hover img{transform:scale(1.03)}
+.trad-fig:not(.trad-fig--large){aspect-ratio:4/5}
+
+/* ── Steps ── */
+.steps{display:block}
+.step{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px}
+.step + .step{border-top:1px solid var(--line-soft)}
+.step .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.step-body{font-size:1rem;line-height:1.65}
+.step-body h3{font-family:var(--sans);font-size:1rem;font-weight:500;text-transform:none;letter-spacing:.01em;line-height:1.65;display:inline;color:var(--ink)}
+.step-body h3::after{content:" "}
+.step-body p{display:inline;font-size:1rem;line-height:1.65}
+
+/* ── Booking ── */
+#book{background:var(--bg-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,90px);align-items:start}
+#bookForm{display:grid;gap:18px}
+.field label{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:9px}
+.field input,.field textarea{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
+.field textarea{resize:vertical;min-height:120px}
+#bookForm .btn{justify-self:start;margin-top:6px}
+.field select{width:100%;background:transparent;border:1px solid var(--line);color:var(--ink);padding:14px 16px;font-family:var(--sans);font-size:.95rem;font-weight:300;transition:border-color .3s;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237d7a73' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.field select:focus{outline:none;border-color:var(--ink)}
+.field select option{background:var(--bg);color:var(--ink)}
+.consent-group{border:none;padding:0;margin:0}
+.consent-legend{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;display:block}
+.consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin-bottom:12px}
+.consent-item input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
+.consent-check{flex-shrink:0;width:16px;height:16px;border:1px solid var(--line);margin-top:3px;display:block;transition:background .2s,border-color .2s}
+.consent-item input:checked~.consent-check{background:var(--ink);border-color:var(--ink)}
+.consent-text{font-size:.78rem;color:var(--ink-mute);line-height:1.5}
+.consent-link{color:var(--ink-soft);text-decoration:underline;text-underline-offset:2px}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+footer{padding-block:70px;background:#FFFFFF}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;align-items:start}
+footer .brand{display:block;margin-bottom:16px}
+footer p,footer a{font-size:.88rem;color:var(--ink-soft)}
+footer a:hover{color:var(--ink)}
+.foot-col h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:16px;font-family:var(--sans);font-weight:500}
+.foot-col a{display:block;margin-bottom:8px}
+.copyright{margin-top:54px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:var(--ink-mute);letter-spacing:.06em}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  #hamburger{display:flex}
+  .hero-grid,.two-col,.book-grid{grid-template-columns:1fr}
+  .hero-media{max-width:420px;margin-inline:auto}
+  .foot-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+}
+/* Section sub-label keeps the muted eyebrow colour in both languages */
+.sec-head p,.show-en .sec-head p.lang,.show-cs .sec-head p.cs{color:var(--ink-mute)}
+
+/* ── Guest artist ── */
+.guest{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,72px);align-items:start}
+.guest-photo{aspect-ratio:3/4;overflow:hidden}
+.guest-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.guest-name{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.06;text-transform:uppercase;letter-spacing:.01em}
+.guest-role{font-family:var(--sans);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-mute);margin-top:14px;display:block}
+.guest-dates{display:grid;grid-template-columns:32px 1fr;gap:16px;padding-block:22px;border-top:1px solid var(--line-soft);margin-top:26px}
+.guest-dates + .guest-dates{margin-top:0}
+.guest-dates .no{font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;color:var(--ink-soft);line-height:1.75;padding-top:2px}
+.guest-dates-body{font-size:1rem;line-height:1.65}
+.guest-dates-body strong{font-weight:500;color:var(--ink)}
+.guest .btn{margin-top:30px}
+/* ── Guest gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.img-wrap{overflow:hidden;background:var(--bg-2)}
+.img-wrap img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;display:block;transition:filter .4s}
+.img-wrap img:hover{filter:brightness(1.05)}
+@media(max-width:900px){.guest{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
+
+/* ── Blog ── */
+.post{max-width:68ch;margin:0 auto}
+.post-meta{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute)}
+.post h1{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.1;letter-spacing:.01em;margin:18px 0 26px;text-transform:none}
+.post h2{font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.25;text-transform:none;letter-spacing:.01em;margin:48px 0 14px}
+.post h3{font-size:1.02rem;line-height:1.4;text-transform:none;letter-spacing:.01em;margin:30px 0 8px;font-weight:500}
+.post p{font-size:1rem;line-height:1.75;margin-bottom:16px}
+.post .lead-para{font-size:1.1rem;line-height:1.7;color:var(--ink)}
+.post ul{margin:0 0 16px 0;padding-left:1.1em;list-style:disc}
+.post li{font-size:1rem;line-height:1.75;color:var(--ink-soft);margin-bottom:6px}
+.post a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.post a:hover{color:var(--ink-mute)}
+.table-wrap{overflow-x:auto;margin:0 0 20px}
+.post table{border-collapse:collapse;width:100%;min-width:460px;font-size:.9rem}
+@media(max-width:520px){.post th,.post td{padding:10px 11px}}
+.post th,.post td{border:1px solid var(--line-soft);padding:12px 14px;text-align:left;vertical-align:top;color:var(--ink-soft);line-height:1.6}
+.post th{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.article-cta{margin-top:56px;padding-top:32px;border-top:1px solid var(--line-soft)}
+.article-address{font-size:.92rem;line-height:1.8}
+.post .btn{margin-top:12px}
+/* index */
+.post-list{max-width:68ch;margin:0 auto;display:grid;gap:0}
+.post-card{display:block;padding:28px 0;border-bottom:1px solid var(--line-soft);text-decoration:none}
+.post-card:first-child{border-top:1px solid var(--line-soft)}
+.post-card h2{font-size:clamp(1.2rem,2.2vw,1.6rem);line-height:1.3;text-transform:none;letter-spacing:.01em;margin:10px 0 10px}
+.post-card p{font-size:.95rem;line-height:1.7;color:var(--ink-soft);margin:0}
+.post-card:hover h2{color:var(--ink-mute)}
+
+.post figure{margin:30px 0}
+.post figure img{width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center;display:block}
+.post figcaption{font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;color:var(--ink-mute);margin-top:8px;line-height:1.6}
+.post-lead-img{margin:0 0 34px}
+.post-figs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.post-figs figure{margin:0}
+.post-figs figure img{max-height:420px}
+@media(max-width:600px){.post-figs{grid-template-columns:1fr}}
+.post-card{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+.post-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+@media(max-width:600px){.post-card{grid-template-columns:1fr}.post-card img{aspect-ratio:16/10}}
+
+.post-steps{margin:0 0 20px;padding-left:0}
+.post-steps p{margin-bottom:14px}
+.post-altlang{font-family:var(--sans);font-size:.78rem;letter-spacing:.06em;margin:0 0 26px}
+.post-altlang a{color:var(--ink-mute);text-decoration:underline;text-underline-offset:3px}
+.post-altlang a:hover{color:var(--ink)}
+/* WhatsApp button, bottom right on every page */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:900;display:inline-flex;align-items:center;gap:8px;
+padding:11px 18px;background:#0A0A0A;color:#fff;text-decoration:none;border:1px solid #0A0A0A;
+font-family:'JetBrains Mono','Courier New',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+transition:background .3s,color .3s,bottom .3s}
+.wa-float:hover{background:#fff;color:#0A0A0A}
+.wa-float svg{flex-shrink:0}
+/* lift it over the cookie banner, which fills the bottom on small screens */
+@media (max-width:720px){.wa-float{right:24px;bottom:20px;padding:10px 14px}
+body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Tattoo Aftercare: A Complete Healing Guide",
+      "description": "How to look after a new tattoo week by week: second skin, washing and cream, what is normal while healing, what to avoid, and when to see a doctor.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-13",
+      "dateModified": "2026-11-13",
+      "image": "https://stintattoostudio.com/images/tattoo-19.jpg",
+      "mainEntityOfPage": "https://stintattoostudio.com/blog/tattoo-aftercare-healing-guide",
+      "author": { "@type": "Organization", "name": "STIN Tattoo Studio", "url": "https://stintattoostudio.com" },
+      "publisher": { "@id": "https://stintattoostudio.com/#studio" },
+      "about": { "@id": "https://stintattoostudio.com/#studio" }
+    },
+    {
+      "@type": "TattooParlor",
+      "@id": "https://stintattoostudio.com/#studio",
+      "name": "STIN Tattoo Studio",
+      "url": "https://stintattoostudio.com",
+      "telephone": "+420607511174",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Míšeňská 73/5",
+        "postalCode": "118 00",
+        "addressLocality": "Praha 1 - Malá Strana",
+        "addressCountry": "CZ"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:00",
+        "closes": "20:00"
+      },
+      "knowsLanguage": ["en", "cs"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How long does a tattoo take to heal?", "acceptedAnswer": { "@type": "Answer", "text": "The surface closes in about two to four weeks. The deeper layers of skin carry on settling for around three months, which is why a tattoo keeps looking better after the first month." } },
+        { "@type": "Question", "name": "Can I shower with a new tattoo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Short, lukewarm showers are fine from the first day. Avoid baths, pools and anything that soaks the tattoo until the skin has closed." } },
+        { "@type": "Question", "name": "Why does my tattoo look faded after two weeks?", "acceptedAnswer": { "@type": "Answer", "text": "A layer of new skin has formed over the ink and it is not transparent yet. The colour comes back between weeks five and eight." } },
+        { "@type": "Question", "name": "Is itching normal while a tattoo heals?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, especially in week two when the skin peels. Tap the area or apply a thin layer of cream instead of scratching, because scratching pulls ink out with the scab." } },
+        { "@type": "Question", "name": "What cream should I use on a new tattoo?", "acceptedAnswer": { "@type": "Answer", "text": "A thin, fragrance-free moisturiser or the healing cream the studio recommends. Avoid thick petroleum ointments, which trap moisture and soften the scab." } },
+        { "@type": "Question", "name": "When can I go swimming after a tattoo?", "acceptedAnswer": { "@type": "Answer", "text": "After three to four weeks, once the tattoo has stopped peeling and the skin is closed. That applies to pools, lakes, the sea and hot tubs." } },
+        { "@type": "Question", "name": "When can I train again after a tattoo?", "acceptedAnswer": { "@type": "Answer", "text": "Light exercise after a few days. Avoid sweat, friction and heavy stretching over the tattooed area for about a week." } },
+        { "@type": "Question", "name": "How do I know if my tattoo is infected?", "acceptedAnswer": { "@type": "Answer", "text": "Redness spreading outward, pain or swelling increasing after day three, heat, thick yellow or green discharge, or a fever. Any of those means see a doctor rather than wait." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body class="show-en">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav">
+  <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:40px;display:block"></a>
+  <div class="nav-links">
+    <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
+    <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+    <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+    <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
+    <div class="tech-dropdown">
+      <a href="#" class="tech-toggle active"><span class="cs">Styly</span><span class="lang">Styles</span> <span style="font-size:.7em;opacity:.5">▾</span></a>
+      <div class="tech-sub">
+        <a href="/fine-line">Fine Line</a>
+        <a href="/ornamental">Ornamental</a>
+        <a href="/floral">Floral</a>
+        <a href="/engraving">Engraving</a>
+        <a href="/graphic">Graphic</a>
+        <a href="/traditional">Traditional</a>
+        <a href="/color-micro-realism">Micro-realism</a>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
+  </div>
+  <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobOverlay">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobOverlay">
+  <button id="mobClose" aria-label="Zavřít menu">×</button>
+  <a href="/"><span class="cs">Domů</span><span class="lang">Home</span></a>
+  <a href="/#about"><span class="cs">O nás</span><span class="lang">About</span></a>
+  <a href="/#artist"><span class="cs">Umělkyně</span><span class="lang">Artist</span></a>
+  <a href="/guest-artists"><span class="cs">Hosté</span><span class="lang">Guest artists</span></a>
+  <a href="/fine-line" style="font-size:1.4rem">↳ Fine Line</a>
+  <a href="/ornamental" style="font-size:1.4rem">↳ Ornamental</a>
+  <a href="/floral" style="font-size:1.4rem">↳ Floral</a>
+  <a href="/engraving" style="font-size:1.4rem">↳ Engraving</a>
+  <a href="/graphic" style="font-size:1.4rem">↳ Graphic</a>
+  <a href="/traditional" style="font-size:1.4rem">↳ Traditional</a>
+  <a href="/color-micro-realism" style="font-size:1.4rem">↳ Micro-realism</a>
+  <a href="#book">Rezervace</a>
+</div>
+
+
+
+
+<!-- ═══════════════ BREADCRUMB ═══════════════ -->
+<div class="wrap crumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li>/</li>
+    <li><a href="/blog/">Blog</a></li>
+    <li>/</li>
+    <li aria-current="page">Tattoo aftercare</li>
+  </ol>
+</div>
+
+<section class="wrap" style="padding-top:clamp(40px,6vw,70px)">
+  <article class="post">
+    <p class="post-meta"><time datetime="2026-11-13">13 November 2026</time> · STIN Tattoo Studio</p>
+    <h1>Tattoo Aftercare: A Complete Healing Guide</h1>
+    <p class="post-altlang"><a href="/blog/pece-o-tetovani-hojeni">Číst česky →</a></p>
+    <figure class="post-lead-img">
+      <img src="/images/tattoo-19.jpg" alt="Fresh fine line tattoo on a forearm covered with protective second skin film" width="960" height="1280" loading="eager" fetchpriority="high">
+      <figcaption>The first four days happen under the film. Leave it alone.</figcaption>
+    </figure>
+    <p class="lead-para">Your tattoo is finished on the skin in a few hours. It finishes healing over several weeks, and most of that part is in your hands.</p>
+
+    <p>This is the guide we give our clients at STIN in Malá Strana, Prague. It covers the first days under the film, the daily routine after it comes off, what healing normally looks like week by week, what to avoid and for how long, and the few signs that mean you should see a doctor rather than wait and see.</p>
+
+    <h2>The first four days: second skin</h2>
+    <p>We cover every fresh tattoo with a breathable adhesive film, usually called second skin. Leave it on for four days and do not take it off early.</p>
+    <p>The film keeps the tattoo clean, lets the skin breathe and stops the tattoo catching on clothes and bed sheets. Underneath it you will see fluid collecting: a cloudy mix of plasma, a little blood and excess ink. The first time you see it, it looks alarming. It is normal and it means the film is doing its job.</p>
+    <p>Two things are not normal. If the film lifts at the edges so the seal is broken, or if fluid starts leaking out, take it off, wash the tattoo as described below, and carry on without it. Do not stick a new film on unless the studio gave you one and showed you how.</p>
+
+    <h2>Taking the film off</h2>
+    <p>Do it in the shower, under warm running water. Wet the edges first, then peel slowly and flat along the skin rather than pulling it up and away. Warm water softens the adhesive and the film comes off without dragging at the tattoo.</p>
+    <p>Then wash it properly:</p>
+    <ul>
+      <li>Clean hands first, every single time.</li>
+      <li>Lukewarm water and a mild, fragrance-free soap.</li>
+      <li>Fingertips only. No washcloth, no sponge, no scrubbing.</li>
+      <li>Pat dry with a paper towel. Bath towels hold bacteria and leave fibres behind.</li>
+      <li>Let the skin air for a few minutes, then a thin layer of the cream we recommend.</li>
+    </ul>
+
+    <h2>The daily routine, weeks one to three</h2>
+    <p>Wash, dry, cream. Two to three times a day, for about three weeks.</p>
+    <p>The word that matters is <strong>thin</strong>. A thick layer of cream traps moisture against the skin, softens the scab and keeps it wet, and soft scabs are how crisp lines turn blurry. The layer should sink in within a minute. If the tattoo looks shiny and greasy an hour later, you used too much.</p>
+
+    <div class="post-figs">
+      <figure>
+        <img src="/images/tattoo-15.jpg" alt="Gloved hand cleaning a freshly tattooed back at STIN Tattoo Studio Prague" width="960" height="1280" loading="lazy">
+        <figcaption>Clean hands, gentle pressure, paper towel.</figcaption>
+      </figure>
+      <figure>
+        <img src="/images/tattoo-18.jpg" alt="Healed fine line tattoo on a shoulder" width="960" height="1280" loading="lazy">
+        <figcaption>The same piece, healed and settled.</figcaption>
+      </figure>
+    </div>
+
+    <h2>What healing looks like, week by week</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>When</th><th>What you see</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td>Days 1-4</td><td>Film on, fluid underneath, the area warm and a little sore</td><td>Leave it alone</td></tr>
+          <tr><td>Days 4-6</td><td>Film off, skin tight and dry, colour looks flat</td><td>Wash and cream 2-3 times a day</td></tr>
+          <tr><td>Week 2</td><td>Peeling and flaking like sunburn, strong itching, small scabs</td><td>Do not scratch or pick, keep creaming</td></tr>
+          <tr><td>Weeks 3-4</td><td>Skin looks shiny or milky, lines look faded</td><td>Keep moisturising, do not panic</td></tr>
+          <tr><td>Weeks 5-8</td><td>Colour comes back, surface evens out</td><td>Normal washing, start using sunscreen</td></tr>
+          <tr><td>Month 3</td><td>Fully settled under the surface</td><td>Sunscreen whenever it is in the sun</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The milky stage in weeks three and four catches almost everyone out. A layer of new skin has formed over the ink and it is not transparent yet, so the tattoo looks dull and washed out. It is not a bad heal. Do not judge your tattoo before week eight.</p>
+
+    <h2>What is normal</h2>
+    <ul>
+      <li>Redness and swelling for the first few days.</li>
+      <li>Warmth around the area, easing after day three.</li>
+      <li>Clear or cloudy fluid under the film.</li>
+      <li>Peeling like sunburn in week two.</li>
+      <li>Intense itching, worst while it peels.</li>
+      <li>A dull, milky look in weeks three and four.</li>
+      <li>A few flakes of colour coming away with the skin.</li>
+    </ul>
+
+    <h2>What is not normal</h2>
+    <p>See a doctor if you notice any of these:</p>
+    <ul>
+      <li>Redness spreading outward from the tattoo, especially as a streak or line.</li>
+      <li>Pain or swelling getting worse after day three instead of better.</li>
+      <li>The area hot to the touch.</li>
+      <li>Thick yellow or green discharge, or a bad smell.</li>
+      <li>Fever, chills or feeling generally unwell.</li>
+      <li>A raised, itchy rash that follows only one colour. That can be a reaction to a pigment.</li>
+    </ul>
+    <p>You are welcome to <a href="/#contact">message us a photo</a> any time, and we will tell you honestly whether what you are seeing is ordinary. But do not wait on a reply from us if you have a fever or spreading redness. An infection caught early is a small problem; left alone it is not.</p>
+
+    <h2>What to avoid, and for how long</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Avoid</th><th>How long</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Pools, lakes, the sea, hot tubs</td><td>3-4 weeks</td><td>Standing water carries bacteria, chlorine irritates open skin</td></tr>
+          <tr><td>Sauna and steam rooms</td><td>3-4 weeks</td><td>Heat and sweat soften healing skin</td></tr>
+          <tr><td>Direct sun on the tattoo</td><td>4 weeks, then sunscreen for life</td><td>UV breaks pigment down and new skin burns easily</td></tr>
+          <tr><td>Scratching and picking</td><td>Always</td><td>Pulls ink out with the scab and leaves patchy lines</td></tr>
+          <tr><td>Hard training, contact sport</td><td>About a week</td><td>Sweat, friction and stretching over fresh work</td></tr>
+          <tr><td>Tight clothes, straps, watch bands</td><td>2 weeks</td><td>Constant rubbing lifts ink</td></tr>
+          <tr><td>Shaving over the tattoo</td><td>Until peeling has finished</td><td>The blade catches the scab</td></tr>
+          <tr><td>Alcohol</td><td>Day of and day after</td><td>Thins the blood, more fluid, slower start to healing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Sun is the long game</h2>
+    <p>Once the tattoo has healed, UV becomes the main thing that ages it. Sunlight breaks pigment particles into fragments small enough for your body to carry away, and that is what fading actually is.</p>
+    <p>SPF 30 or higher, every time the tattoo is in the sun, for as long as you have it. This matters most on fine lines and light grey work, where there is less pigment to lose in the first place. We go into it properly in <a href="/blog/do-fine-line-tattoos-fade">Do fine line tattoos fade?</a></p>
+
+    <h2>Fine line tattoos need a lighter hand</h2>
+    <p>Thin lines sit in a narrow channel and carry less ink than a bold outline, so they are less forgiving while they heal. Over-moisturising, scratching and sunburn all do more visible damage to a <a href="/fine-line">fine line piece</a> than to a heavy traditional one. Same routine, just less cream and more patience.</p>
+
+    <h2>Healing while you are travelling</h2>
+    <p>If you were tattooed in Prague and fly home a day or two later, nothing changes about the routine. Keep your soap and cream in your hand luggage, keep the area out of the sun, and avoid placements that sit under a seatbelt or a bag strap on the way home. Our <a href="/blog/tattoo-in-prague-guide-for-visitors">guide for visitors</a> covers flying, swimming and timing a tattoo around a trip.</p>
+
+    <h2>Touch-ups</h2>
+    <p>Sometimes a small patch lifts during peeling and heals lighter than the rest. That is common, it is not a mistake, and it is quick to correct.</p>
+    <p>Wait until the tattoo is fully healed, at least four to six weeks, then send us a photo. We will tell you whether it actually needs anything and arrange a time if it does. Judging it earlier, during the milky stage, usually leads people to ask for a touch-up they do not need.</p>
+
+    <h2>Where to find us</h2>
+    <p><a href="/#contact">STIN Tattoo Studio</a> is at Míšeňská 73/5, Malá Strana, Prague 1, a few minutes on foot from Charles Bridge. We are open every day from 12:00 to 20:00, we work in English and Czech, and you can reach us on <a href="tel:+420607511174">+420 607 511 174</a> or on WhatsApp.</p>
+    <p>If you are still deciding on a piece rather than healing one, the <a href="/free-consultation">consultation is free</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How long does a tattoo take to heal?</h3>
+    <p>The surface closes in about two to four weeks. The deeper layers carry on settling for around three months, which is why a tattoo keeps looking better after the first month.</p>
+    <h3>Can I shower with a new tattoo?</h3>
+    <p>Yes. Short, lukewarm showers are fine from day one. No baths, no pools, nothing that soaks it until the skin has closed.</p>
+    <h3>Why does my tattoo look faded after two weeks?</h3>
+    <p>New skin has formed over the ink and it is not transparent yet. The colour comes back between weeks five and eight.</p>
+    <h3>Is itching normal?</h3>
+    <p>Yes, especially in week two. Tap the area or add a thin layer of cream instead of scratching. Scratching pulls ink out with the scab.</p>
+    <h3>What cream should I use?</h3>
+    <p>A thin, fragrance-free moisturiser, or the healing cream we recommend. Avoid thick petroleum ointments, which keep the scab wet.</p>
+    <h3>When can I go swimming?</h3>
+    <p>After three to four weeks, once it has stopped peeling. That includes pools, lakes, the sea and hot tubs.</p>
+    <h3>When can I train again?</h3>
+    <p>Light exercise after a few days. Keep sweat, friction and heavy stretching off the area for about a week.</p>
+    <h3>How do I know if it is infected?</h3>
+    <p>Spreading redness, pain or swelling increasing after day three, heat, thick yellow or green discharge, or fever. Any of those means see a doctor rather than wait.</p>
+
+    <div class="article-cta">
+      <h2>Not sure what you are looking at?</h2>
+      <p>Send us a photo. We would far rather answer a question about a tattoo that is healing perfectly well than hear about it three weeks later.</p>
+      <p>And if you are here for the next one: tell us the idea, the placement and roughly the size.</p>
+      <a href="/#book" class="btn btn--primary">Book a session →</a>
+    </div>
+  </article>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="wrap">
+  <div class="foot-grid">
+    <div class="rv">
+      <a href="/" class="brand"><img src="/images/logo-stin.svg" alt="STIN Tattoo" style="height:32px;display:block"></a>
+      <p>Tattoo Studio</p>
+      <p style="margin-top:10px">Míšeňská 73/5, 118 00 Praha</p>
+      <p><a href="mailto:stintattoostudio@gmail.com">stintattoostudio@gmail.com</a></p>
+    </div>
+    <div class="foot-col rv">
+      <h4>Styly / Styles</h4>
+      <a href="/fine-line">Fine Line</a>
+      <a href="/ornamental">Ornamental</a>
+      <a href="/floral">Floral</a>
+      <a href="/engraving">Engraving</a>
+      <a href="/graphic">Graphic</a>
+      <a href="/traditional">Traditional</a>
+      <a href="/color-micro-realism">Micro-realism</a>
+    </div>
+    <div class="foot-col rv">
+      <h4>Studio</h4>
+      <a href="/#about">O nás / About</a>
+      <a href="/#artist">Umělkyně / Artist</a>
+      <a href="/guest-artists">Hosté / Guest artists</a>
+      <a href="/#portfolio">Portfolio</a>
+      <a href="/#contact">Kontakt / Contact</a>
+      <a href="/blog/">Blog</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2025 STIN Tattoo Studio, Praha · <a href="#cookies" data-cookie-settings>Cookies</a> · <a href="/ochrana-osobnich-udaju">GDPR</a> &middot; <span class="footer-credit">Design <a href="https://imarket2web.com" rel="noopener">imarket2web</a></span></span>
+    <span><a href="https://www.instagram.com/stintattoostudio">Instagram</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── Language toggle ──────────────────────────────────────────── */
+  function setLang(l){
+    document.body.className='show-'+l;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active',b.textContent.trim()===(l==='cs'?'CZ':'EN'));
+    });
+    try{localStorage.setItem('stin-lang',l)}catch(e){}
+  }
+  window.setLang=setLang;
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'en');})();
+
+  var nav=document.getElementById('nav');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});
+
+  var hamburger=document.getElementById('hamburger'),
+      mobOverlay=document.getElementById('mobOverlay'),
+      mobClose=document.getElementById('mobClose');
+  function openMenu(){mobOverlay.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function closeMenu(){mobOverlay.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  hamburger.addEventListener('click',openMenu);
+  mobClose.addEventListener('click',closeMenu);
+  mobOverlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobOverlay.classList.contains('open'))closeMenu();});
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:0.1,rootMargin:'0px 0px -28px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  document.querySelectorAll('#hero .rv').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},60+i*70);});
+
+  var bookForm=document.getElementById('bookForm');
+  if(bookForm){bookForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var gdpr=bookForm.querySelector('#bf-gdpr');
+    if(gdpr&&!gdpr.checked){gdpr.focus();return;}
+    var btn=this.querySelector('.btn--primary');
+    var successMsg=document.getElementById('form-success');
+    var data={
+      name:(bookForm.querySelector('#bf-name')||{}).value||'',
+      email:(bookForm.querySelector('#bf-email')||{}).value||'',
+      phone:(bookForm.querySelector('#bf-phone')||{}).value||'',
+      artist:(bookForm.querySelector('#bf-artist')||{}).value||'',
+      style:(bookForm.querySelector('#bf-style')||{}).value||'',
+      message:(bookForm.querySelector('#bf-idea')||{}).value||'',
+      consent_photos:(bookForm.querySelector('#bf-photos')||{}).checked?'yes':'no',
+      consent_marketing:(bookForm.querySelector('#bf-marketing')||{}).checked?'yes':'no'
+    };
+    var text='🐾 Nová rezervace / New booking!\n\n👤 '+data.name+'\n📧 '+data.email+'\n📱 '+data.phone+'\n🖊 '+data.artist+'\n🎨 '+data.style+'\n💬 '+data.message+'\n\n📸 Photos: '+data.consent_photos+'\n📣 Marketing: '+data.consent_marketing;
+    var WORKER_URL='https://stin-tattoo.alporokh.workers.dev';
+    var SHEETS_URL='https://script.google.com/macros/s/AKfycbzWppkRNfqjAGa98HVkUl43ixOnBmo2Kjqh4Suko3cR7_UVv5CxXZAIUq2caj8e7cPu/exec';
+    if(btn){btn.disabled=true;btn.textContent='Odesílám…';}
+    fetch(WORKER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).then(function(r){return r.json().catch(function(){return {};}).then(function(j){if(r.ok&&j.ok!==false){gtag('event','generate_lead',{form_id:'bookForm',form_name:'booking_inquiry',tattoo_style:data.style||'not_selected',currency:'CZK',value:3000});gtag('event','conversion',{send_to:'AW-18404683250/3JAVCPCt94wdEPLbhMhE',value:1.0,currency:'CZK'});}});}).catch(function(){});
+    fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(function(){});
+    setTimeout(function(){
+      if(btn){btn.disabled=false;btn.textContent='Odeslat poptávku';}
+      if(successMsg){successMsg.style.display='block';setTimeout(function(){successMsg.style.display='none';},5000);}
+      bookForm.reset();
+    },1000);
+  });}
+
+})();
+</script>
+<script src="/consent.js"></script>
+<!-- WhatsApp -->
+<a class="wa-float" href="https://wa.me/420607511174" target="_blank" rel="noopener noreferrer"
+   aria-label="WhatsApp +420 607 511 174" data-wa>
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.23-8.24z"/></svg>
+  <span>WhatsApp</span>
+</a>
+</body>
+</html>
