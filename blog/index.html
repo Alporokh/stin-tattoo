@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | STIN Tattoo Studio Praha</title>
+<title>Tattoo Blog | STIN Tattoo Studio Prague</title>
 <link rel="canonical" href="https://stintattoostudio.com/blog/">
-<meta name="description" content="Články o tetování ze studia STIN Praha 1 - rady před návštěvou, péče o tetování a styly. / Tattoo guides from STIN Tattoo Studio in Prague.">
+<link rel="alternate" hreflang="en" href="https://stintattoostudio.com/blog/">
+<link rel="alternate" hreflang="cs" href="https://stintattoostudio.com/blog/cs/">
+<link rel="alternate" hreflang="x-default" href="https://stintattoostudio.com/blog/">
+<meta name="description" content="Tattoo guides from STIN Tattoo Studio in Prague 1: aftercare, how fine line ages, custom design and what to know before your first session.">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Q554XP679"></script>
 <script>
@@ -86,6 +89,11 @@ a{color:inherit;text-decoration:none}
 .lang-btn{background:none;border:1px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:2px 7px;transition:color .3s,border-color .3s}
 .lang-btn.active{color:var(--ink);font-weight:500;border-color:var(--ink)}
 .lang-sep{color:var(--line)}
+.blog-alt{display:inline-block;font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mute);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
+.blog-alt:hover{color:var(--ink);border-color:var(--ink)}
+.lang-btn{text-decoration:none;display:inline-block}
+.hero-sub{margin-bottom:18px}
+
 
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;letter-spacing:.01em;text-transform:uppercase}
 h2{font-size:clamp(2rem,5vw,3.4rem)}
@@ -296,7 +304,7 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
 </style>
 
 </head>
-<body class="show-cs">
+<body class="show-en">
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav">
@@ -319,9 +327,9 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
       </div>
     </div>
     <div class="lang-toggle">
-      <button class="lang-btn" onclick="setLang('cs')">CZ</button>
+      <a class="lang-btn" href="/blog/cs/">CZ</a>
       <span class="lang-sep">|</span>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <a class="lang-btn active" href="/blog/">EN</a>
     </div>
     <a href="#book" class="btn btn--outline" style="padding:11px 24px">Rezervace</a>
   </div>
@@ -352,7 +360,7 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
 <!-- ═══════════════ BREADCRUMB ═══════════════ -->
 <div class="wrap crumb">
   <ol>
-    <li><a href="/">Domů</a></li>
+    <li><a href="/">Home</a></li>
     <li>/</li>
     <li aria-current="page">Blog</li>
   </ol>
@@ -360,55 +368,32 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
 
 <header id="hero" class="wrap" style="padding-bottom:clamp(30px,4vw,50px)">
   <h1 class="hero-title rv" style="font-size:clamp(2.6rem,7vw,5rem)">Blog</h1>
-  <p class="hero-sub rv"><span class="cs">Rady, péče a vše okolo tetování</span><span class="lang">Guides, aftercare and everything around tattooing</span></p>
+  <p class="hero-sub rv">Guides, aftercare and everything around tattooing</p>
+  <p class="rv"><a class="blog-alt" href="/blog/cs/">Číst česky →</a></p>
 </header>
 
 <section class="wrap" style="padding-top:0">
   <div class="post-list">
-    <a class="post-card" href="/blog/pece-o-tetovani-hojeni">
-      <img src="/images/tattoo-19.jpg" alt="Čerstvé tetování pod ochrannou fólií, STIN Tattoo Studio Praha" width="960" height="1280" loading="lazy">
-      <div>
-      <span class="post-meta"><time datetime="2026-11-13">13. listopadu 2026</time> · Česky</span>
-      <h2>Péče o tetování: kompletní průvodce hojením</h2>
-      <p>Druhá kůže, mytí a krém, jak hojení vypadá týden po týdnu, čemu se vyhnout a kdy je potřeba lékař.</p>
-      </div>
-    </a>
     <a class="post-card" href="/blog/tattoo-aftercare-healing-guide">
       <img src="/images/tattoo-19.jpg" alt="Fresh tattoo under protective second skin film, STIN Tattoo Studio Prague" width="960" height="1280" loading="lazy">
       <div>
-      <span class="post-meta"><time datetime="2026-11-13">13 November 2026</time> · English</span>
+      <span class="post-meta"><time datetime="2026-11-13">13 November 2026</time></span>
       <h2>Tattoo Aftercare: A Complete Healing Guide</h2>
       <p>Second skin, washing and cream, what healing looks like week by week, what to avoid, and when to see a doctor.</p>
-      </div>
-    </a>
-    <a class="post-card" href="/blog/fine-line-tetovani-blednuti">
-      <img src="/images/fine-line-tattoo-stin.jpg" alt="Fine line tetování na paži, STIN Tattoo Studio Praha" width="959" height="1280" loading="lazy">
-      <div>
-      <span class="post-meta"><time datetime="2026-11-13">13. listopadu 2026</time> · Česky</span>
-      <h2>Blednou fine line tetování?</h2>
-      <p>Co blednutí opravdu způsobuje, jak do toho mluví umístění, rozdíl mezi změkčením a blowoutem a jak často dotetovat.</p>
       </div>
     </a>
     <a class="post-card" href="/blog/do-fine-line-tattoos-fade">
       <img src="/images/fine-line-tattoo-stin.jpg" alt="Fine line tattoo on an upper arm, STIN Tattoo Studio Prague" width="959" height="1280" loading="lazy">
       <div>
-      <span class="post-meta"><time datetime="2026-11-13">13 November 2026</time> · English</span>
+      <span class="post-meta"><time datetime="2026-11-13">13 November 2026</time></span>
       <h2>Do Fine Line Tattoos Fade?</h2>
       <p>What really causes fading, how much placement matters, softening versus blowout, and how often a touch-up is needed.</p>
-      </div>
-    </a>
-    <a class="post-card" href="/blog/tetovani-na-miru-praha">
-      <img src="/images/ref1-640.jpg" alt="Custom tattoo design at STIN Tattoo Studio Prague" width="640" height="841" loading="lazy">
-      <div>
-      <span class="post-meta"><time datetime="2026-10-13">13. října 2026</time> · Česky</span>
-      <h2>Tetování na míru v centru Prahy: od nápadu k hotovému návrhu</h2>
-      <p>Jak u nás vzniká návrh na míru - konzultace, kresba pro vaše tělo, sezení. Co si vzít s sebou a jak dlouho to trvá.</p>
       </div>
     </a>
     <a class="post-card" href="/blog/custom-tattoo-design-prague">
       <img src="/images/ref1-640.jpg" alt="Custom tattoo design at STIN Tattoo Studio Prague" width="640" height="841" loading="lazy">
       <div>
-      <span class="post-meta"><time datetime="2026-10-13">13 October 2026</time> · English</span>
+      <span class="post-meta"><time datetime="2026-10-13">13 October 2026</time></span>
       <h2>Custom Tattoos in Central Prague: From Your Idea to the Finished Design</h2>
       <p>What a custom tattoo means, how the design process works, what to bring, and which styles suit custom work.</p>
       </div>
@@ -416,7 +401,7 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
     <a class="post-card" href="/blog/tattoo-in-prague-guide-for-visitors">
       <img src="/images/stin-hero.jpg" alt="STIN Tattoo Studio in Malá Strana, Prague" width="960" height="1280" loading="lazy">
       <div>
-      <span class="post-meta"><time datetime="2026-10-01">1 October 2026</time> · English</span>
+      <span class="post-meta"><time datetime="2026-10-01">1 October 2026</time></span>
       <h2>Getting a Tattoo in Prague: A Guide for International Visitors</h2>
       <p>Booking versus walking in, finding an English-speaking artist, when in your trip to get tattooed, and how to handle flying, swimming and sun afterwards.</p>
       </div>
@@ -450,7 +435,8 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
       <a href="/guest-artists">Hosté / Guest artists</a>
       <a href="/#portfolio">Portfolio</a>
       <a href="/#contact">Kontakt / Contact</a>
-      <a href="/blog/">Blog</a>
+      <a href="/blog/cs/">Blog (česky)</a>
+      <a href="/blog/">Blog (English)</a>
     </div>
   </div>
   <div class="copyright">
@@ -472,7 +458,7 @@ body.consent-open .wa-float{bottom:calc(var(--consent-h, 200px) + 26px)}}
     try{localStorage.setItem('stin-lang',l)}catch(e){}
   }
   window.setLang=setLang;
-  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'cs');})();
+  (function(){var s;try{s=localStorage.getItem('stin-lang')}catch(e){}setLang(s||'en');})();
 
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>48);},{passive:true});

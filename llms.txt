@@ -36,7 +36,8 @@ Bookings are made via the contact form on the website or by direct message on In
 - [Home](https://stintattoostudio.com/): Full site — studio info, artist bio, portfolio, aftercare, and booking form
 - [Free consultation](https://stintattoostudio.com/free-consultation): Free, no-obligation consultation for a custom tattoo
 - [Guest artists](https://stintattoostudio.com/guest-artists): Visiting artists and the dates they work at the studio
-- [Blog](https://stintattoostudio.com/blog/): Guides on tattoo aftercare, fine line tattoos and getting tattooed in Prague
+- [Blog, English](https://stintattoostudio.com/blog/): Guides on tattoo aftercare, fine line tattoos and getting tattooed in Prague
+- [Blog, Czech](https://stintattoostudio.com/blog/cs/): The same guides in Czech. Each article is published in one language only; the two indexes are hreflang pairs.
 
 ## Guides
 
