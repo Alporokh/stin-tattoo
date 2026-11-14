@@ -611,7 +611,15 @@ body {
 
 /* ─── PORTFOLIO ──────────────────────────────────────────────── */
 #portfolio {
+  /* The carousel sits in a dark band. Redefining the three ink tokens here
+     flips the heading, the body copy, the ghost button and the whole ring
+     toolbar with it - no per-element overrides needed. */
+  --color-surface:  #141210;
+  --color-ink:      #F5F2EE;
+  --color-ink-soft: rgba(245, 242, 238, 0.60);
+  --color-rule:     rgba(245, 242, 238, 0.26);
   background: var(--color-surface);
+  color: var(--color-ink);
   padding: clamp(4rem, 10vh, 8rem) var(--gutter);
 }
 .portfolio-header {
@@ -671,6 +679,318 @@ body {
 .port-item:hover .port-caption {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ─── PORTFOLIO · CIRCULAR CAROUSEL ──────────────────────────── */
+/* The grid stays the markup and the no-JS fallback. main.js lifts the
+   figures into a 3D ring (.is-ring) when the browser can handle it and
+   the visitor has not asked for reduced motion. */
+
+.port-stage { position: relative; }
+
+.port-stage.is-ring {
+  --card-w: 300px;
+  --card-h: 400px;
+  --ring-h: 530px;
+  --card-r: 16px;
+  margin-inline: calc(-1 * var(--gutter));
+  width: calc(100% + 2 * var(--gutter));
+}
+
+.port-stage.is-ring .portfolio-grid {
+  display: block;
+  position: relative;
+  height: var(--ring-h);
+  gap: 0;
+  overflow: hidden;              /* the ring is wider than the screen */
+  perspective: 700px;
+  /* vanishing point above the middle, so the far side of the drum rides
+     higher than the photos in front of it */
+  perspective-origin: 50% 42%;
+  touch-action: pan-y;           /* vertical page scroll still works */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+.port-stage.is-ring .portfolio-grid.is-dragging { cursor: grabbing; }
+.port-stage.is-ring .portfolio-grid:focus-visible {
+  box-shadow: inset 0 0 0 1px var(--color-ink);
+}
+
+.ring-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── one card on the ring ── */
+.port-stage.is-ring .port-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--card-w);
+  height: var(--card-h);
+  margin: calc(var(--card-h) / -2) 0 0 calc(var(--card-w) / -2);
+  transform-style: preserve-3d;
+  /* No backface-visibility here: the far half of the ring stays on screen as
+     pale ghost cards, which is what gives the ring its depth. */
+  transition: transform 0.45s var(--ease-expo);
+}
+/* the far half: pale, flat, inert */
+.port-stage.is-ring .port-item.is-back { pointer-events: none; }
+.port-stage.is-ring .port-item.is-back .port-img {
+  visibility: visible;
+  opacity: 0.22;
+  filter: grayscale(100%) brightness(2.1) contrast(0.45);
+}
+
+.port-stage.is-ring .port-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card-r);
+  filter: grayscale(100%) contrast(1.08);
+  transition: filter 0.5s var(--ease-expo), opacity 0.5s linear;
+}
+.port-stage.is-ring .port-item:hover .port-img { transform: none; }
+.port-stage.is-ring .port-item.is-front .port-img,
+.port-stage.is-ring .port-item:hover .port-img {
+  filter: grayscale(0%) contrast(1);
+}
+
+.port-stage.is-ring .port-caption {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0));
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 0 0 var(--card-r) var(--card-r);
+}
+/* ── bendable face: seven strips of the same photo laid on an arc ──
+   The cards are curved at all times so they wrap the cylinder, and curl
+   further as the ring picks up speed. The strips repeat the flat photo's own
+   treatment, including the colour on the front card, so the flat <img> they
+   stand in for can take over seamlessly on the far side of the ring. */
+.ring-bend {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  visibility: hidden;
+}
+.ring-sl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  filter: grayscale(100%) contrast(1.08);
+}
+.port-stage.is-ring .port-item.is-front .ring-sl {
+  filter: grayscale(0%) contrast(1);
+}
+.ring-sl:first-child {
+  border-top-left-radius: var(--card-r);
+  border-bottom-left-radius: var(--card-r);
+}
+.ring-sl:last-child {
+  border-top-right-radius: var(--card-r);
+  border-bottom-right-radius: var(--card-r);
+}
+.ring-sl:nth-child(1) { transform: var(--t0, none); }
+.ring-sl:nth-child(2) { transform: var(--t1, none); }
+.ring-sl:nth-child(3) { transform: var(--t2, none); }
+.ring-sl:nth-child(4) { transform: var(--t3, none); }
+.ring-sl:nth-child(5) { transform: var(--t4, none); }
+.ring-sl:nth-child(6) { transform: var(--t5, none); }
+.ring-sl:nth-child(7) { transform: var(--t6, none); }
+
+.port-stage.is-ring .port-item.has-bend:not(.is-back) .ring-bend { visibility: visible; }
+.port-stage.is-ring .port-item.has-bend:not(.is-back) .port-img { visibility: hidden; }
+
+/* ── edges fade into the page instead of being cut off ── */
+.ring-fog {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #141210 0%,
+    rgba(20, 18, 16, 0) 14%,
+    rgba(20, 18, 16, 0) 86%,
+    #141210 100%
+  );
+}
+
+/* ── controls ── */
+.ring-ui {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  margin-top: var(--s4);
+  padding-inline: var(--gutter);
+}
+.ring-ui[hidden] { display: none; }
+
+.ring-btn {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-ink);
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease,
+              color var(--dur-fast) ease;
+}
+.ring-btn:hover {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-surface);
+}
+
+.ring-meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+.ring-idx { color: var(--color-ink); }
+.ring-sep { opacity: 0.35; }
+.ring-label {
+  margin-left: var(--s2);
+  padding-left: var(--s3);
+  border-left: 1px solid var(--color-rule);
+}
+
+.ring-hint {
+  margin-top: var(--s2);
+  padding-inline: var(--gutter);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  opacity: 0.65;
+}
+.ring-hint[hidden] { display: none; }
+
+@media (max-width: 1024px) {
+  .port-stage.is-ring { --card-w: 240px; --card-h: 315px; --ring-h: 415px; --card-r: 13px; }
+}
+@media (max-width: 680px) {
+  .port-stage.is-ring { --card-w: 172px; --card-h: 228px; --ring-h: 305px; --card-r: 10px; }
+  .ring-ui { gap: var(--s3); }
+  .ring-label { display: none; }
+}
+
+/* ─── PORTFOLIO LIGHTBOX ─────────────────────────────────────── */
+/* Works in both modes: on the 3D ring and on the plain grid that
+   reduced-motion and no-JS visitors get. */
+
+#portfolio .port-item { cursor: zoom-in; }
+.port-stage.is-ring .port-item { cursor: inherit; }  /* the ring's grab wins */
+
+.ring-auto .ic-play { display: none; }
+.ring-auto[data-paused="true"] .ic-pause { display: none; }
+.ring-auto[data-paused="true"] .ic-play { display: inline; }
+
+body.lb-open { overflow: hidden; }
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;                       /* over the cookie banner and WhatsApp */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(10, 10, 10, 0.95);
+  opacity: 0;
+  transition: opacity 0.28s var(--ease-expo);
+}
+.lb[hidden] { display: none; }
+.lb.is-on { opacity: 1; }
+
+.lb-fig {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  max-width: min(1100px, 100%);
+  transform: scale(0.94);
+  transition: transform 0.32s var(--ease-expo);
+}
+.lb.is-on .lb-fig { transform: none; }
+
+.lb-img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 11rem);
+  max-height: calc(100dvh - 11rem);
+  object-fit: contain;
+  background: #141414;
+}
+
+.lb-cap {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s3);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+.lb-count { color: rgba(255, 255, 255, 0.45); }
+
+.lb-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  transition: background var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.lb-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.lb-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.lb-close { top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+.lb-prev  { left: clamp(0.5rem, 2.5vw, 2rem); top: 50%; transform: translateY(-50%); }
+.lb-next  { right: clamp(0.5rem, 2.5vw, 2rem); top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 600px) {
+  .lb-btn { width: 38px; height: 38px; }
+  .lb-img {
+    max-height: calc(100vh - 9rem);
+    max-height: calc(100dvh - 9rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb, .lb-fig { transition: none; }
 }
 
 /* ─── AFTERCARE ──────────────────────────────────────────────── */
