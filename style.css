@@ -1117,6 +1117,77 @@ body.lb-open { overflow: hidden; }
   color: var(--color-bg);
 }
 
+/* ─── REVIEWS ────────────────────────────────────────────────── */
+#reviews {
+  background: var(--color-surface);
+  padding: clamp(4rem, 10vh, 8rem) var(--gutter);
+  text-align: center;
+}
+.rev-header {
+  margin: 0 auto var(--s7);
+  max-width: var(--max-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+}
+.rev-header .ig-sub { line-height: 1.7; margin-top: var(--s2); }
+.rev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s5);
+  max-width: var(--max-wide);
+  margin: 0 auto var(--s7);
+  text-align: left;
+}
+.rev-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-rule);
+  padding: var(--s6) var(--s5) var(--s5);
+  transition: border-color var(--dur-fast);
+}
+.rev-card:hover { border-color: var(--color-ink); }
+.rev-stars {
+  font-size: var(--text-small);
+  letter-spacing: 0.3em;
+  color: var(--color-ink);
+  margin-bottom: var(--s4);
+}
+.rev-quote {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-ink);
+  padding-bottom: var(--s5);
+  margin-bottom: var(--s4);
+  border-bottom: 1px solid var(--color-rule);
+}
+.rev-quote::before { content: "\201C"; }
+.rev-quote::after  { content: "\201D"; }
+.rev-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-body-lg);
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+.rev-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-top: var(--s1);
+}
+@media (max-width: 960px) {
+  #reviews { text-align: left; }
+  .rev-header { align-items: flex-start; margin-left: 0; }
+  .rev-grid { grid-template-columns: 1fr; gap: var(--s4); }
+}
+
 /* ─── BOOK ───────────────────────────────────────────────────── */
 #book {
   background: var(--color-bg);
